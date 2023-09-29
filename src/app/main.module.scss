@@ -1,0 +1,128 @@
+@import '/src/styles/mixins';
+@import '/src/styles/letterals';
+
+.main_container{
+    width: $desktop;
+    min-height: 1000px;
+    height: fit-content;
+    @media (max-width: $mobile) {
+        width: $mobile;
+    }
+    background-color: red;
+    position: relative;
+    z-index: 4;
+}
+
+.backgroundImage_container{
+    width:inherit;
+    height: inherit;
+    position:absolute;
+    top:0;
+    right: 0;
+    z-index: 5;
+}
+
+.pageContent{
+    @include flex(column,flex-start);
+    width: 100%;
+    height: fit-content;
+    min-height: 500px;
+    position: relative;
+    z-index: 6;
+    
+}
+
+.hero_container{
+    @include flex(column,flex-start,center);
+    height:fit-content;
+    padding:70px 0px 0px 0px;
+    margin-bottom:80px;
+    @media (max-width: $mobile) {
+        height:fit-content;
+        padding:25px 0px 0px 0px;
+        margin-bottom:50px;
+    }
+}
+
+.contactUs{
+    &_container{
+        @include flex(row,space-between);
+        width:246px;
+        height:74px;
+        @media (max-width: $mobile) {
+            width:200px;
+            height: 50px;
+        }
+    }
+    &_image{
+        width:73px;
+        height:73px;
+        @media (max-width: $mobile) {
+            width:50px;
+            height:50px;
+        }
+    }
+}
+
+.description_container{
+    @include NarzissFont(40px);
+    color:$white;
+    width: 500px;
+    text-align:center;
+    padding-top:20px;
+    height:fit-content;
+    @media (max-width: $mobile) {
+        width: 212px;
+        height: 115px;
+        font-size:30px;
+        padding-top:0px;
+        line-height:150%;
+        text-align:center;
+    }
+}
+
+.mainImage_container{
+    @include flex(column,$ai:center,$jc:center);
+    .divider{
+        width: 2px;
+        height: 169px;
+    }
+    @media (max-width: $mobile) {
+        .divider{
+            width: 2px;
+            height: 75px;
+        }
+    }
+}
+
+.sandclockImage{
+    width:890px;
+    height: 500px;
+    @media (max-width: $mobile) {
+        padding:0px 40px;
+        box-sizing:border-box;
+        width:400px;
+        height: 220px;
+    }
+}
+
+.brandname_container{
+    & p {
+        color: $white;
+        @include AntarcticFont(190px);
+        transform:translateY(-230px);
+        @media (max-width: $mobile) {
+            font-size: 66px;
+            transform:translateY(-80px);
+        }
+    }
+}
+
+.buttons_container{
+    margin-bottom:40px;
+    transform:translateY(-100px);
+    @media (max-width: $mobile) {
+        margin-bottom:20px;
+        transform:translateY(0px);
+    }
+}

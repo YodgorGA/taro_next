@@ -1,0 +1,22 @@
+@import '/src/styles/mixins';
+@import '/src/styles/letterals';
+
+.button{
+    color:$black;
+    @include flex(column,center,center);
+    text-align: center;
+    @include GwenFont(50px);
+    border-radius: 70px;
+    &__beije{
+        background-color: $beije;
+        @media (max-width: $mobile) {
+        
+        }
+    }
+    &__white{
+        background-color: $white;
+        @media (max-width: $mobile) {
+        
+        }
+    }
+}

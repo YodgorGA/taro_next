@@ -1,0 +1,28 @@
+@mixin flex($fd:row,$jc:center,$ai:center){
+    display: flex;
+    flex-direction: $fd;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+@mixin NarzissFont($size:40px){
+    font-family: 'Narziss';
+    font-size: $size;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+@mixin AntarcticFont($size){
+    font-family: 'Antarctic';
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-size: $size;
+}
+@mixin GwenFont($size){
+    font-family: 'Gwen-Trial';
+    font-style: normal;
+    font-weight: 350;
+    line-height: normal;
+    font-size: $size;
+}

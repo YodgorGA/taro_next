@@ -1,95 +1,52 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import {FC} from 'react';
+import S from './main.module.scss';
+import { Button } from '@/shared';
+import Image from 'next/image';
+import SandClock from '@/assets/images/sandClocks.png'
+import TelegramIcon from '@/assets/icons/telegram 1.png'
+import EmaiIcon from '@/assets/icons/email 1.png'
 
-export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+interface MainPageProps {
+    
 }
+
+export const MainPage:FC<MainPageProps> = ({...MainPageProps}) =>{
+    
+    return ( 
+        <main className={S.main_container}>
+            <div className={S.backgroundImage_container}>
+              {/*DARK SPHERE*/}
+              {/*LIGHT SPHERE*/}
+            </div>
+            {/*HEADER z-index:6*/}
+            <div className={S.pageContent}>
+                <div className={S.hero_container}>
+                    {/*LOGO*/}
+                    <div className={S.contactUs_container}>
+                        <Image src={TelegramIcon} alt="Contact us on Telegram" className="contactUs_image" />
+                        <Image src={EmaiIcon} alt="Contact us on mail" className="contactUs_image" />
+                    </div>
+                    <div className={S.description_container}>
+                        <p>Краткое и заманивающее описание услуг</p>
+                    </div>
+                </div>
+                <div className={S.mainImage_container}>
+                    <div className="divider"></div>
+                    <Image src={SandClock} alt="Портал магии" className={S.sandclockImage}/>
+                    <div className={S.brandname_container}>
+                        <p>Портал магии</p>
+                    </div>
+                </div>
+                <div className={S.buttons_container}>
+                    <Button>Регистрация</Button>
+                    <Button>Купить амулет</Button>
+                </div>
+
+            </div>
+
+        </main>
+    )
+}
+
+export default MainPage
+

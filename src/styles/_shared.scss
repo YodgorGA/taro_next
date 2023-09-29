@@ -1,0 +1,8 @@
+@import '/src/styles/mixins';
+@import '/src/styles/letterals';
+
+.divider{
+    width: 10px;
+    height: 10px;
+    background-color: $beije;
+}

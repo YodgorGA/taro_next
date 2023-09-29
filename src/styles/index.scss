@@ -1,0 +1,15 @@
+@use 'globals';
+@use 'letterals';
+@use 'mixins';
+@use 'shared';
+@import './letterals';
+
+/*_______________________________________App/layout.tsx_styles_________________________________________*/
+body{
+    background-color: $black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:$white;
+}
