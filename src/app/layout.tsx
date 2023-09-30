@@ -20,15 +20,17 @@ const Antarctic = localFont({
   variable:'--font-antarctic'
 })
 const Gwen = localFont({
-  src: '../assets/fonts/Gwen-Trial-Regular.woff',
+  src: [{
+      path:'../assets/fonts/GwenTrialRegular.otf'
+    },
+    {
+      path:'../assets/fonts/GwenTrialRegular.woff'
+    }
+  ],
   variable:'--font-gwen'
 })
 const Narziss = localFont({
-  src: [{
-    path:'../assets/fonts/NarzissProCyrillic.woff2',
-  },{
-    path:'../assets/fonts/NarzissProCyrillic.woff'
-  }],
+  src: '../assets/fonts/NarzissProCyrillic.woff2',
   variable:'--font-narziss',
 })
 
@@ -40,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={
-        `${Antarctic.variable} ${Gwen.variable} ${Narziss.variable}`
+        `${Gwen.variable} ${Antarctic.variable} ${Narziss.variable}`
       }>{children}</body>
     </html>
   )

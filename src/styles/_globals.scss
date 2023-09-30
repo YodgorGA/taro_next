@@ -17,7 +17,8 @@ div{box-sizing:border-box};* > li{list-style:none}
 }
 
 @font-face {
-  font-family: "Gwen-Trial";
+  font-family: "Gwen";
   src: 
-  url('/src/assets/fonts/Gwen-Trial-Regular.woff') format("woff");
+  url('/src/assets/fonts/GwenTrialRegular.otf') format('opentype'),
+  url('/src/assets/fonts/GwenTrialRegular.woff') format("woff"),
 }
