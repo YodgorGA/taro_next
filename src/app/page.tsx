@@ -2,9 +2,9 @@ import {FC} from 'react';
 import S from './main.module.scss';
 import { Button } from '@/shared';
 import Image from 'next/image';
-import SandClock from '@/assets/images/sandClocks.png'
-import TelegramIcon from '@/assets/icons/telegram 1.png'
-import EmaiIcon from '@/assets/icons/email 1.png'
+import SandClock from '/public/assets/images/sandClocks.png'
+import TelegramIcon from '/public/assets/icons/telegram 1.png'
+import EmaiIcon from '/public/assets/icons/email 1.png'
 
 interface MainPageProps {
     

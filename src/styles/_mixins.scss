@@ -6,7 +6,7 @@
 }
 
 @mixin NarzissFont($size:40px){
-    font-family: 'Narziss';
+    font-family: 'NarzissProCyrillic';
     font-size: $size;
     font-style: normal;
     font-weight: 400;
@@ -20,7 +20,7 @@
     font-size: $size;
 }
 @mixin GwenFont($size){
-    font-family: 'Gwen';
+    font-family: 'Gwen-Trial';
     font-style: normal;
     font-weight: 350;
     line-height: normal;
