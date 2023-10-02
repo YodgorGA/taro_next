@@ -3,12 +3,13 @@ import S from './button.module.scss';
 
 interface ButtonProps {
     children:React.ReactNode;
+    page:string;
 }
 
-export const Button:FC<ButtonProps> = ({children,...ButtonProps}) =>{
+export const Button:FC<ButtonProps> = ({page,children,...ButtonProps}) =>{
     
     return ( 
-        <div className={S.button}>
+        <div className={`${S.button}__${page}`}>
             {children}
         </div>
     )

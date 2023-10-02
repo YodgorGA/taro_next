@@ -1,0 +1,11 @@
+@import '/src/styles/mixins.scss';
+@import '/src/styles/letterals.scss';
+
+.burger{
+    &_container{
+        height: 80px;
+        width:100%;
+        @include flex(row,flex-end,center);
+        padding: 0px 17px 0px 0px;
+    }
+}

@@ -7,6 +7,7 @@
     text-align: center;
     @include GwenFont(50px);
     border-radius: 70px;
+    background-color: $beije;
     &__beije{
         background-color: $beije;
         @media (max-width: $mobile) {

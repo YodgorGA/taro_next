@@ -8,7 +8,6 @@
     @media (max-width: $mobile) {
         width: $mobile;
     }
-    background-color: red;
     position: relative;
     z-index: 4;
 }
@@ -41,6 +40,19 @@
         height:fit-content;
         padding:25px 0px 0px 0px;
         margin-bottom:50px;
+    }
+}
+.logo{
+    &_container{
+        width:250px;
+        height: 250px;
+        position: relative;
+        padding-bottom:10px;
+        @media (max-width: 640px) {
+            width:125px;
+            height: 125px;
+            padding-bottom:0px;
+        }
     }
 }
 
@@ -84,11 +96,12 @@
     }
 }
 
-.mainImage_container{
+.image_container{
     @include flex(column,$ai:center,$jc:center);
     .divider{
         width: 2px;
         height: 169px;
+        background-color: $beije;
     }
     @media (max-width: $mobile) {
         .divider{
@@ -128,4 +141,15 @@
         margin-bottom:20px;
         transform:translateY(0px);
     }
+    .button{
+        &__shop{
+            color: #000;
+            text-align: center;
+            @include GwenFont(50px);
+            background-color: $beije;
+            padding: 30px;
+            border-radius: 100px;
+        }
+    }
 }
+
