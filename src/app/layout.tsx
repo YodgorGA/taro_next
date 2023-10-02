@@ -1,7 +1,7 @@
 import '@/styles/index.scss'
 import type { Metadata } from 'next'
 import localFont  from 'next/font/local'
-import Icon from '@/assets/favicon/favicon.ico';
+import { Oranienbaum } from 'next/font/google'
 
 
 export const metadata: Metadata = {
@@ -29,25 +29,6 @@ const Gwen = localFont({
   ],
   variable:'--font-gwen'
 })
-const Narziss = localFont({
-  src: [{
-    path:'../../public/assets/fonts/NarzissProCyrillic.ttf',
-    weight:'400',
-    style:'normal'
-  },
-  {
-    path:'../../public/assets/fonts/NarzissProCyrillic.woff',
-    weight:'400',
-    style:'normal'
-  },
-  {
-    path:'../../public/assets/fonts/NarzissProCyrillic.woff2',
-    weight:'400',
-    style:'normal'
-  }
-],
-  variable:'--font-narziss'
-})
 
 export default function RootLayout({
   children,
@@ -57,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={
-        `${Gwen.variable} ${Antarctic.variable} ${Narziss.variable}`
+        `${Gwen.variable} ${Antarctic.variable}`
       }>{children}</body>
     </html>
   )
