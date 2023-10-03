@@ -1,7 +1,16 @@
 import '@/styles/index.scss'
 import type { Metadata } from 'next'
-import localFont  from 'next/font/local'
-import { Oranienbaum } from 'next/font/google'
+import localFont from 'next/font/local'
+
+const Antarctic = localFont({
+  src: '../../public/fonts/Antarctic.otf',
+  variable:'--font-antarctic',
+})
+const Gwen = localFont({
+  src: '../../public/fonts/GwenTrialRegular.otf',
+  variable:'--font-gwen'
+})
+
 
 
 export const metadata: Metadata = {
@@ -15,20 +24,6 @@ export const metadata: Metadata = {
   themeColor:'black',
 }
 
-const Antarctic = localFont({
-  src: '../../public/assets/fonts/Antarctic.otf',
-  variable:'--font-antarctic',
-})
-const Gwen = localFont({
-  src: [{
-      path:'../../public/assets/fonts/GwenTrialRegular.otf'
-    },
-    {
-      path:'../../public/assets/fonts/GwenTrialRegular.woff'
-    }
-  ],
-  variable:'--font-gwen'
-})
 
 export default function RootLayout({
   children,

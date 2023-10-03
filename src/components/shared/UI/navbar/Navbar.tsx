@@ -10,10 +10,10 @@ export const Navbar:FC<NavbarProps> = ({...NavbarProps}) =>{
     return ( 
         <nav className={S.nav_container}>
             <ul className={S.nav_items}>
-                <li>история</li>
-                <li>таро</li>
-                <li>нумерология</li>
-                <li>лавка магии</li>
+                <li>Таро</li>
+                <li>История</li>
+                <li>Нумерология</li>
+                <li>Лавка магии</li>
             </ul>
         </nav>
     )

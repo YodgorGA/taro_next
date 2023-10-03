@@ -6,7 +6,7 @@
     min-height: 1000px;
     height: fit-content;
     @media (max-width: $mobile) {
-        width: $mobile;
+        width: 100%;
     }
     position: relative;
     z-index: 4;
@@ -22,13 +22,15 @@
 }
 
 .pageContent{
-    @include flex(column,flex-start);
+    @include flex(column,flex-start,center);
     width: 100%;
     height: fit-content;
     min-height: 500px;
     position: relative;
     z-index: 6;
-    
+    @media (max-width: $mobile) {
+        @include flex(column,flex-start,center);
+    }
 }
 
 .hero_container{
@@ -49,8 +51,8 @@
         position: relative;
         padding-bottom:10px;
         @media (max-width: 640px) {
-            width:125px;
-            height: 125px;
+            width:175px;
+            height: 175px;
             padding-bottom:0px;
         }
     }
@@ -61,17 +63,29 @@
         @include flex(row,space-between);
         width:246px;
         height:74px;
+        margin-top: 40px;
         @media (max-width: $mobile) {
             width:200px;
             height: 50px;
+            margin-top: 20px;
         }
     }
-    &_image{
-        width:73px;
-        height:73px;
+    &__tg{
+        width:75px;
+        height: 75px;
+        position: relative;
         @media (max-width: $mobile) {
             width:50px;
-            height:50px;
+            height: 50px;
+        }  
+    }
+    &__email{
+        width:75px;
+        height: 75px;
+        position: relative;
+        @media (max-width: $mobile) {
+            width:50px;
+            height: 50px;
         }
     }
 }
@@ -82,17 +96,15 @@
     padding-top:20px;
     height:fit-content;
     text-align:center;
+    @include GwenFont(40px);
     @media (max-width: $mobile) {
-        width: 212px;
-        height: 115px;
-        font-size:30px;
+        width: 350px;
+        height: 70px;
+        font-size:25px;
         padding-top:0px;
         line-height:150%;
         text-align:center;
-
-    }
-    p{
-        @include GwenFont(40px);
+        margin-top: 40px;
     }
 }
 
@@ -149,7 +161,14 @@
             background-color: $beije;
             padding: 30px;
             border-radius: 100px;
+            @media (max-width: $mobile) {
+                width: 250px;
+                height: 70px;
+                font-size: 30px;
+                padding: 15px 0px 0px 0px;
+            }
         }
+
     }
 }
 

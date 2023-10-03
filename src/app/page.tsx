@@ -28,8 +28,14 @@ export const MainPage:FC<MainPageProps> = ({...MainPageProps}) =>{
                         <Image alt="Портал магии" src={Logo} fill/>
                     </div>
                     <div className={S.contactUs_container}>
-                        <Image src={TelegramIcon} alt="Contact us on Telegram" className="contactUs_image" />
-                        <Image src={EmaiIcon} alt="Contact us on mail" className="contactUs_image" />
+                        <div className={S.contactUs__tg}>
+                            <Image fill src={TelegramIcon} alt="Contact us on Telegram" />
+                        </div>
+                        <div className={S.contactUs__email}> 
+                            <Image fill src={EmaiIcon} alt="Contact us on mail" />
+                        </div>
+                        
+                       
                     </div>
                     <div className={S.description_container}>
                         <p>Краткое и заманивающее описание услуг</p>
