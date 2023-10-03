@@ -1,3 +1,5 @@
+
+"use client"
 import {FC} from 'react';
 import S from './burger.module.scss';
 import Image from 'next/image';
