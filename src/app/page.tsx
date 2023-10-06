@@ -7,6 +7,8 @@ import EmaiIcon from '/public/assets/icons/email 1.png'
 import Logo from '/public/assets/icons/magic_portal.png'
 import { Header } from '@/components/widgets';
 import { StoreUpdater } from '@/components/shared';
+import Darkball from '/public/assets/images/dbl.png';
+import Lightball from '/public/assets/images/lbl.png';
 
 interface MainPageProps {
     
@@ -18,8 +20,12 @@ export const MainPage:FC<MainPageProps> = ({...MainPageProps}) =>{
         <main className={S.main_container}>
             <StoreUpdater/>
             <div className={S.backgroundImage_container}>
-              {/*DARK SPHERE*/}
-              {/*LIGHT SPHERE*/}
+                <div className={S.backgroundImage_darkSphere}>
+                    <Image fill sizes={'(min-width:640px) 100vh,(max-width:640px) 25vh'}src={Darkball} alt={''}/>
+                </div>
+                <div className={S.backgroundImage_lightSphere}>
+                    <Image fill sizes={'(min-width:640px) 100vh,(max-width:640px) 25vh'}src={Lightball} alt={''}/>
+                </div>
             </div>
             <Header/>
             <div className={S.pageContent}>

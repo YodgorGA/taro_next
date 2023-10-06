@@ -8,7 +8,7 @@ interface AboutPageProps {
 export const AboutPage:FC<AboutPageProps> = ({...AboutPageProps}) =>{
     
     return ( 
-        <section>
+        <section className={S.about_container}>
             
         </section>
     )

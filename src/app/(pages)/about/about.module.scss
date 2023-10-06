@@ -1,0 +1,10 @@
+@import '/src/styles/mixins.scss';
+@import '/src/styles/letterals.scss';
+
+.about{
+    &_container{
+        width: 100%;
+        height: 100%;
+        background-color: red;
+    }
+}

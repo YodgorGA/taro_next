@@ -12,14 +12,48 @@
     z-index: 4;
 }
 
-.backgroundImage_container{
-    width:inherit;
-    height: inherit;
-    position:absolute;
-    top:0;
-    right: 0;
-    z-index: 5;
+.backgroundImage{
+    &_container{
+        width:inherit;
+        height: inherit;
+        position:absolute;
+        top:0;
+        right: 0;
+        z-index: 5;
+        @include flex(column,flex-start,center);
+        overflow: hidden;
+    }
+    &_darkSphere{
+       width: 800px;
+       height: 800px;
+       position: relative;
+       top: -100px;
+       left: -300px;
+       @media (max-width: $mobile) {
+        position: relative;
+        width: 500px;
+        height: 500px;
+        top: 20px;
+        left: -260px;
+       }                           
+    }
+    &_lightSphere{
+        width: 1200px;
+        height: 1000px;
+        position: relative;
+        top: -400px;
+        right: -300px;
+       @media (max-width: $mobile) {
+        position: relative;
+        width: 600px;
+        height: 500px;
+        top: -240px;
+        left: 260px;
+       }            
+    }
 }
+
+    
 
 .pageContent{
     @include flex(column,flex-start,center);

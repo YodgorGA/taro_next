@@ -1,0 +1,54 @@
+@import '/src/styles/mixins.scss';
+@import '/src/styles/letterals.scss';
+
+.layout{
+    &_container{
+        width: 100vw;
+        height: 700px;
+        @include flex();
+        position: relative;
+        overflow: hidden;
+    }
+    &_background{
+        width: $desktop;
+        height: 100%;
+        top:0;
+        left:0;
+        position: absolute;
+        @include flex(row,space-between,flex-start);
+    }
+}
+
+.darkBall{
+    &_container{
+        width: 800px;
+        height: 540px;
+        position: relative;
+        bottom: -295px;
+        left: -150px;
+        @media (max-width: $mobile) {
+         position: relative;
+         width: 500px;
+         height: 500px;
+         bottom: 0px;
+         left: 0px;
+        }     
+    }
+}
+
+.lightBall{
+    &_container{
+        width: 800px;
+        height: 435px;
+        position: relative;
+        top:-67px;
+        right: -156px;
+       @media (max-width: $mobile) {
+        position: relative;
+        width: 600px;
+        height: 500px;
+        top:0px;
+        right: 0px;
+       }            
+    }
+}
