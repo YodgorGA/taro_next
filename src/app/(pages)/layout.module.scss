@@ -4,10 +4,12 @@
 .layout{
     &_container{
         width: 100vw;
-        height: 100vh;
+        height: fit-content;
         @include flex(column,flex-start,center);
         position: relative;
-        overflow: hidden;
+        @media (max-width: $mobile){
+            
+        }
 
     }
     &_background{
@@ -19,6 +21,9 @@
         right: 0;
         margin:0 auto;
         position: absolute;
+        @media (max-width: $desktop){
+            overflow: hidden;
+        }
         .background{
             &_container{
                 width: 100%;
@@ -37,10 +42,10 @@
 .darkBall{
     position: absolute;
     top: 518px;
-    left: -278px;
+    left: -250px;
     &_container{
-        width: 800px;
-        height: 540px;
+        width: 700px;
+        height: 600px;
         position: relative;
         margin: 0px 0px 0px 0px;
 
@@ -53,8 +58,8 @@
     top: -78px;
     right: -238px;
     &_container{
-        width: 800px;
-        height: 435px;
+        width: 750px;
+        height: 600px;
         position: relative;
         margin: 0px 0px 0px 0px;
 

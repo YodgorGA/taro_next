@@ -24,14 +24,14 @@ export const AboutPage:FC<AboutPageProps> = ({...AboutPageProps}) =>{
             <div className={S.images}>
                 <div className={S.image_container}>
                     <div className={S.image_candle}>
-                        <Image fill sizes='(max-width:1152px) 194px, (max-width:1151px) 129px' src={CandleImage} alt='candles'/>
+                        <Image fill  src={CandleImage} alt='candles'/>
                     </div>
                     <div className={S.image_cards}>
-                        <Image fill sizes='(max-width:1152px) 194px, (max-width:1151px) 134px' src={CardsImage} alt='cards'/>
+                        <Image fill src={CardsImage} alt='cards'/>
                     </div>
-                    <div className={S.star}>
+                </div>
+                <div className={S.star}>
                         <Image fill src={Star} alt=''/>
-                    </div>
                 </div>
             </div>
         </section>

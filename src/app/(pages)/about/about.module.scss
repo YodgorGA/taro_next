@@ -4,8 +4,11 @@
 .about{
     &_container{
         width: 1152px;
-        height: 700px;
+        height: fit-content;
         @include flex(row,space-between,flex-start);
+        @media (max-width: $desktop){
+            @include flex(column,flex-start,center);
+        }
     }
 }
 
@@ -14,49 +17,82 @@
     height: 100%;
     @include flex(column,flex-start,flex-start);
     @include GwenFont(30px);
+    @media (max-width: $mobile){
+        @include flex(column,flex-start,center);
+    }
 }
 
 .title{
     font-size: 60px;
     margin: 44px 0px 60px 50px;
-
+    @media (max-width: $mobile){
+         font-size: 40px;
+         margin:20px 0px 0px 0px;
+    }
 }
 .description{
     margin-left: 70px;
-
+    @media (max-width: $desktop){
+        height: 400px;
+        font-size: 25px;
+    }
+    @media (max-width: $mobile){
+         height: 300px;
+         margin:20px 0px 0px 0px;
+    }
 }
 
 .images{
     width: 40%;
     height: 100%;
-
+    position: relative;
+    @media (max-width: $mobile){
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+    .star{
+        position: absolute;
+        left: 36px;
+        bottom: 90px;
+        width: 120px;
+        height: 120px;
+        @media (max-width: $mobile){
+             width: 70px;
+             height: 70px;
+             left: 130px;
+             bottom: 10px;
+        }
+    }
     .image{
         &_container{
             @include flex(row,center,flex-end);
             height: 100%;
-            position: relative;
 
-            & .star{
-                position: relative;
-                left: 56px;
-                bottom: 112px;
-
-            }
         }
         &_candle{
             position: relative;
             width: 194px;
             height: 365px;
             margin: 100px 25px 240px 0px;
-
+            @media (max-width: $mobile){
+                margin: 0px 0px 100px 0px;
+                width: 134px;
+                height: 232px;
+            }
         }
         &_cards{
             position: relative;
             width: 194px;
             height: 335px;
             margin: 0px 50px 112px 0px;
+            @media (max-width: $mobile){
+                margin: 0px 0px 0px 20px;
+                width: 134px;
+                height: 232px;
+            }
 
         }
     }
 }
+
 
