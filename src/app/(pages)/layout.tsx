@@ -14,11 +14,17 @@ export const Layout:FC<LayoutProps> = ({children,...LayoutProps}) =>{
         <>
             <div className={S.layout_container}>
                 <div className={S.layout_background}>
-                    <div className={S.darkBall_container}>
-                        <Image fill src={Darkball} alt=''/>
-                    </div>
-                    <div className={S.lightBall_container}>
-                        <Image fill src={Lightball} alt=''/>
+                    <div className={S.background_container}>
+                        <div className={S.darkBall}>
+                            <div className={S.darkBall_container}>
+                                <Image fill src={Darkball} alt=''/>
+                            </div>
+                        </div>
+                        <div className={S.lightBall}>
+                            <div className={S.lightBall_container}>
+                                <Image fill src={Lightball} alt=''/>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 {children}

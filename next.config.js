@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images:{
-        deviceSizes:[1152,640]
+        deviceSizes:[1920,1152,1151,640]
     }
 }
 

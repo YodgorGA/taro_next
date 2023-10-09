@@ -4,51 +4,59 @@
 .layout{
     &_container{
         width: 100vw;
-        height: 700px;
-        @include flex();
+        height: 100vh;
+        @include flex(column,flex-start,center);
         position: relative;
         overflow: hidden;
+
     }
     &_background{
         width: $desktop;
         height: 100%;
         top:0;
         left:0;
+        bottom: 0;
+        right: 0;
+        margin:0 auto;
         position: absolute;
-        @include flex(row,space-between,flex-start);
+        .background{
+            &_container{
+                width: 100%;
+                height: 100%;
+                position: relative;
+                @media (max-width: $desktop) {
+                    width: 100vw;
+                }
+            }
+        }
     }
 }
 
+
+
 .darkBall{
+    position: absolute;
+    top: 518px;
+    left: -278px;
     &_container{
         width: 800px;
         height: 540px;
         position: relative;
-        bottom: -295px;
-        left: -150px;
-        @media (max-width: $mobile) {
-         position: relative;
-         width: 500px;
-         height: 500px;
-         bottom: 0px;
-         left: 0px;
-        }     
+        margin: 0px 0px 0px 0px;
+
     }
+
 }
 
 .lightBall{
+    position: absolute;
+    top: -78px;
+    right: -238px;
     &_container{
         width: 800px;
         height: 435px;
         position: relative;
-        top:-67px;
-        right: -156px;
-       @media (max-width: $mobile) {
-        position: relative;
-        width: 600px;
-        height: 500px;
-        top:0px;
-        right: 0px;
-       }            
+        margin: 0px 0px 0px 0px;
+
     }
 }

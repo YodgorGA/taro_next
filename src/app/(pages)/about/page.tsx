@@ -1,5 +1,9 @@
 import {FC} from 'react';
 import S from './about.module.scss';
+import CandleImage from '/public/assets/images/about_candles.png';
+import CardsImage from '/public/assets/images/about_cards.png';
+import Star from '/public/assets/icons/Star 1.svg'
+import Image from 'next/image';
 
 interface AboutPageProps {
     
@@ -9,7 +13,27 @@ export const AboutPage:FC<AboutPageProps> = ({...AboutPageProps}) =>{
     
     return ( 
         <section className={S.about_container}>
-            
+            <div className={S.text}>
+                <div className={S.title}>
+                    <p>О нас | История</p>
+                </div>
+                <div className={S.description}>
+                    <p>Текст легенды</p>
+                </div>
+            </div>
+            <div className={S.images}>
+                <div className={S.image_container}>
+                    <div className={S.image_candle}>
+                        <Image fill sizes='(max-width:1152px) 194px, (max-width:1151px) 129px' src={CandleImage} alt='candles'/>
+                    </div>
+                    <div className={S.image_cards}>
+                        <Image fill sizes='(max-width:1152px) 194px, (max-width:1151px) 134px' src={CardsImage} alt='cards'/>
+                    </div>
+                    <div className={S.star}>
+                        <Image fill src={Star} alt=''/>
+                    </div>
+                </div>
+            </div>
         </section>
     )
 }
