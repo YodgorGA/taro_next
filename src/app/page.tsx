@@ -49,7 +49,7 @@ export const MainPage:FC<MainPageProps> = ({...MainPageProps}) =>{
                 </div>
                 <div className={S.image_container}>
                     <div className={S.divider}></div>
-                    <Image src={SandClock} alt="Портал магии" className={S.sandclockImage}/>
+                    <Image priority src={SandClock} alt="Портал магии" className={S.sandclockImage}/>
                     <div className={S.brandname_container}>
                         <p>Портал магии</p>
                     </div>
