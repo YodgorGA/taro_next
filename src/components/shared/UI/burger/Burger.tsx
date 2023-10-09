@@ -12,7 +12,8 @@ interface BurgerProps {
 export const Burger:FC<BurgerProps> = ({...BurgerProps}) =>{
     const [isModalOpen,setIsModalOpen] = useState<boolean>(false);
     const burgerClickHandler = () =>{
-        isModalOpen === true? setIsModalOpen(false):setIsModalOpen(true) 
+        console.log('click')
+        isModalOpen === true? setIsModalOpen(false):setIsModalOpen(true)
     }
     return (
         <>

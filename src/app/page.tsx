@@ -19,14 +19,6 @@ export const MainPage:FC<MainPageProps> = ({...MainPageProps}) =>{
     return ( 
         <main className={S.main_container}>
             <StoreUpdater/>
-            <div className={S.backgroundImage_container}>
-                <div className={S.backgroundImage_darkSphere}>
-                    <Image fill sizes={'(min-width:640px) 100vh,(max-width:640px) 25vh'}src={Darkball} alt={''}/>
-                </div>
-                <div className={S.backgroundImage_lightSphere}>
-                    <Image fill sizes={'(min-width:640px) 100vh,(max-width:640px) 25vh'}src={Lightball} alt={''}/>
-                </div>
-            </div>
             <Header/>
             <div className={S.pageContent}>
                 <div className={S.hero_container}>
@@ -59,7 +51,14 @@ export const MainPage:FC<MainPageProps> = ({...MainPageProps}) =>{
                 </div>
 
             </div>
-
+            <div className={S.backgroundImage_container}>
+                <div className={S.backgroundImage_darkSphere}>
+                    <Image fill sizes={'(min-width:640px) 100vh,(max-width:640px) 25vh'}src={Darkball} alt={''}/>
+                </div>
+                <div className={S.backgroundImage_lightSphere}>
+                    <Image fill sizes={'(min-width:640px) 100vh,(max-width:640px) 25vh'}src={Lightball} alt={''}/>
+                </div>
+            </div>    
         </main>
     )
 }

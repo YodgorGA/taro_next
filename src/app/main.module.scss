@@ -10,6 +10,7 @@
     }
     position: relative;
     z-index: 4;
+    margin: 0 auto;
 }
 
 .backgroundImage{
@@ -19,9 +20,11 @@
         position:absolute;
         top:0;
         right: 0;
-        z-index: 5;
+        z-index: 4;
         @include flex(column,flex-start,center);
-        overflow: hidden;
+        @media (max-width: $desktop){
+             overflow: hidden;
+        }
     }
     &_darkSphere{
        width: 800px;
