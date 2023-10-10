@@ -8,36 +8,78 @@
 
         position: relative;
         @include flex(column,center,center);
+        @media (max-width: $mobile) {
+            width: 100%;
+            height: fit-content;
+            min-height: 800px;
+        }
     }
 }
 
 .title{
     max-width: 200px;
     max-height: 120px;
-    @include GwenFont(80px)
+    margin-top: 30px;
+    @include GwenFont(80px);
+    @media (max-width: $mobile) {
+        font-size: 55px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
 }
 
 .content{
     height: 428px;
     width: 1019px;
+    margin-top: 30px;
+    margin-bottom: 50px;
     @include flex(row,space-between,flex-start);
+    @media (max-width: $mobile) {
+        @include flex(column,space-between,center);
+        height: 650px;
+        width: 100%;
+    }
     &_left{
         gap: 20px;
         width: 50%;
         height: 100%;
-        @include flex(row,space-between,flex-start)
+        @include flex(row,space-between,flex-start);
+        @media (max-width: $mobile) {
+            @include flex(row,space-between,flex-start);
+            gap:10px;
+            width: 100%;
+            height: 50%;
+            padding: 0px 30px;
+            .content_text{
+                height: fit-content;
+            }
+        }
     }
     &_right{
         gap: 20px;
         width: 50%;
         height: 100%;
-        @include flex(row-reverse,space-between,flex-end)
+        @include flex(row-reverse,space-between,flex-end);
+        @media (max-width: $mobile) {
+            @include flex(row-reverse,space-between,flex-end);
+            gap:10px;
+            width: 100%;
+            height: 50%;
+            padding: 0px 30px;
+            .content_text{
+                height: fit-content;
+            }
+        }
     }
     &_text{
         @include GwenFont(30px);
         width: 300px;
         height: 200px;
         overflow: hidden;
+        @media (max-width: $mobile) {
+            font-size: 20px;
+            width: 200px;
+        }
     }
 }
 
@@ -46,130 +88,21 @@
         width: 205px;
         height: 244px;
         position: relative;
+        @media (max-width: $mobile) {
+            width: 120px;
+            height: 149px;  
+        }
     }
     &_right{
        width: 207px;
        height: 207px;
-       position: relative; 
+       position: relative;
+       @media (max-width: $mobile) {
+        width: 140px;
+        height: 132px; 
+       } 
     }
 }
 
-.button{
-    width: 280px;
-    height: 60px;
-    padding: 30px 10px;
-    background-color: $beije;
-    @include GwenFont(30px);
-    border-radius: 30px;
-    @include flex(column,center,center);
-    &_container{
-        width: 100%;
-        height: 100px;
-        @include flex(row,center,center)
-    }
-}
-
-.modal{
-    
-    &_container{
-        position: absolute;
-        top:200px;
-        left:0;
-        right: 0;
-        bottom: 0;
-        margin: 0 auto;
-        width: 80%;
-        height: 40%;
 
 
-    }
-    &_wrapper{
-        width: 100%;
-        height: 100%;
-        position: relative;
-        @include flex(column,center,center);
-
-    }
-    &_blur{
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        background-color: $black;
-        left:0;
-        top:0;
-        filter: blur(5px);
-        opacity: .8;
-    }
-    &_fiedls{
-        @include flex(row,center,center);
-        height: 70%;
-        width: 90%;
-        background-color: $beije;
-        border-radius:100px;
-        position: relative;
-        z-index: 4;
-    }
-    &_question{
-        width: 35%;
-        height: 100%;
-        border-radius: 100px 0px 0px 100px;
-        @include GwenFont(22px);
-        @include flex(row,center,center);
-        padding-left: 20px;
-        padding-top: 40px;
-        text-align: center;
-        color: $black;
-        border-right: 2px solid $black;
-        & p{
-            width: 170px;
-            height: 180px;
-        }
-    }
-    &_form{
-        color:$black;
-        box-sizing: border-box;
-        padding: 30px 0px 0px 20px ;
-        width: 45%;
-        height: 100%;
-        border-right: 2px solid $black;
-        & label{
-            @include GwenFont(22px);
-        }
-    }
-    &_input{
-        margin-top: 20px;
-        width: 70%;
-        background-color: transparent;
-        outline: none;
-        @include GwenFont(16px);
-        border: none;
-        box-shadow: none;
-        border-bottom: 2px solid $black;
-        &::-webkit-input-placeholder{
-            @include GwenFont(16px);
-            color:$black;
-        }
-        overflow-x: scroll;
-    }
-    &_buttonContainer{
-        width: 30%;
-        height: 100%;
-        border-radius: 0px 100px 100px 0px;
-        @include flex();
-    }
-    &_button{
-        width: 100px;
-        height: 100px;
-        border-radius: 51px;
-        border: 2px solid $black;
-        @include flex();
-        @include GwenFont(18px);
-        color:$black;
-        text-align: center;
-    }
-
-    &.hidden{
-        display: none;
-    }
-
-}

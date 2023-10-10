@@ -23,6 +23,7 @@
         position: absolute;
         @media (max-width: $desktop){
             overflow: hidden;
+            width: 100%;
         }
         .background{
             &_container{

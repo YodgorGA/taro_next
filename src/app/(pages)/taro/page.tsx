@@ -3,6 +3,7 @@ import S from './taro.module.scss';
 import Image from 'next/image';
 import TaroLeft from '/public/assets/images/taroLeft.png';
 import TaroRight from '/public/assets/images/taroRight.png';
+import { TaroModal } from '@/components/widgets';
 
 interface TaroPageProps {
     
@@ -39,29 +40,7 @@ export const TaroPage:FC<TaroPageProps> = ({...TaroPageProps}) =>{
                     </div>
                 </div>
             </div>
-            <div className={S.button_container}>
-                <button className={S.button}>Задать вопрос</button>
-            </div>
-            <div className={`${S.modal_container} `}>
-                <div className={S.modal_wrapper}>
-                    <div className={S.modal_blur}/>
-                    <div className={S.modal_fiedls}>
-                        <div className={S.modal_question}>
-                            <p>
-                                Задайте свой вопрос и получите на него расклад ответом
-                            </p>
-                        </div>
-                        <div className={S.modal_form}>
-                            <label>Введите ваши данные</label>
-                            <input className={S.modal_input} placeholder={'Ваше имя'} type={'text'}/>
-                            <input className={S.modal_input} placeholder={'Ваш вопрос'} type={'text'}/>
-                        </div>
-                        <div className={S.modal_buttonContainer}>
-                            <div className={S.modal_button}>Узнать ответ</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <TaroModal/>
         </section>
     )
 }
