@@ -1,0 +1,54 @@
+@import '/src/styles/mixins.scss';
+@import '/src/styles/letterals.scss';
+
+.container{
+    width: 1152px;
+    height: 100vh;
+    position: relative;
+    @media (max-width: $mobile) {
+        width: 100%;
+    }
+}
+.wrapper{
+    width: 100%;
+    height: 700px;
+    @include flex(column,flex-start,center);
+}
+
+.cards{
+    &_container{
+        width: 100%;
+        height: 90%;
+        @include flex(row,center,center);
+        gap:100px;
+        margin-bottom: 40px;
+        @media (max-width: $mobile) {
+            gap:30px;
+            margin-bottom: 20px;
+            height: 80%;
+        }
+    }
+    &_buttonContainer{
+        width:500px;
+        height: 70px;
+        @media (max-width: $mobile) {
+            width: 80%;
+            margin-bottom: 20px;
+            & button{
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    &_cardItem{
+        width: 20%;
+        height: 100%;
+        background-color: red;
+        @media (max-width: $mobile) {
+            width: 25%;
+            height: 45%;
+        }
+    }
+}
+

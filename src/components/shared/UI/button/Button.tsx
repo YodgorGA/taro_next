@@ -3,15 +3,15 @@ import S from './button.module.scss';
 
 interface ButtonProps {
     children:React.ReactNode;
-    page:string;
+    clickHandler:()=>void;
 }
 
-export const Button:FC<ButtonProps> = ({page,children,...ButtonProps}) =>{
+export const Button:FC<ButtonProps> = ({clickHandler,children,...ButtonProps}) =>{
     
     return ( 
-        <div className={`${S.button}__${page}`}>
+        <button onClick={clickHandler} className={S.button}>
             {children}
-        </div>
+        </button>
     )
 }
 
