@@ -25,11 +25,6 @@ export const CardTimer:FC<CardTimerProps> = ({...CardTimerProps}) =>{
             <div className={S.timerCards_itemContainer}>
                 <div className={`${S.timerCards_item}`}></div>
             </div>
-            
-            
- 
-            
-            
         </div>
     )
 }

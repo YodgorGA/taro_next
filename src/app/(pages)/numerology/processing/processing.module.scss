@@ -30,6 +30,7 @@
         }
     }
 
+
     &_cardItemContainer{
         width: 33%;
         position: relative;
@@ -39,7 +40,6 @@
             padding-top: 160%;           /* initial ratio of 1:1*/
         }
     }
-
     &_cardItem{
         position: absolute;
         top: 0;

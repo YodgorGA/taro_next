@@ -1,12 +1,12 @@
 "use client"
 import {FC, useState} from 'react';
-import S from './taroModal.module.scss';
+import S from './formModal.module.scss';
 
-interface TaroModalProps {
+interface FormModalProps {
 
 }
 
-export const TaroModal:FC<TaroModalProps> = ({...TaroModalProps}) =>{
+export const FormModal:FC<FormModalProps> = ({...FormModalProps}) =>{
     const [isHidden,setIsHidden] = useState<boolean>(true);
     const modalToggler = () =>{
         isHidden === true? setIsHidden(false) : setIsHidden(true);
@@ -45,5 +45,5 @@ export const TaroModal:FC<TaroModalProps> = ({...TaroModalProps}) =>{
     )
 }
 
-export default TaroModal
+export default FormModal
 

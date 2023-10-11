@@ -1,7 +1,7 @@
 import Header from "./UI/header/Header";
-import TaroModal from "./UI/taroModal/taroModal";
+import FormModal from "./UI/formModal/FormModal";
 
 export {
     Header,
-    TaroModal
+    FormModal
 }

@@ -16,20 +16,9 @@
     }
 }
 
-.title{
-    max-width: 200px;
-    max-height: 120px;
-    margin-top: 30px;
-    @include GwenFont(80px);
-    @media (max-width: $mobile) {
-        font-size: 55px;
-        margin-top: 20px;
-        margin-bottom: 30px;
-    }
-}
 
 .content{
-    height: 428px;
+    height: 100%;
     width: 1019px;
     margin-top: 30px;
     margin-bottom: 50px;
@@ -38,6 +27,7 @@
         @include flex(column,space-between,center);
         height: 650px;
         width: 100%;
+        margin: 10px 0px;
     }
     &_left{
         gap: 20px;
@@ -45,10 +35,9 @@
         height: 100%;
         @include flex(row,space-between,flex-start);
         @media (max-width: $mobile) {
-            @include flex(row,space-between,flex-start);
             gap:10px;
             width: 100%;
-            height: 50%;
+            height: 40%;
             padding: 0px 30px;
             .content_text{
                 height: fit-content;
@@ -72,7 +61,7 @@
         }
     }
     &_text{
-        @include GwenFont(30px);
+        @include GwenFont(25px);
         width: 300px;
         height: 200px;
         overflow: hidden;
