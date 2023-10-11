@@ -1,0 +1,42 @@
+@import '/src/styles/mixins.scss';
+@import '/src/styles/letterals.scss';
+
+.timerCards{
+    margin-top: 60px;
+    height: 50%;
+    width: 100%;
+    @include flex(row,center,center);
+    gap:15px;
+
+    &_item{
+        width: 50px;
+        height: 66px;
+        background-color: $beije;
+    }
+    &_itemContainer{
+        
+        perspective-origin: 50%;
+        perspective: 240px;
+        -webkit-perspective: 240px;
+
+
+    }
+
+    .dropped{
+        animation:cardDrop 1s ease-in-out alternate;
+        transform-origin: bottom;
+    }
+}
+
+@keyframes cardDrop {
+
+    
+    from{
+        transform: rotateX(0deg);
+    }
+
+    to{
+        transform: rotateX(-90deg);
+    }
+
+}
