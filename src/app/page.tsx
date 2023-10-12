@@ -22,10 +22,10 @@ export const MainPage:FC<MainPageProps> = ({...MainPageProps}) =>{
             <StoreUpdater/>
             <div className={S.backgroundImage_container}>
                 <div className={S.backgroundImage_darkSphere}>
-                    <Image fill sizes={'(min-width:640px) 100vh,(max-width:640px) 25vh'} src={Darkball} alt={''}/>
+                    <Image priority fill sizes={'(min-width:640px) 100vh,(max-width:640px) 25vh'} src={Darkball} alt={''}/>
                 </div>
                 <div className={S.backgroundImage_lightSphere}>
-                    <Image fill sizes={'(min-width:640px) 100vh,(max-width:640px) 25vh'} src={Lightball} alt={''}/>
+                    <Image priority fill sizes={'(min-width:640px) 100vh,(max-width:640px) 25vh'} src={Lightball} alt={''}/>
                 </div>
             </div>
             <Header/>
@@ -50,7 +50,7 @@ export const MainPage:FC<MainPageProps> = ({...MainPageProps}) =>{
                 </div>
                 <div className={S.image_container}>
                     <div className={S.divider}></div>
-                    <Image src={SandClock} alt="Портал магии" className={S.sandclockImage}/>
+                    <Image priority src={SandClock} alt="Портал магии" className={S.sandclockImage}/>
                     <div className={S.brandname_container}>
                         <p>Портал магии</p>
                     </div>

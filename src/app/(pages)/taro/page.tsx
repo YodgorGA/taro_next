@@ -3,8 +3,8 @@ import S from './taro.module.scss';
 import Image from 'next/image';
 import TaroLeft from '/public/assets/images/taroLeft.png';
 import TaroRight from '/public/assets/images/taroRight.png';
-import { FormModal } from '@/components/widgets';
-import { Title } from '@/components/shared';
+import { FormModal, Header } from '@/components/widgets';
+import { Burger, Title } from '@/components/shared';
 
 interface TaroPageProps {
     
@@ -14,6 +14,7 @@ export const TaroPage:FC<TaroPageProps> = ({...TaroPageProps}) =>{
     
     return ( 
         <section className={S.taro_container}>
+            <Burger/>
             <Title children='Таро'/>
             <div className={S.content}>
                 <div className={S.content_left}>

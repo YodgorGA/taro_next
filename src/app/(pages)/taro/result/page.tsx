@@ -1,6 +1,6 @@
 import {FC} from 'react';
 import S from './result.module.scss';
-import { Title } from '@/components/shared';
+import { Cross, Title } from '@/components/shared';
 
 interface ResultProps {
     
@@ -10,6 +10,7 @@ export const Result:FC<ResultProps> = ({...ResultProps}) =>{
     
     return ( 
         <section className={S.container}>
+            <Cross href='/taro'/>
             <div className={S.wrapper}>
                 <Title children='Результат'/>
                 <div className={S.result_container}>
