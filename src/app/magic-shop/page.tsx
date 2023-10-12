@@ -1,119 +1,44 @@
-import {FC} from 'react';
+"use client"
+import {FC, useState} from 'react';
 import S from './magic-shop.module.scss';
 import Image from 'next/image';
 import magicShopBackground from '/public/assets/images/magicShopBackground.png';
-import Placeholder from '/public/assets/images/placeholder.png';
-import { Title } from '@/components/shared';
+import { ICardItem, Title } from '@/components/shared';
+import { Items } from '@/components/shared';
+import { ShopItem } from '@/components/features';
+import { MagicShopModal as Modal} from '@/components/widgets';
+
+
 
 interface MagicShopProps {
     
 }
 
 export const MagicShop:FC<MagicShopProps> = ({...MagicShopProps}) =>{
-    
+    const [isModalOpen,setIsModalOpen] = useState<boolean>(false);
+
+    const toggleModal = () =>{
+        isModalOpen === true? setIsModalOpen(false):setIsModalOpen(true);
+    }
     return ( 
         <section className={S.container}>
             <div className={S.wrapper}>
-
                 <div className={S.shop_container}>
                 <Title children='Лавка магии'/>
                     <div className={S.shop_items}>
-                        <div className={S.shop_item}>
-                            <div className={S.item}>
-                                <div className={S.item_photo}>
-                                    <Image src={Placeholder} alt=''/>
+                        {Items.map((item:ICardItem)=>{
+                            return(
+                                <div key={Math.random()} className={S.shop_item}>
+                                    <ShopItem
+                                        alt={item.alt}
+                                        buttonClickHandler={toggleModal}
+                                        img={item.img}
+                                        price={item.price}
+                                        title={item.title}
+                                    />
                                 </div>
-                                <div className={S.item_title}>
-                                    <p>Название</p>
-                                </div>
-                                <div className={S.item_price}>
-                                    <p>Цена</p>
-                                </div>
-                                <div className={S.item_button}>
-                                    Купить
-                                </div>
-                            </div>
-                        </div>
-                        <div className={S.shop_item}>
-                            <div className={S.item}>
-                                <div className={S.item_photo}>
-                                    <Image src={Placeholder} alt=''/>
-                                </div>
-                                <div className={S.item_title}>
-                                    <p>Название</p>
-                                </div>
-                                <div className={S.item_price}>
-                                    <p>Цена</p>
-                                </div>
-                                <div className={S.item_button}>
-                                    Купить
-                                </div>
-                            </div>
-                        </div>
-                        <div className={S.shop_item}>
-                            <div className={S.item}>
-                                <div className={S.item_photo}>
-                                    <Image src={Placeholder} alt=''/>
-                                </div>
-                                <div className={S.item_title}>
-                                    <p>Название</p>
-                                </div>
-                                <div className={S.item_price}>
-                                    <p>Цена</p>
-                                </div>
-                                <div className={S.item_button}>
-                                    Купить
-                                </div>
-                            </div>
-                        </div>
-                        <div className={S.shop_item}>
-                            <div className={S.item}>
-                                <div className={S.item_photo}>
-                                    <Image src={Placeholder} alt=''/>
-                                </div>
-                                <div className={S.item_title}>
-                                    <p>Название</p>
-                                </div>
-                                <div className={S.item_price}>
-                                    <p>Цена</p>
-                                </div>
-                                <div className={S.item_button}>
-                                    Купить
-                                </div>
-                            </div>
-                        </div>
-                        <div className={S.shop_item}>
-                            <div className={S.item}>
-                                <div className={S.item_photo}>
-                                    <Image src={Placeholder} alt=''/>
-                                </div>
-                                <div className={S.item_title}>
-                                    <p>Название</p>
-                                </div>
-                                <div className={S.item_price}>
-                                    <p>Цена</p>
-                                </div>
-                                <div className={S.item_button}>
-                                    Купить
-                                </div>
-                            </div>
-                        </div>
-                        <div className={S.shop_item}>
-                            <div className={S.item}>
-                                <div className={S.item_photo}>
-                                    <Image src={Placeholder} alt=''/>
-                                </div>
-                                <div className={S.item_title}>
-                                    <p>Название</p>
-                                </div>
-                                <div className={S.item_price}>
-                                    <p>Цена</p>
-                                </div>
-                                <div className={S.item_button}>
-                                    Купить
-                                </div>
-                            </div>
-                        </div>
+                            )
+                        })}
                     </div>
                 </div>
             </div>

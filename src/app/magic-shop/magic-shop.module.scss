@@ -56,7 +56,8 @@
         row-gap: 40px;
         @media (max-width: $mobile) {
             grid-template:repeat(3,33%)/repeat(2,50%);
-            column-gap: 20px;
+            column-gap: 0px;
+            row-gap: 0px;
         }
     }
     &_item{
@@ -69,6 +70,8 @@
             &:nth-child(3n-1){
                 margin-top: 0px;
             }
+            width: 160px;
+            height: 250px;
         }
     }
 }
@@ -80,6 +83,10 @@
         width: 215px;
         height: 215px;
         position: relative;
+        @media (max-width: $mobile) {
+            width: 160px;
+            height: 160px;
+        }
     }
     &_title{
         @include GwenFont(25px);
