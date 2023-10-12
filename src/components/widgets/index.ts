@@ -1,9 +1,11 @@
 import Header from "./UI/header/Header";
 import FormModal from "./UI/formModal/FormModal";
-import MagicShopModal from './UI/magicShopModal/MagicShopModal';
+import MagicShopBuy from '../../app/magic-shop/[itemId]/page';
+import ShopForm from "./UI/shopform/shopForm";
 
 export {
     Header,
     FormModal,
-    MagicShopModal
+    MagicShopBuy,
+    ShopForm
 }

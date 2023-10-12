@@ -1,17 +1,21 @@
+"use client"
 import {FC} from 'react';
 import S from './waiting.module.scss';
-import { CardTimer, Title } from '@/components/shared';
-import Dots from '/public/assets/images/doubleDots.png';
-import Image from 'next/image';
+import { Cross, Title } from '@/components/shared';
+import { useRouter } from 'next/navigation'
 
 interface WaitingProps {
     
 }
 
 export const Waiting:FC<WaitingProps> = ({...WaitingProps}) =>{
-    
+    const router = useRouter();
+    setTimeout(()=>{
+        router.push('/numerology/result');
+    },3000)
     return ( 
         <section className={S.container}>
+            <Cross href='/numerology'/>
             <div className={S.wrapper}>
                 <Title children={'Ожидайте'}/>
                 <div className={S.timer_container}>

@@ -37,7 +37,7 @@ export const Numerology:FC<NumerologyProps> = ({...NumerologyProps}) =>{
                     </div>
                 </div>
             </div>
-            <FormModal/>
+            <FormModal href='/numerology/processing'/>
         </section>
     )
 }

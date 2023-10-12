@@ -6,9 +6,6 @@ import magicShopBackground from '/public/assets/images/magicShopBackground.png';
 import { ICardItem, Title } from '@/components/shared';
 import { Items } from '@/components/shared';
 import { ShopItem } from '@/components/features';
-import { MagicShopModal as Modal} from '@/components/widgets';
-
-
 
 interface MagicShopProps {
     
@@ -31,7 +28,7 @@ export const MagicShop:FC<MagicShopProps> = ({...MagicShopProps}) =>{
                                 <div key={Math.random()} className={S.shop_item}>
                                     <ShopItem
                                         alt={item.alt}
-                                        buttonClickHandler={toggleModal}
+                                        link={String(Math.random())}
                                         img={item.img}
                                         price={item.price}
                                         title={item.title}

@@ -1,12 +1,13 @@
 "use client"
 import {FC, useState} from 'react';
 import S from './formModal.module.scss';
+import Link from 'next/link';
 
 interface FormModalProps {
-
+    href:string
 }
 
-export const FormModal:FC<FormModalProps> = ({...FormModalProps}) =>{
+export const FormModal:FC<FormModalProps> = ({href,...FormModalProps}) =>{
     const [isHidden,setIsHidden] = useState<boolean>(true);
     const modalToggler = () =>{
         isHidden === true? setIsHidden(false) : setIsHidden(true);
@@ -33,7 +34,7 @@ export const FormModal:FC<FormModalProps> = ({...FormModalProps}) =>{
                                 <input className={S.modal_input} placeholder={'Ваш вопрос'} type={'text'}/>
                             </div>
                             <div className={S.modal_buttonContainer}>
-                                <button onClick={modalToggler} className={S.modal_button}>Узнать ответ</button>
+                                <button className={S.modal_button}><Link href={href}>Узнать ответ</Link></button>
                             </div>
                         </div>
                     </div>

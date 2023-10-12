@@ -9,6 +9,7 @@ import { Header } from '@/components/widgets';
 import { StoreUpdater } from '@/components/shared';
 import Darkball from '/public/assets/images/dbl.png';
 import Lightball from '/public/assets/images/lbl.png';
+import Link from 'next/link';
 
 interface MainPageProps {
     
@@ -55,7 +56,7 @@ export const MainPage:FC<MainPageProps> = ({...MainPageProps}) =>{
                     </div>
                 </div>
                 <div className={S.buttons_container}>
-                    <div className={S.button__shop}>Купить амулет</div>
+                    <div className={S.button__shop}><Link href={'/magic-shop'}>Купить амулет</Link></div>
                 </div>
 
             </div>

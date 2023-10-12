@@ -5,7 +5,8 @@ import Burger from "./UI/burger/Burger"
 import Title from "./UI/title/Title"
 import CardTimer from "./UI/cardTimer/CardTimer"
 import type {ICardItem} from "./lib/types";
-import { Items } from "./lib/mock"
+import { Items,Item } from "./lib/mock"
+import Cross from "./UI/cross/Cross"
 
 
 export {
@@ -16,5 +17,7 @@ export {
     Title,
     CardTimer,
     ICardItem,
-    Items
+    Items,
+    Item,
+    Cross
 }

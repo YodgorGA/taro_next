@@ -1,25 +1,88 @@
 @import '/src/styles/mixins.scss';
 @import '/src/styles/letterals.scss';
 
-.buy{
-    &_container{
-        position: absolute;
-        top:0;
-        left:0;
-        right: 0;
-        bottom: 0;
-        background-color: red;
-        width: $desktop;
-        height: 891px;
-        z-index: 6;
-        @include flex(column,flex-start,flex-end);
-    }
-    &_wrapper{
-        background-color: green;
-        width: 25%;
-        height: 25%;
-    }
-    &_cross{
-
+.container{
+    width: 1152px;
+    height: 100vh;
+    position: relative;
+    margin: 0 auto;
+    @media (max-width: $desktop) {
+        width: 100%;
     }
 }
+
+
+.background{
+    width: 100%;
+    position: absolute;
+    top:0;
+    z-index: 2;
+    &_container{
+        width: 100%;
+        height: auto;
+        position: relative;
+        transform: translateZ(180deg);
+        &:before{
+            content: "";
+            display: block;
+            padding-top: 23%;
+        }
+        @media (max-width: $desktop) {
+            height: auto;
+        }
+    }
+
+}
+
+.wrapper{
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    z-index: 3;
+    @include flex(column,flex-start,center);
+    padding: 0px 90px 40px 90px;
+    @media (max-width: $mobile) {
+        padding: 20px 20px 0px 20px;
+    }
+    &>:first-child{
+        align-self: flex-end;
+    }
+}
+
+
+.shopItem{
+    width: 275px;
+    height: 325px;
+    margin-top: 120px;
+    @include flex(column,flex-start,center);
+    @media (max-width: $mobile) {
+        width: 150px;
+        height: 250px;
+    }
+    &_image{
+        width: 215px;
+        height: 215px;
+        border-radius: 120px;
+        position: relative;
+        @media (max-width: $mobile) {
+            width: 150px;
+            height: 150px;
+        }
+    }
+    &_title{
+        @include GwenFont(30px);
+        color:$white;
+        @media (max-width: $mobile) {
+            font-size: 24px;
+        }
+    }
+    &_price{
+        @include GwenFont(30px);
+        color: $beije;
+        @media (max-width: $mobile) {
+            font-size: 24px;
+        }
+    }
+}
+
+

@@ -39,5 +39,11 @@ export const Items:ICardItem[]=[
         title:'Название'
     },
     
-
 ]
+
+export const Item = {
+    alt:'',
+    img:Placeholder,
+    price:'Цена',
+    title:'Название'
+}
