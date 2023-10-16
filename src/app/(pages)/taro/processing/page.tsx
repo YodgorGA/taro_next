@@ -2,13 +2,11 @@
 import {FC} from 'react';
 import S from './processing.module.scss';
 import { Button, Cross, Title } from '@/components/shared';
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation';
 
 interface TaroProcessingProps {
     
 }
-
-
 
 export const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps}) =>{
     const router = useRouter()
