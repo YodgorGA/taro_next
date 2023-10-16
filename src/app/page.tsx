@@ -22,6 +22,7 @@ export const MainPage:FC<MainPageProps> = ({...MainPageProps}) =>{
             <StoreUpdater/>
             <div className={S.backgroundImage_container}>
                 <div className={S.backgroundImage_darkSphere}>
+                    
                     <Image priority fill sizes={'(min-width:640px) 100vh,(max-width:640px) 25vh'} src={Darkball} alt={''}/>
                 </div>
                 <div className={S.backgroundImage_lightSphere}>
