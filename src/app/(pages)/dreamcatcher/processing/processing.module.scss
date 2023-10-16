@@ -9,7 +9,6 @@
         width: 100%;
     }
 }
-
 .wrapper{
     width: 100%;
     height: 700px;
@@ -31,8 +30,9 @@
         }
     }
 
+
     &_cardItemContainer{
-        width: 20%;
+        width: 33%;
         position: relative;
         &:before{
             content: "";
@@ -40,14 +40,13 @@
             padding-top: 160%;           /* initial ratio of 1:1*/
         }
     }
-
     &_cardItem{
         position: absolute;
         top: 0;
         left: 0;
         bottom: 0;
         right: 0;
-        border: 1px solid $parchment;
+        background-color: red;
     }
     &_buttonContainer{
         width:500px;

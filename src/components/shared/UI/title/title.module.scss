@@ -13,4 +13,10 @@
         height: 80px;
         margin: 10px 0px;
     }
+    &_backArrow{
+        width: 40px;
+        height: 30px;
+        margin-right: 20px;
+        @include flex(column,center,center)
+    }
 }

@@ -25,5 +25,8 @@
         @include GwenFont(40px);
         @include flex(column,flex-start,center);
         gap:20px;
+        &> li{
+            cursor: pointer;
+        }
     }
 }

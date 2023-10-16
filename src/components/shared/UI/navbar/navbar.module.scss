@@ -12,5 +12,8 @@
         @include flex(row,space-around,center);
         color:$beije;
         @include GwenFont(40px);
+        &> li{
+            cursor: pointer;
+        }
     }
 }

@@ -5,6 +5,8 @@
     &_container{
         width: 1152px;
         height: fit-content;
+        position: relative;
+        z-index: 2;
         @include flex(row,space-between,flex-start);
         @media (max-width: $desktop){
             @include flex(column,flex-start,center);

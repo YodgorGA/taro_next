@@ -1,24 +1,24 @@
 import {FC} from 'react';
-import S from './taro.module.scss';
+import S from './dreamcatcher.module.scss';
+import { Title } from '@/components/shared';
 import Image from 'next/image';
-import TaroLeft from '/public/assets/images/taroLeft.png';
-import TaroRight from '/public/assets/images/taroRight.png';
-import { FormModal, Header } from '@/components/widgets';
-import { Burger, Title } from '@/components/shared';
+import numerologyLeft from '/public/assets/images/numerologyLeft.png';
+import numerologyRight from '/public/assets/images/numerologyRight.png';
+import { FormModal } from '@/components/widgets';
 
-interface TaroPageProps {
+interface DreamcatcherProps {
     
 }
 
-export const TaroPage:FC<TaroPageProps> = ({...TaroPageProps}) =>{
+export const Dreamcatcher:FC<DreamcatcherProps> = ({...DreamcatcherProps}) =>{
     
     return ( 
-        <section className={S.taro_container}>
-            <Title children='Таро'/>
+        <section className={S.numerology_container}>
+            <Title children='Сонник'/>
             <div className={S.content}>
                 <div className={S.content_left}>
                     <div className={S.image_right}>
-                        <Image fill src={TaroLeft} alt=''/>
+                        <Image fill src={numerologyLeft} alt=''/>
                     </div>
                     <div className={S.content_text}>
                         <p>
@@ -28,7 +28,7 @@ export const TaroPage:FC<TaroPageProps> = ({...TaroPageProps}) =>{
                 </div>
                 <div className={S.content_right}>
                     <div className={S.image_right}>
-                        <Image fill src={TaroRight} alt=''/>
+                        <Image fill src={numerologyRight} alt=''/>
                     </div>
                     <div className={S.content_text}>
                         <p>
@@ -37,10 +37,10 @@ export const TaroPage:FC<TaroPageProps> = ({...TaroPageProps}) =>{
                     </div>
                 </div>
             </div>
-            <FormModal href='/taro/processing'/>
+            <FormModal href='/dreamcatcher/processing'/>
         </section>
     )
 }
 
-export default TaroPage
+export default Dreamcatcher
 

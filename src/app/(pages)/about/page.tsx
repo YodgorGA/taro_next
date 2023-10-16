@@ -4,6 +4,7 @@ import CandleImage from '/public/assets/images/about_candles.png';
 import CardsImage from '/public/assets/images/about_cards.png';
 import Star from '/public/assets/icons/Star 1.svg'
 import Image from 'next/image';
+import { Title } from '@/components/shared';
 
 interface AboutPageProps {
     
@@ -15,7 +16,7 @@ export const AboutPage:FC<AboutPageProps> = ({...AboutPageProps}) =>{
         <section className={S.about_container}>
             <div className={S.text}>
                 <div className={S.title}>
-                    <p>О нас | История</p>
+                    <Title>История</Title>
                 </div>
                 <div className={S.description}>
                     <p>Текст легенды</p>

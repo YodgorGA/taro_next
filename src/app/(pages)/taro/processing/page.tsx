@@ -32,6 +32,12 @@ export const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps})
                     <div className={S.cards_cardItemContainer}>
                         <div key={Math.random()} className={S.cards_cardItem}></div>
                     </div>
+                    <div className={S.cards_cardItemContainer}>
+                        <div key={Math.random()} className={S.cards_cardItem}></div>
+                    </div>
+                    <div className={S.cards_cardItemContainer}>
+                        <div key={Math.random()} className={S.cards_cardItem}></div>
+                    </div>
                 </div>
                 <div className={S.cards_buttonContainer}>
                     <Button clickHandler={buttonClickHandler}>Оплатить и узнать результат</Button>
