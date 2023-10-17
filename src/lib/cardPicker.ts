@@ -1,4 +1,6 @@
-export const CardLinks = [
+import { log } from "console";
+
+const links = [
     '/taroCards/blured/2cups.png',
     '/taroCards/blured/2pentacles.png',
     '/taroCards/blured/2swords.png',
@@ -69,7 +71,7 @@ export const CardLinks = [
     '/taroCards/blured/hermit.png',
     '/taroCards/blured/fool.png',
     '/taroCards/blured/high_priestess.png',
-    '/taroCards/blured/heirophant.png',
+    '/taroCards/blured/hierophant.png',
     '/taroCards/blured/hanged_man.png',
     '/taroCards/blured/devil.png',
     '/taroCards/blured/empress.png',
@@ -79,19 +81,16 @@ export const CardLinks = [
     '/taroCards/blured/jugment.png',
 ]
 
-const getRandomNumber = () =>{
-    return Math.floor(Math.random() * (78 - 1) + 1);
+export const getRandomLinks = () =>{
+    const randomNumber = () => Number(Math.floor(Math.random() * (78 - 1) + 1));
+    const randomLinks:string[] = []
+    const linksSet = new Set<string>()
+    
+    do { linksSet.add(links[randomNumber()])} while (linksSet.size < 5);
+
+    linksSet.forEach((item:string)=>{
+        randomLinks.push(item)
+    })
+
+    return randomLinks
 }
-
-export const getNRandomNumbers = (n:number) =>{
-    const rndNArr:number[] = []
-    for( let i = 0; i < n; i ++){
-        rndNArr.push(getRandomNumber());
-    }
-
-    return rndNArr
-}
-
-
-
-
