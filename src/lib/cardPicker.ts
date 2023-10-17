@@ -1,4 +1,5 @@
-import { log } from "console";
+const bluredDir = '/public/taroCards/blured';
+const normalDir = '/public/taroCards/default';
 
 const links = [
     '/taroCards/blured/2cups.png',
@@ -78,9 +79,94 @@ const links = [
     '/taroCards/blured/emperor.png',
     '/taroCards/blured/death.png',
     '/taroCards/blured/justice.png',
-    '/taroCards/blured/jugment.png',
+    '/taroCards/blured/judgment.png',
 ]
 
+
+const cardMeta = {
+    solo:{
+        death:'смерть',
+        justice:'справедливость',
+        judgment:'суд',
+        emperor:'император',
+        empress:'императрица',
+        devil:'дьявол',
+        hanged_man:'повешенный',
+        hierophant:'иерофант',
+        high_priestess:'верховная жрица',
+        fool:'дурак',
+        hermit:'отшельник',
+        magician:'волшебник',
+        world:'мир',
+        wheel_of_fortune:'колесо фортуны',
+        tower:'башня',
+        temperance:'умеренность',
+        strength:'сила',
+        lovers:'влюбленные',
+        chariot:'колесница',
+        star:'звезда',
+        sun:'солнце',
+        moon:'луна',
+    },
+
+    types:{
+        cups:'кубков',
+        pentacles:'пентаклей',
+        swords:'мечей',
+        wands:'жезлов',
+    },
+
+    ranks:{
+        page:'паж',
+        knight:'рыцарь',
+        queen:'королева',
+        king:'король',
+        ace:'туз'
+    },
+
+    numbers:{
+        '2':'двойка',
+        '3':'тройка',
+        '4':'четвёрка',
+        '5':'пятёрка',
+        '6':'шестёрка',
+        '7':'семёрка',
+        '8':'восьмёрка',
+        '9':'девятка',
+        '10':'десятка',
+    }
+    
+}
+
+
+
+
+const createCardInfo = (name:string) =>{
+    // const cardInfo = {
+    //     [name]:{
+
+    //     },
+    
+    //     set setCardInfo(){
+    //         for(let meta in cardMeta){
+    //             for( let metaItem in meta){
+    //                 this[name] = {
+    //                     name:`${cardMeta.numbers[2]} ${cardMeta.types}`,
+    //                     url: 
+    //                 }
+    //             }
+
+    //         }
+
+    //     }
+    
+    // }
+}
+
+
+const getCardNameByLink = (link:string) =>{
+    return link.match(/([^/]*?)(?:\..*)?$/)![1]
+}
 export const getRandomLinks = () =>{
     const randomNumber = () => Number(Math.floor(Math.random() * (78 - 1) + 1));
     const randomLinks:string[] = []
@@ -90,7 +176,10 @@ export const getRandomLinks = () =>{
 
     linksSet.forEach((item:string)=>{
         randomLinks.push(item)
+        
+        getCardNameByLink(item);
     })
+
 
     return randomLinks
 }
