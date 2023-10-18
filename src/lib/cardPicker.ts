@@ -79,11 +79,15 @@ const links = [
     '/taroCards/blured/emperor.png',
     '/taroCards/blured/death.png',
     '/taroCards/blured/justice.png',
-    '/taroCards/blured/judgment.png',
+    '/taroCards/blured/judgement.png',
 ]
 
 
-const cardMeta = {
+const cardMeta:{
+    [key:string]:{
+        [key:string]:string
+    }
+} = {
     solo:{
         death:'смерть',
         justice:'справедливость',
@@ -124,7 +128,7 @@ const cardMeta = {
         ace:'туз'
     },
 
-    numbers:{
+    digit:{
         '2':'двойка',
         '3':'тройка',
         '4':'четвёрка',
@@ -142,25 +146,40 @@ const cardMeta = {
 
 
 const createCardInfo = (name:string) =>{
-    // const cardInfo = {
-    //     [name]:{
+    const cardInfo= {
+        [name]:{
+            quantor:''||null,
+            type:'',
+            link:`/taroCards/blured/${name}.png`,
+        },
+        set setCardInfo(name:any){
+            if(name.match(/\d+/)){
+                let quantor = name.match(/\d+/)![0]
+                let type = name.split(name.match(/\d+/)![0])[1]
+                this[name].quantor = cardMeta.digit[quantor];
+                this[name].type = cardMeta.types[type];
+                console.log(cardInfo);
 
-    //     },
-    
-    //     set setCardInfo(){
-    //         for(let meta in cardMeta){
-    //             for( let metaItem in meta){
-    //                 this[name] = {
-    //                     name:`${cardMeta.numbers[2]} ${cardMeta.types}`,
-    //                     url: 
-    //                 }
-    //             }
+            }
+            else if(name.match('_of_')){
+                let quantor = name.split('_of_')[0];
+                let type = name.split('_of_')[1];
+                this[name].quantor = cardMeta.ranks[quantor];
+                this[name].type = cardMeta.types[type];
+                console.log(cardInfo);
+            }
+            else{
+                let quantor = null;
+                let type = name;
+                this[name].quantor = quantor;
+                this[name].type = type;
+                console.log(cardInfo);
+            }
+            
+        }
+    }
 
-    //         }
-
-    //     }
-    
-    // }
+    cardInfo.setCardInfo = name;
 }
 
 
@@ -176,8 +195,7 @@ export const getRandomLinks = () =>{
 
     linksSet.forEach((item:string)=>{
         randomLinks.push(item)
-        
-        getCardNameByLink(item);
+        createCardInfo(getCardNameByLink(item));
     })
 
 
