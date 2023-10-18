@@ -172,7 +172,7 @@ const createCardInfo = (name:string) =>{
                 let quantor = null;
                 let type = name;
                 this[name].quantor = quantor;
-                this[name].type = type;
+                this[name].type = cardMeta.solo[type]
                 console.log(cardInfo);
             }
             
