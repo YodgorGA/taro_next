@@ -81,9 +81,6 @@ const cardMeta:{
     
 }
 
-
-
-
 const createCardInfo = (name:string) =>{
     const cardInfo = {
         [name]:{
