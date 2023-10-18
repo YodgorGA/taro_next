@@ -1,85 +1,24 @@
-const bluredDir = '/public/taroCards/blured';
-const normalDir = '/public/taroCards/default';
+import { ICardInfo } from '@/lib/types';
 
-const links = [
-    '/taroCards/blured/2cups.png',
-    '/taroCards/blured/2pentacles.png',
-    '/taroCards/blured/2swords.png',
-    '/taroCards/blured/2wands.png',
-    '/taroCards/blured/3cups.png',
-    '/taroCards/blured/3pentacles.png',
-    '/taroCards/blured/3swords.png',
-    '/taroCards/blured/3wands.png',
-    '/taroCards/blured/4cups.png',
-    '/taroCards/blured/4pentacles.png',
-    '/taroCards/blured/4swords.png',
-    '/taroCards/blured/4wands.png',
-    '/taroCards/blured/5cups.png',
-    '/taroCards/blured/5pentacles.png',
-    '/taroCards/blured/5swords.png',
-    '/taroCards/blured/5wands.png',
-    '/taroCards/blured/6cups.png',
-    '/taroCards/blured/6pentacles.png',
-    '/taroCards/blured/6swords.png',
-    '/taroCards/blured/6wands.png',
-    '/taroCards/blured/7cups.png',
-    '/taroCards/blured/7pentacles.png',
-    '/taroCards/blured/7swords.png',
-    '/taroCards/blured/7wands.png',
-    '/taroCards/blured/8cups.png',
-    '/taroCards/blured/8pentacles.png',
-    '/taroCards/blured/8swords.png',
-    '/taroCards/blured/8wands.png',
-    '/taroCards/blured/9cups.png',
-    '/taroCards/blured/9pentacles.png',
-    '/taroCards/blured/9swords.png',
-    '/taroCards/blured/9wands.png',
-    '/taroCards/blured/10cups.png',
-    '/taroCards/blured/10pentacles.png',
-    '/taroCards/blured/10swords.png',
-    '/taroCards/blured/10wands.png',
-    '/taroCards/blured/ace_of_cups.png',
-    '/taroCards/blured/ace_of_pentacles.png',
-    '/taroCards/blured/ace_of_swords.png',
-    '/taroCards/blured/ace_of_wands.png',
-    '/taroCards/blured/king_of_cups.png',
-    '/taroCards/blured/king_of_pentacles.png',
-    '/taroCards/blured/king_of_swords.png',
-    '/taroCards/blured/king_of_wands.png',
-    '/taroCards/blured/knight_of_cups.png',
-    '/taroCards/blured/knight_of_pentacles.png',
-    '/taroCards/blured/knight_of_swords.png',
-    '/taroCards/blured/knight_of_wands.png',
-    '/taroCards/blured/queen_of_cups.png',
-    '/taroCards/blured/queen_of_pentacles.png',
-    '/taroCards/blured/queen_of_swords.png',
-    '/taroCards/blured/queen_of_wands.png',
-    '/taroCards/blured/page_of_cups.png',
-    '/taroCards/blured/page_of_pentacles.png',
-    '/taroCards/blured/page_of_swords.png',
-    '/taroCards/blured/page_of_wands.png',
-    '/taroCards/blured/lovers.png',
-    '/taroCards/blured/chariot.png',
-    '/taroCards/blured/star.png',
-    '/taroCards/blured/sun.png',
-    '/taroCards/blured/moon.png',
-    '/taroCards/blured/strength.png',
-    '/taroCards/blured/temperance.png',
-    '/taroCards/blured/tower.png',
-    '/taroCards/blured/wheel_of_fortune.png',
-    '/taroCards/blured/world.png',
-    '/taroCards/blured/magician.png',
-    '/taroCards/blured/hermit.png',
-    '/taroCards/blured/fool.png',
-    '/taroCards/blured/high_priestess.png',
-    '/taroCards/blured/hierophant.png',
-    '/taroCards/blured/hanged_man.png',
-    '/taroCards/blured/devil.png',
-    '/taroCards/blured/empress.png',
-    '/taroCards/blured/emperor.png',
-    '/taroCards/blured/death.png',
-    '/taroCards/blured/justice.png',
-    '/taroCards/blured/judgement.png',
+const cardNames = [
+    '2cups','2pentacles','2swords','2wands',
+    '3cups','3pentacles','3swords','3wands',
+    '4cups','4pentacles','4swords','4wands',
+    '5cups','5pentacles','5swords','5wands',
+    '6cups','6pentacles','6swords','6wands',
+    '7cups','7pentacles','7swords','7wands',
+    '8cups','8pentacles','8swords','8wands',
+    '9cups','9pentacles','9swords','9wands',
+    '10cups','10pentacles','10swords','10wands',
+    'ace_of_cups','ace_of_pentacles','ace_of_swords','ace_of_wands',
+    'king_of_cups','king_of_pentacles','king_of_swords','king_of_wands',
+    'knight_of_cups','knight_of_pentacles','knight_of_swords','knight_of_wands',
+    'queen_of_cups','queen_of_pentacles','queen_of_swords','queen_of_wands',
+    'page_of_cups','page_of_pentacles','page_of_swords','page_of_wands',
+    'lovers','chariot','star','sun','moon','strength','temperance',
+    'tower','wheel_of_fortune','world','magician','hermit','fool',
+    'high_priestess','hierophant','hanged_man','devil','empress',
+    'emperor','death','justice','judgement'
 ]
 
 
@@ -146,7 +85,7 @@ const cardMeta:{
 
 
 const createCardInfo = (name:string) =>{
-    const cardInfo= {
+    const cardInfo = {
         [name]:{
             quantor:''||null,
             type:'',
@@ -158,7 +97,7 @@ const createCardInfo = (name:string) =>{
                 let type = name.split(name.match(/\d+/)![0])[1]
                 this[name].quantor = cardMeta.digit[quantor];
                 this[name].type = cardMeta.types[type];
-                console.log(cardInfo);
+                // console.log(cardInfo);
 
             }
             else if(name.match('_of_')){
@@ -166,38 +105,39 @@ const createCardInfo = (name:string) =>{
                 let type = name.split('_of_')[1];
                 this[name].quantor = cardMeta.ranks[quantor];
                 this[name].type = cardMeta.types[type];
-                console.log(cardInfo);
+                // console.log(cardInfo);
             }
             else{
                 let quantor = null;
                 let type = name;
                 this[name].quantor = quantor;
                 this[name].type = cardMeta.solo[type]
-                console.log(cardInfo);
+                // console.log(cardInfo);
             }
             
         }
     }
 
     cardInfo.setCardInfo = name;
+
+    return cardInfo
 }
 
-
-const getCardNameByLink = (link:string) =>{
-    return link.match(/([^/]*?)(?:\..*)?$/)![1]
-}
-export const getRandomLinks = () =>{
+// const getCardNameByLink = (link:string) =>{
+//     return link.match(/([^/]*?)(?:\..*)?$/)![1]
+// }
+export const getRandomCardItems = () =>{
     const randomNumber = () => Number(Math.floor(Math.random() * (78 - 1) + 1));
-    const randomLinks:string[] = []
-    const linksSet = new Set<string>()
+    // const randomcardNames:string[] = []
+    const randomCardItems:ICardInfo[] = [];
+    const cardNamesSet = new Set<string>()
     
-    do { linksSet.add(links[randomNumber()])} while (linksSet.size < 5);
+    do { cardNamesSet.add(cardNames[randomNumber()])} while (cardNamesSet.size < 5);
 
-    linksSet.forEach((item:string)=>{
-        randomLinks.push(item)
-        createCardInfo(getCardNameByLink(item));
+    cardNamesSet.forEach((item:string)=>{
+        randomCardItems.push(createCardInfo(item));
+        // console.log(randomCardItems);
     })
 
-
-    return randomLinks
+    return randomCardItems
 }

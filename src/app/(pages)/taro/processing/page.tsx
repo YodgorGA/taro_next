@@ -3,22 +3,25 @@ import { FC, useEffect, useState } from 'react';
 import S from './processing.module.scss';
 import { Button, Cross, Title } from '@/components/shared';
 import { useRouter } from 'next/navigation';
-import { getRandomLinks } from '@/lib/cardPicker';
+import { getRandomCardItems } from '@/lib/cardPicker';
 import Image from 'next/image';
+import { ICardInfo } from '@/lib/types';
 
 interface TaroProcessingProps {
     
 }
 
+const randomCardsArr = getRandomCardItems();
+// console.log(randomCardsArr);
 
 export const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps}) =>{
     const router = useRouter()
-    const [randomCardLinks,setRandomCardLinks] = useState<string[]>([])
+    const [randomCardItems,setrandomCardItems] = useState<ICardInfo[]>([])
     const buttonClickHandler = () =>{
         router.push('/taro/waiting');
     }
     useEffect(()=>{
-        setRandomCardLinks(getRandomLinks())
+        setrandomCardItems(randomCardsArr)
     },[])
     return ( 
         <section className={S.container}>
@@ -29,11 +32,12 @@ export const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps})
                 <Title children='Раcклад'/>
                 <div className={S.cards_container}>
                 {
-                    randomCardLinks.map((link)=>{
+                    randomCardItems.map((item)=>{
+                        const cardItemName = Object.keys(item)[0];
                         return (
                         <div key={Math.random()} className={S.cards_cardItemContainer}>
                             <div  className={S.cards_cardItem}>
-                                <Image src={link} fill alt=''/>
+                                <Image src={item[cardItemName].link} fill alt=''/>
                             </div>
                         </div>)
                     })
