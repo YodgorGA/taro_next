@@ -17,48 +17,6 @@
 }
 
 .cards{
-    &_container{
-        width: 90%;
-        height: 90%;
-        @include flex(row,center,center);
-        gap:100px;
-        margin-bottom: 40px;
-
-        @media (max-width: $mobile) {
-            gap:30px;
-            margin-bottom: 20px;
-            height: 80%;
-        }
-    }
-
-    &_cardItemContainer{
-        width: 20%;
-        position: relative;
-        animation: popUp ease-in-out 2s;
-        &:before{
-            content: "";
-            display: block;
-            padding-top: 160%;           /* initial ratio of 1:1*/
-        }
-    }
-    
-    @keyframes popUp {
-        from{
-            opacity: 0;
-        }
-        to{
-            opacity: 1;
-        }
-    }
-
-    &_cardItem{
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-
-    }
 
     &_buttonContainer{
         width:500px;
