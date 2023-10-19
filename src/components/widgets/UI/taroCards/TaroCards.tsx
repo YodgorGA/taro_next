@@ -2,8 +2,8 @@
 import {FC,useEffect,useState} from 'react';
 import S from './taroCards.module.scss';
 import Image from 'next/image';
-import { ICardInfo } from '@/lib/types';
-import { getRandomCardItems } from '@/lib/cardPicker';
+import { ICardInfo } from '@/components/shared';
+import { getRandomCardItems } from '@/components/widgets';
 
 interface TaroCardsProps {
     

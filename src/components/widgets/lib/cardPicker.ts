@@ -1,4 +1,4 @@
-import { ICardInfo } from '@/lib/types';
+import { ICardInfo } from "@/components/shared"
 
 const cardNames = [
     '2cups','2pentacles','2swords','2wands',

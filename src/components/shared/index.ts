@@ -4,19 +4,20 @@ import Navbar from "./UI/navbar/Navbar"
 import Burger from "./UI/burger/Burger"
 import Title from "./UI/title/Title"
 import CardTimer from "./UI/cardTimer/CardTimer"
-import type {ICardItem} from "./lib/types";
+import type {ICardItem,ICardInfo,ITimerCardInfo} from "./lib/types";
 import { Items,Item } from "./lib/mock"
 import Cross from "./UI/cross/Cross"
+import { getTimerDigits,getTimerDigitLink } from "./lib/cardTimerHelper"
 
 
 export {
     Button,
-    StoreUpdater,
+    StoreUpdater,getTimerDigits,getTimerDigitLink,
     Burger,
     Navbar,
     Title,
     CardTimer,
-    ICardItem,
+    ICardItem,ICardInfo,ITimerCardInfo,
     Items,
     Item,
     Cross

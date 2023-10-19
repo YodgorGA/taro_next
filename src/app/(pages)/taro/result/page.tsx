@@ -7,8 +7,18 @@ interface ResultProps {
     
 }
 
-export const Result:FC<ResultProps> = ({...ResultProps}) =>{
-    
+const getData = async() =>{
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts')
+    return response.json();
+}
+
+export const Result:FC<ResultProps> = async ({...ResultProps}) =>{
+    const posts:[{
+        userId:number,
+        id:number,
+        title:string,
+        body:string,
+    }] = await getData();
     return ( 
         <section className={S.container}>
             <Cross href='/taro'/>
@@ -16,7 +26,18 @@ export const Result:FC<ResultProps> = ({...ResultProps}) =>{
                 <Title children='Результат'/>
                 <div className={S.result_container}>
                     <TaroCards/>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque accusamus perferendis nisi at, distinctio hic! Alias ad doloremque quasi illum cum rem dolorem quod, magni odio facere maxime quaerat sit.</p>
+                    <p></p>
+                    {
+                        posts.map((post)=>{
+                            return (
+                                <div> 
+                                    <p>{post.id}</p>
+                                    <p>{post.title}</p>
+                                    <p>{post.body}</p>
+                                </div>
+                            )
+                        })
+                    }
                 </div>
             </div>
         </section>

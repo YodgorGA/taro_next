@@ -6,3 +6,16 @@ export interface ICardItem{
     title:string,
     price:string,
 }
+
+export interface ICardInfo{
+    [key:string]:{
+        quantor:string|null,
+        type:string,
+        link:string
+    },
+}
+
+export interface ITimerCardInfo{
+    value:number,
+    link:string,
+}

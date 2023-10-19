@@ -9,21 +9,32 @@
     gap:15px;
 
     &_item{
-        width: 50px;
-        height: 66px;
+        width: 120px;
+        height: 200px;
         background-color: $beije;
+        border-radius: 5px;
+        position: relative;
+        z-index: 4;
+        &__behind{
+            position: absolute;
+            top:0;
+            border-radius: 5px;
+            left:0;
+            width: 120px;
+            height: 200px;
+            background-color: $beije;
+            z-index: 3;
+        }
     }
     &_itemContainer{
-        
+        position: relative;
         perspective-origin: 50%;
-        perspective: 240px;
-        -webkit-perspective: 240px;
-
-
+        perspective: 600px;
+        -webkit-perspective: 600px;
     }
 
     .dropped{
-        animation:cardDrop 1s ease-in-out alternate;
+        animation:cardDrop 0.9s ease-in-out infinite ;
         transform-origin: bottom;
     }
 }
