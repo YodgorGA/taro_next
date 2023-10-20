@@ -15,6 +15,7 @@
         border-radius: 5px;
         position: relative;
         z-index: 4;
+
         &__behind{
             position: absolute;
             top:0;
@@ -34,7 +35,7 @@
     }
 
     .dropped{
-        animation:cardDrop 0.9s ease-in-out infinite ;
+        animation:cardDrop 1s ease-in-out infinite ;
         transform-origin: bottom;
     }
 }
