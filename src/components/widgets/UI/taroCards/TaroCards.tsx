@@ -7,12 +7,11 @@ import { getRandomCardItems } from '@/components/widgets';
 import { useUserFunctionStore } from '@/store';
 
 interface TaroCardsProps {
-    blured:boolean
 }
 
 
-export const TaroCards:FC<TaroCardsProps> = ({blured,...TaroCardsProps}) =>{
-    const randomCardsArr = getRandomCardItems(blured);
+export const TaroCards:FC<TaroCardsProps> = ({...TaroCardsProps}) =>{
+    const randomCardsArr = getRandomCardItems();
     const [randomCardItems,setrandomCardItems] = useState<ICardInfo[]>([])
     const setTaroCardItems = useUserFunctionStore(state=>state.setTaroCardItems);
 
