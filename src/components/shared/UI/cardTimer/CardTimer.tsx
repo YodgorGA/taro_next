@@ -35,12 +35,15 @@ export const CardTimer:FC<CardTimerProps> = ({propTime,...CardTimerProps}) =>{
                 setIsTimerStarted(true)
             },1000)
         }
+        else{
+            router.push('/taro/result');
+        }
     },[time])
     return ( 
         <div className={S.timerCards}>
             <div className={`${S.timerCards_itemContainer}`}>
                 <div className={`${S.timerCards_item__behind}`}>
-                    <Image width={120} height={200} objectFit='cover' src={BlankCard} alt={`blank`}/>
+                    <Image width={120} height={200} src={BlankCard} alt={`blank`}/>
                 </div>
                 <div className={`${S.timerCards_item} ${isTimerStarted === true && rightDigit < 1 && S.dropped}`}>
                     <Image width={120} height={200} src={getTimerDigitLink(leftDigit)} alt={`${leftDigit}`}/>

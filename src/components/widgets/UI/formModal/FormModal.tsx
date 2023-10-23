@@ -1,16 +1,47 @@
 "use client"
-import {FC, useState} from 'react';
+import {FC, useEffect, useState} from 'react';
 import S from './formModal.module.scss';
-import Link from 'next/link';
+import {usePathname, useRouter} from 'next/navigation';
+import { useUserFunctionStore } from '@/store';
+
 
 interface FormModalProps {
-    href:string
+    href:string,
+    currentReq: 'dreamcatcherReq'|'numerologyReq'|'taroReq',
+    currentPathName:'/taro'|'/numerology'|'/dreamcatcher'
 }
 
-export const FormModal:FC<FormModalProps> = ({href,...FormModalProps}) =>{
+export const FormModal:FC<FormModalProps> = ({currentPathName,currentReq,href,...FormModalProps}) =>{
     const [isHidden,setIsHidden] = useState<boolean>(true);
+    const [errors,setErrors] = useState<string[]>([]);
+        
+    const setDreamCatcherReq = useUserFunctionStore(state=>state.setDreamcatcherReq);
+    const setTaroReq = useUserFunctionStore((state)=>state.setTaroReq);
+    const setNumerologyReq = useUserFunctionStore(state=>state.setNumerologyReq);
+    const dreamcatcherReq= useUserFunctionStore(state=>state.dreamcatcherReq);
+    const numerologyReq = useUserFunctionStore(state=>state.numerologyReq);
+    const taroReq = useUserFunctionStore(state=>state.taroReq);
+
+    const router = useRouter();
+    const pathname = usePathname()
     const modalToggler = () =>{
         isHidden === true? setIsHidden(false) : setIsHidden(true);
+    }
+    const buttonClickHandler = () =>{
+        if(pathname.includes('/taro')){
+            taroReq !== '' && taroReq !== undefined && router.push(href)
+        }
+        if(pathname.includes('/numerology')){
+            numerologyReq !== '' && numerologyReq !== undefined && router.push(href)
+        }
+        if(pathname.includes('/dreamcatcher')){
+            dreamcatcherReq !== '' && dreamcatcherReq !== undefined && router.push(href)
+        }
+    }
+    const inputChangeHandler = (e:React.ChangeEvent<HTMLInputElement>)=>{
+            pathname.includes('/taro') && setTaroReq(e.currentTarget.value);
+            pathname.includes('/numerology') && setNumerologyReq(e.currentTarget.value);
+            pathname.includes('/dreamcatcher') && setDreamCatcherReq(e.currentTarget.value);
     }
     return ( 
         <>
@@ -31,10 +62,10 @@ export const FormModal:FC<FormModalProps> = ({href,...FormModalProps}) =>{
                             <div className={S.modal_form}>
                                 <label>Введите ваши данные</label>
                                 <input className={S.modal_input} placeholder={'Ваше имя'} type={'text'}/>
-                                <input className={S.modal_input} placeholder={'Ваш вопрос'} type={'text'}/>
+                                <input onChange={inputChangeHandler} className={S.modal_input} placeholder={'Ваш вопрос'} type={'text'}/>
                             </div>
                             <div className={S.modal_buttonContainer}>
-                                <button className={S.modal_button}><Link href={href}>Узнать ответ</Link></button>
+                                <button onClick={buttonClickHandler} className={S.modal_button}>Узнать ответ</button>
                             </div>
                         </div>
                     </div>

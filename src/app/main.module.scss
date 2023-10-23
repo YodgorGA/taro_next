@@ -64,7 +64,7 @@
     height: fit-content;
     min-height: 500px;
     position: relative;
-    z-index: 6;
+    z-index: 4;
     @media (max-width: $mobile) {
         @include flex(column,flex-start,center);
     }

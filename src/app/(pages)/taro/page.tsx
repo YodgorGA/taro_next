@@ -6,9 +6,12 @@ import TaroRight from '/public/assets/images/taroRight.png';
 import { FormModal } from '@/components/widgets';
 import {Title } from '@/components/shared';
 
+
 interface TaroPageProps {
     
 }
+
+
 
 export const TaroPage:FC<TaroPageProps> = ({...TaroPageProps}) =>{
     
@@ -37,7 +40,7 @@ export const TaroPage:FC<TaroPageProps> = ({...TaroPageProps}) =>{
                     </div>
                 </div>
             </div>
-            <FormModal href='/taro/processing'/>
+            <FormModal currentPathName={'/taro'} currentReq={'taroReq'} href='/taro/processing'/>
         </section>
     )
 }

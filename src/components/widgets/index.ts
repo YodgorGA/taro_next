@@ -4,6 +4,7 @@ import MagicShopBuy from '../../app/magic-shop/[itemId]/page';
 import ShopForm from "./UI/shopform/shopForm";
 import TaroCards from "./UI/taroCards/TaroCards";
 import { getRandomCardItems } from "./lib/cardPicker";
+import OpenTaroCards from "./UI/openTaroCards/OpenTaroCards";
 
 export {
     Header,
@@ -11,5 +12,6 @@ export {
     MagicShopBuy,
     ShopForm,
     TaroCards,
-    getRandomCardItems
+    getRandomCardItems,
+    OpenTaroCards
 }
