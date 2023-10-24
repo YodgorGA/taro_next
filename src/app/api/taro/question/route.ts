@@ -1,35 +1,19 @@
 import { NextResponse } from "next/server";
+import OpenAI from "openai";
+const openai = new OpenAI();
 
 
-const chatReq = async (body:{
-    model:string,
-    messages:[
-        {
-            role:string,
-            content:string
-        }
-    ]
-}) =>{
-    const resp = await fetch('https://api.openai.com/v1/chat/completions',{
-        method:'POST',
-        headers:{
-            "Content-Type":"aplication/json",
-            "Authorization": `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`
-        },
-        body:JSON.stringify(body)
-    })
-
-    return resp
+const getChatResp = async (body:string) => {
+    const completion = await openai.chat.completions.create({
+        messages: [{ role: "system", content: `${body}` }],
+        model: "gpt-3.5-turbo",
+      });
+    
+      return completion.choices[0].message.content;
 }
 
 export async function POST(request:Request,){
-    const body = await request.json()
-    const chatResp = await chatReq({
-        model:'gpt-3.5-turbo',
-        messages:[{
-            role:`user`,
-            content: body
-        }]
-    })
+    const body:string = await request.json()
+    const chatResp = await getChatResp(body);
     return NextResponse.json({chatResp});
 }
