@@ -8,11 +8,13 @@ import type {ICardItem,ICardInfo,ITimerCardInfo} from "./lib/types";
 import { Items,Item } from "./lib/mock"
 import Cross from "./UI/cross/Cross"
 import { getTimerDigits,getTimerDigitLink } from "./lib/cardTimerHelper"
+import { getCardsNames } from "./lib/getStoreData"
+
 
 
 export {
     Button,
-    StoreUpdater,getTimerDigits,getTimerDigitLink,
+    StoreUpdater,getTimerDigits,getTimerDigitLink,getCardsNames,
     Burger,
     Navbar,
     Title,

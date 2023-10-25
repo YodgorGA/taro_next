@@ -4,7 +4,7 @@ import S from './taroCards.module.scss';
 import Image from 'next/image';
 import { ICardInfo } from '@/components/shared';
 import { getRandomCardItems } from '@/components/widgets';
-import { useUserFunctionStore } from '@/store';
+import { TaroStore } from '@/store';
 
 interface TaroCardsProps {
 }
@@ -13,7 +13,7 @@ interface TaroCardsProps {
 export const TaroCards:FC<TaroCardsProps> = ({...TaroCardsProps}) =>{
     const randomCardsArr = getRandomCardItems();
     const [randomCardItems,setrandomCardItems] = useState<ICardInfo[]>([])
-    const setTaroCardItems = useUserFunctionStore(state=>state.setTaroCardItems);
+    const setTaroCardItems = TaroStore(state=>state.setTaroCardItems);
 
     useEffect(()=>{
         setrandomCardItems(randomCardsArr);

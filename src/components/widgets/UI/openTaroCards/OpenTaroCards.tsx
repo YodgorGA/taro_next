@@ -1,16 +1,16 @@
 'use client'
 import {FC, useState} from 'react';
 import S from './openTaroCards.module.scss';
-import { useUserFunctionStore } from '@/store';
 import { ICardInfo } from '@/components/shared';
 import Image from 'next/image';
+import { TaroStore } from '@/store';
 
 interface OpenTaroCardsProps {
     
 }
 
 export const OpenTaroCards:FC<OpenTaroCardsProps> = ({...OpenTaroCardsProps}) =>{
-    const storedTaroCards = useUserFunctionStore(state=>state.taroCardItems);
+    const storedTaroCards = TaroStore(state=>state.taroCardItems);
 
     return ( 
         <div className={S.cards_container}>
