@@ -40,7 +40,7 @@ export const TaroPage:FC<TaroPageProps> = ({...TaroPageProps}) =>{
                     </div>
                 </div>
             </div>
-            <FormModal currentPathName={'/taro'} currentReq={'taroReq'} href='/taro/processing'/>
+            <FormModal href='/taro/processing'/>
         </section>
     )
 }

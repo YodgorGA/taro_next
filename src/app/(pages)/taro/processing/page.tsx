@@ -4,7 +4,7 @@ import S from './processing.module.scss';
 import { Button, Cross, Title } from '@/components/shared';
 import { useRouter } from 'next/navigation';
 import { TaroCards } from '@/components/widgets';
-import { useUserFunctionStore } from '@/store';
+import { TaroStore } from '@/store';
 
 
 interface TaroProcessingProps {
@@ -16,7 +16,7 @@ interface TaroProcessingProps {
 export const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps}) =>{
     
     const router = useRouter()
-    const taroReq = useUserFunctionStore(state=>state.taroReq);
+    const taroReq = TaroStore(state=>state.taroReq);
     
     const getPaymentInfo = async () =>{
         const response = await fetch('/api/taro/payment');
@@ -27,7 +27,6 @@ export const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps})
         const interval = setInterval(()=>{
             const payment:Promise<{status:boolean}> = getPaymentInfo();
             payment.then(response =>{
-                console.log(response.status)
                 if(response.status === true){
                     router.push('/taro/waiting');
                     clearInterval(interval)

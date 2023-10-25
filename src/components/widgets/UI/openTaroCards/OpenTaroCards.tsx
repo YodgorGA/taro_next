@@ -17,7 +17,6 @@ export const OpenTaroCards:FC<OpenTaroCardsProps> = ({...OpenTaroCardsProps}) =>
         {
             storedTaroCards.map((item:ICardInfo)=>{
                 const cardItemName = Object.keys(item)[0];
-                console.log(cardItemName);
                 return (
                 <div key={Math.random()} className={S.cards_cardItemContainer}>
                     <div  className={S.cards_cardItem}>

@@ -2,25 +2,24 @@
 import {FC, useEffect, useState} from 'react';
 import S from './formModal.module.scss';
 import {usePathname, useRouter} from 'next/navigation';
-import { useUserFunctionStore } from '@/store';
+import { DreamcatcherStore, TaroStore, NumerologyStore } from '@/store';
 
 
 interface FormModalProps {
     href:string,
-    currentReq: 'dreamcatcherReq'|'numerologyReq'|'taroReq',
-    currentPathName:'/taro'|'/numerology'|'/dreamcatcher'
 }
 
-export const FormModal:FC<FormModalProps> = ({currentPathName,currentReq,href,...FormModalProps}) =>{
+export const FormModal:FC<FormModalProps> = ({href,...FormModalProps}) =>{
     const [isHidden,setIsHidden] = useState<boolean>(true);
-    const [errors,setErrors] = useState<string[]>([]);
         
-    const setDreamCatcherReq = useUserFunctionStore(state=>state.setDreamcatcherReq);
-    const setTaroReq = useUserFunctionStore((state)=>state.setTaroReq);
-    const setNumerologyReq = useUserFunctionStore(state=>state.setNumerologyReq);
-    const dreamcatcherReq= useUserFunctionStore(state=>state.dreamcatcherReq);
-    const numerologyReq = useUserFunctionStore(state=>state.numerologyReq);
-    const taroReq = useUserFunctionStore(state=>state.taroReq);
+    const setDreamCatcherReq = DreamcatcherStore(state=>state.setDreamcatcherReq);
+    const dreamcatcherReq= DreamcatcherStore(state=>state.dreamcatcherReq);
+
+    const setTaroReq = TaroStore((state)=>state.setTaroReq);
+    const taroReq = TaroStore(state=>state.taroReq);
+
+    const setNumerologyReq = NumerologyStore(state=>state.setNumerologyReq);
+    const numerologyReq = NumerologyStore(state=>state.numerologyReq);
 
     const router = useRouter();
     const pathname = usePathname()

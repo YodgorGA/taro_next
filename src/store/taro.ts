@@ -6,9 +6,11 @@ interface ITaroStore {
     taroReq:string,
     taroCardItems:ICardInfo[],
     taroAnswer:string,
+    taroCardNames:string,
     setTaroReq:(reqText:string)=>void,
     setTaroCardItems:(cardItems:ICardInfo[])=>void,
     setTaroAnswer:(answer:string)=>void,
+    setTaroCardNames:()=>void,
 }
 
 export const TaroStore = create<ITaroStore>()(
@@ -17,6 +19,7 @@ export const TaroStore = create<ITaroStore>()(
             taroReq:'',
             taroCardItems:[],
             taroAnswer:'',
+            taroCardNames:'',
             setTaroReq: (reqText:string) =>{
                 set({taroReq: reqText})
             },
@@ -26,6 +29,20 @@ export const TaroStore = create<ITaroStore>()(
             setTaroAnswer:(answer:string)=>{
                 set({taroAnswer: answer})
             },
+            setTaroCardNames:()=>{
+                if(TaroStore.getState().taroCardItems.length > 0){
+                    
+                    const newCardNamesArr:string[] = [];
+    
+                    TaroStore.getState().taroCardItems.forEach((item:ICardInfo)=>{
+                        const cardName = Object.keys(item)[0];
+                        newCardNamesArr.push(`${item[cardName].quantor !== null? item[cardName].quantor:''} ${item[cardName].type}`) 
+                    })
+                    set({
+                        taroCardNames: newCardNamesArr.join(',')
+                    })
+                }     
+            }
         }),
         {name: 'TaroStore'}
     )

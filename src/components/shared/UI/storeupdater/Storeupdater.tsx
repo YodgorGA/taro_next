@@ -1,6 +1,6 @@
 "use client"
 import { useDefinition } from '@/store';
-import { useEffect, useLayoutEffect } from 'react';
+import { useEffect } from 'react';
 
 export const StoreUpdater = ({...StoreUpdaterProps}) =>{
     const setCurrentDefinition = useDefinition((store)=>store.setCurrentDefinition);
