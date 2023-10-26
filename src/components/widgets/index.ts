@@ -5,6 +5,8 @@ import ShopForm from "./UI/shopform/shopForm";
 import TaroCards from "./UI/taroCards/TaroCards";
 import { getRandomCardItems } from "./lib/cardPicker";
 import OpenTaroCards from "./UI/openTaroCards/OpenTaroCards";
+import { getDescription, getPlaceholder } from "./lib/formModalHelpers";
+
 
 export {
     Header,
@@ -12,6 +14,6 @@ export {
     MagicShopBuy,
     ShopForm,
     TaroCards,
-    getRandomCardItems,
+    getRandomCardItems,getPlaceholder,getDescription,
     OpenTaroCards
 }

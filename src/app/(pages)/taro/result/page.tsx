@@ -30,7 +30,7 @@ export const Result:FC<ResultProps> = ({...ResultProps}) =>{
                 <Title children='Результат'/>
                 <div className={S.result_container}>
                     <OpenTaroCards/>
-                    <p>{answer}</p>
+                    <pre>{answer}</pre>
                 </div>
             </div>
         </section>

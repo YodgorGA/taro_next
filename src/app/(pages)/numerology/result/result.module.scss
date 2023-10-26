@@ -27,5 +27,9 @@
         @media (max-width: $mobile) {
             font-size: 25px;
         }
+        & pre{
+            width: 100%;
+            text-wrap: balance;
+        }
     }
 }

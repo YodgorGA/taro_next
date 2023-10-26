@@ -56,15 +56,14 @@
         height: 100%;
         border-radius: 100px 0px 0px 100px;
         @include GwenFont(22px);
-        @include flex(row,center,center);
-        padding-left: 20px;
-        padding-top: 40px;
+        @include flex(column,center,center);
         text-align: center;
         color: $black;
         border-right: 2px solid $black;
         & p{
             width: 170px;
             height: 180px;
+            @include flex(column,center,center);
         }
         @media (max-width: $mobile) {
             border-bottom: 2px solid $black ;
@@ -119,6 +118,10 @@
         &::-webkit-input-placeholder{
             @include GwenFont(16px);
             color:$black;
+        }
+        &::-webkit-scrollbar{
+            width: 0px;
+            height: 0px;
         }
         overflow-x: scroll;
         @media (max-width: $mobile) {

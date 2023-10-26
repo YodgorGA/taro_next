@@ -1,0 +1,8 @@
+@import '/src/styles/mixins.scss';
+@import '/src/styles/letterals.scss';
+
+.timer{
+    &_numbers{
+        @include AntarcticFont(70px);
+    }
+}

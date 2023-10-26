@@ -7,20 +7,21 @@ const openai = new OpenAI();
 
 const getChatResp = async (request:{taroReq:string,taroCardNames:string}) => {
     
-    const completion = await openai.chat.completions.create({
-        messages: [
-            { 
-                role: "system", content: `Выступи в качестве таролога, говори загадочно и расплывчато.` 
-            },
-            {
-                role:'user',
-                content:`Сделай анализ расклада таро. Мои карты ${request.taroCardNames} и мой вопрос ${request.taroReq}`
-            }],
-        model: "gpt-3.5-turbo",
+    // const completion = await openai.chat.completions.create({
+    //     messages: [
+    //         { 
+    //             role: "system", content: `Выступи в качестве таролога, говори загадочно и расплывчато.` 
+    //         },
+    //         {
+    //             role:'user',
+    //             content:`Сделай анализ расклада таро. Мои карты ${request.taroCardNames} и мой вопрос ${request.taroReq}`
+    //         }],
+    //     model: "gpt-3.5-turbo",
 
-    });
+    // });
     
-    return completion.choices[0].message.content;
+    // return completion.choices[0].message.content;
+    return (request.taroCardNames);
 }
 
 export async function POST(request:Request){

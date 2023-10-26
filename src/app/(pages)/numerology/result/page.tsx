@@ -1,20 +1,32 @@
-import {FC} from 'react';
+"use client"
+import {FC, useEffect} from 'react';
 import S from './result.module.scss';
 import { Cross, Title } from '@/components/shared';
+import { NumerologyStore } from '@/store';
+import { useRouter } from 'next/navigation';
 
 interface ResultProps {
     
 }
 
 export const Result:FC<ResultProps> = ({...ResultProps}) =>{
+    const router = useRouter();
+    const answer = NumerologyStore((state)=>state.numerologyAnswer);
+    const numerologyReq = NumerologyStore((state)=>state.numerologyReq);
 
+    useEffect(()=>{
+        if(numerologyReq.length < 1){
+            router.push('/numerology');
+        }
+        
+    })
     return ( 
         <section className={S.container}>
             <Cross href='/numerology'/>
             <div className={S.wrapper}>
                 <Title children='Результат'/>
                 <div className={S.result_container}>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque accusamus perferendis nisi at, distinctio hic! Alias ad doloremque quasi illum cum rem dolorem quod, magni odio facere maxime quaerat sit.</p>
+                    <pre>{answer}</pre>
                 </div>
             </div>
         </section>

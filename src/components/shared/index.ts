@@ -9,6 +9,10 @@ import { Items,Item } from "./lib/mock"
 import Cross from "./UI/cross/Cross"
 import { getTimerDigits,getTimerDigitLink } from "./lib/cardTimerHelper"
 import { getCardsNames } from "./lib/getStoreData"
+import DigitTimer from "./UI/digitTimer/DigitTimer"
+import DreamcatcherTimer from "./UI/dreamcatcherTimer/dreamcatcherTimer"
+
+
 
 
 
@@ -18,7 +22,7 @@ export {
     Burger,
     Navbar,
     Title,
-    CardTimer,
+    CardTimer,DigitTimer,DreamcatcherTimer,
     ICardItem,ICardInfo,ITimerCardInfo,
     Items,
     Item,

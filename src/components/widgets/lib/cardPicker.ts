@@ -16,7 +16,7 @@ const cardNames = [
     'queen_of_cups','queen_of_pentacles','queen_of_swords','queen_of_wands',
     'page_of_cups','page_of_pentacles','page_of_swords','page_of_wands',
     'lovers','chariot','star','sun','moon','strength','temperance',
-    'tower','wheel_of_fortune','world','magician','hermit','fool',
+    'tower','wheelOfFortune','world','magician','hermit','fool',
     'high_priestess','hierophant','hanged_man','devil','empress',
     'emperor','death','justice','judgement'
 ]

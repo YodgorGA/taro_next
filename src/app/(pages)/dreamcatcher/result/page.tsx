@@ -1,20 +1,32 @@
-import {FC} from 'react';
+'use client'
+import {FC, useEffect} from 'react';
 import S from './result.module.scss';
 import { Cross, Title } from '@/components/shared';
+import { useRouter } from 'next/navigation';
+import { DreamcatcherStore } from '@/store';
 
 interface ResultProps {
     
 }
 
 export const Result:FC<ResultProps> = ({...ResultProps}) =>{
+    const router = useRouter();
+    const answer = DreamcatcherStore((state)=>state.dreamcatcherAnswer);
+    const dreamcatcherReq = DreamcatcherStore((state)=>state.dreamcatcherReq);
 
+    useEffect(()=>{
+        if(dreamcatcherReq.length < 1){
+            router.push('/dreamcatcher');
+        }
+        
+    })
     return ( 
         <section className={S.container}>
-            <Cross href='/numerology'/>
+            <Cross href='/dreamcatcher'/>
             <div className={S.wrapper}>
                 <Title children='Результат'/>
                 <div className={S.result_container}>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque accusamus perferendis nisi at, distinctio hic! Alias ad doloremque quasi illum cum rem dolorem quod, magni odio facere maxime quaerat sit.</p>
+                    <pre>{answer}</pre>
                 </div>
             </div>
         </section>

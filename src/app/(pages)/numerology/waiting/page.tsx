@@ -1,8 +1,9 @@
 "use client"
-import {FC} from 'react';
+import {FC, useEffect, useState} from 'react';
 import S from './waiting.module.scss';
-import { Cross, Title } from '@/components/shared';
+import { Cross, DigitTimer, Title } from '@/components/shared';
 import { useRouter } from 'next/navigation'
+import { NumerologyStore } from '@/store';
 
 interface WaitingProps {
     
@@ -10,9 +11,31 @@ interface WaitingProps {
 
 export const Waiting:FC<WaitingProps> = ({...WaitingProps}) =>{
     const router = useRouter();
-    setTimeout(()=>{
-        router.push('/numerology/result');
-    },3000)
+    
+    const numerologyReq = NumerologyStore(state=>state.numerologyReq);
+    const numerologyAnswer = NumerologyStore((state)=>state.setNumerologyAnswer);
+
+    const postQuestion = async (numerologyReq:string)=>{
+        if(numerologyReq !== ''){
+            const response = await fetch('/api/numerology/question',{
+                method:'POST',
+                body: JSON.stringify({numerologyReq}),
+                headers:{
+                    "Content-Type":'applications/json',
+                }
+            });
+            const data:{chatResp:string} = await response.json();
+
+            numerologyAnswer(data.chatResp);
+        }
+    }
+    useEffect(()=>{
+        if(numerologyReq.length < 1){
+            router.push('/numerology');
+        }
+        postQuestion(numerologyReq)
+    })
+
     return ( 
         <section className={S.container}>
             <Cross href='/numerology'/>
@@ -22,9 +45,7 @@ export const Waiting:FC<WaitingProps> = ({...WaitingProps}) =>{
                     <div className={S.timer_remaining__text}>
                         <p>Время ожидания составит:</p>
                     </div>
-                   <div className={S.timer_numbers}>
-                        <p>10:00</p>
-                   </div>
+                    <DigitTimer timerTime={59}/>
                 </div>
             </div>
         </section>

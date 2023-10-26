@@ -1,8 +1,8 @@
 import {FC} from 'react';
 import S from './taro.module.scss';
 import Image from 'next/image';
-import TaroLeft from '/public/assets/images/taroLeft.png';
-import TaroRight from '/public/assets/images/taroRight.png';
+import Taro1 from '/public/assets/images/taroLeft.png';
+import Taro2 from '/public/assets/images/taroRight.png';
 import { FormModal } from '@/components/widgets';
 import {Title } from '@/components/shared';
 
@@ -16,26 +16,26 @@ interface TaroPageProps {
 export const TaroPage:FC<TaroPageProps> = ({...TaroPageProps}) =>{
     
     return ( 
-        <section className={S.taro_container}>
+        <section className={S.container}>
             <Title children='Таро'/>
             <div className={S.content}>
-                <div className={S.content_left}>
-                    <div className={S.image_right}>
-                        <Image fill src={TaroLeft} alt=''/>
+                <div className={S.content_top}>
+                    <div className={S.image_top}>
+                        <Image fill src={Taro1} alt=''/>
                     </div>
                     <div className={S.content_text}>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta eaque quos harum quaerat esse sed officia nulla possimus veritatis maxime doloremque id suscipit hic, culpa quis? Voluptas ullam debitis totam.
+                            Сонник - это справочник символов и интерпретаций, связанных со снами. Ваши сновидения могут содержать ключи к пониманию вашего подсознания и скрытых желаний. С помощью сонника, вы можете разгадать символику ваших снов и получать ценные инсайты.
                         </p>
                     </div>
                 </div>
-                <div className={S.content_right}>
-                    <div className={S.image_right}>
-                        <Image fill src={TaroRight} alt=''/>
+                <div className={S.content_bottom}>
+                    <div className={S.image_bottom}>
+                        <Image fill src={Taro2} alt=''/>
                     </div>
                     <div className={S.content_text}>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio omnis veritatis vero! Ratione libero sint veniam beatae quas magnam autem culpa mollitia reprehenderit cumque quaerat ea repellendus vitae, explicabo nesciunt.
+                        Добро пожаловать на страницу, посвященную соннику, инструменту, который поможет вам понять символику и значения ваших снов. Мы предоставляем вам возможность исследовать тайны своего подсознания через анализ снов.
                         </p>
                     </div>
                 </div>

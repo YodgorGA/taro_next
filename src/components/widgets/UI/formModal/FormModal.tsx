@@ -3,11 +3,12 @@ import {FC, useEffect, useState} from 'react';
 import S from './formModal.module.scss';
 import {usePathname, useRouter} from 'next/navigation';
 import { DreamcatcherStore, TaroStore, NumerologyStore } from '@/store';
-
+import { getDescription,getPlaceholder } from '@/components/widgets';
 
 interface FormModalProps {
     href:string,
 }
+
 
 export const FormModal:FC<FormModalProps> = ({href,...FormModalProps}) =>{
     const [isHidden,setIsHidden] = useState<boolean>(true);
@@ -37,11 +38,13 @@ export const FormModal:FC<FormModalProps> = ({href,...FormModalProps}) =>{
             dreamcatcherReq !== '' && dreamcatcherReq !== undefined && router.push(href)
         }
     }
-    const inputChangeHandler = (e:React.ChangeEvent<HTMLInputElement>)=>{
-            pathname.includes('/taro') && setTaroReq(e.currentTarget.value);
-            pathname.includes('/numerology') && setNumerologyReq(e.currentTarget.value);
-            pathname.includes('/dreamcatcher') && setDreamCatcherReq(e.currentTarget.value);
+    const inputChangeHandler = (e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)=>{
+        pathname.includes('/taro') && setTaroReq(e.currentTarget.value);
+        pathname.includes('/numerology') && setNumerologyReq(e.currentTarget.value);
+        pathname.includes('/dreamcatcher') && setDreamCatcherReq(e.currentTarget.value);
     }
+
+
     return ( 
         <>
             <div className={S.button_container}>
@@ -55,13 +58,18 @@ export const FormModal:FC<FormModalProps> = ({href,...FormModalProps}) =>{
                         <div className={S.modal_fiedls}>
                             <div className={S.modal_question}>
                                 <p>
-                                    Задайте свой вопрос и получите на него расклад ответом
+                                    {getDescription(pathname)}
                                 </p>
                             </div>
                             <div className={S.modal_form}>
                                 <label>Введите ваши данные</label>
                                 <input className={S.modal_input} placeholder={'Ваше имя'} type={'text'}/>
-                                <input onChange={inputChangeHandler} className={S.modal_input} placeholder={'Ваш вопрос'} type={'text'}/>
+                                {pathname.includes('dreamcatcher') ? 
+                                    <textarea onChange={inputChangeHandler} className={S.modal_input} placeholder={getPlaceholder(pathname)}/>
+                                    :
+                                    <input onChange={inputChangeHandler} className={S.modal_input} placeholder={getPlaceholder(pathname)} type={'text'}/>
+                                }
+                                
                             </div>
                             <div className={S.modal_buttonContainer}>
                                 <button onClick={buttonClickHandler} className={S.modal_button}>Узнать ответ</button>

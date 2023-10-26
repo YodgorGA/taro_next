@@ -1,8 +1,9 @@
 "use client"
-import {FC} from 'react';
+import {FC, useEffect} from 'react';
 import S from './processing.module.scss';
 import { Button, Cross, Title } from '@/components/shared';
 import { useRouter } from 'next/navigation'
+import { DreamcatcherStore } from '@/store';
 
 interface TaroProcessingProps {
     
@@ -10,32 +11,41 @@ interface TaroProcessingProps {
 
 export const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps}) =>{
     const router = useRouter()
-    const buttonClickHandler = () =>{
-        router.push('/numerology/waiting');
+
+    const dreamcatcherReq = DreamcatcherStore(state=>state.dreamcatcherReq);
+
+    const getPaymentInfo = async () =>{
+        const response = await fetch('/api/dreamcatcher/payment');
+        return response.json()
     }
+    const buttonClickHandler = () =>{
+        const interval = setInterval(()=>{
+            const payment:Promise<{status:boolean}> = getPaymentInfo();
+            payment.then(response =>{
+                if(response.status === true){
+                    router.push('/dreamcatcher/waiting');
+                    clearInterval(interval)
+                }
+            });
+            
+        },2000)
+    }
+    useEffect(()=>{
+        if(dreamcatcherReq.length <1){
+            router.push('/dreamcatcher');
+        }
+    })
     return ( 
         <section className={S.container}>
-            <Cross href='/numerology'/>
+            <Cross href='/dreamcatcher'/>
             <div className={S.wrapper}>
-                <Title children='Раcклад'/>
-                <div className={S.cards_container}>
-                    <div className={S.cards_cardItemContainer}>
-                        <div key={Math.random()} className={S.cards_cardItem}></div>
-                    </div>
-                    <div className={S.cards_cardItemContainer}>
-                        <div key={Math.random()} className={S.cards_cardItem}></div>
-                    </div>
-                    <div className={S.cards_cardItemContainer}>
-                        <div key={Math.random()} className={S.cards_cardItem}></div>
-                    </div>
-                    <div className={S.cards_cardItemContainer}>
-                        <div key={Math.random()} className={S.cards_cardItem}></div>
-                    </div>
-                    <div className={S.cards_cardItemContainer}>
-                        <div key={Math.random()} className={S.cards_cardItem}></div>
-                    </div>
+                <Title children='Оплата'/>
+                <div className={S.question}>
+                    <p>
+                    Добро пожаловать в захватывающий мир толкования сновидений, где каждая ночь становится загадочным путешествием в глубины вашей подсознательной вселенной. <br/><br/> Желаете продолжить путешествие?
+                    </p>
                 </div>
-                <div className={S.cards_buttonContainer}>
+                <div className={S.buttonContainer}>
                     <Button clickHandler={buttonClickHandler}>Оплатить и узнать результат</Button>
                 </div>
             </div>

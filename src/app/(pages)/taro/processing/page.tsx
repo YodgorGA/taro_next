@@ -37,7 +37,7 @@ export const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps})
 
     }
     useEffect(()=>{
-        if(taroReq === '' || taroReq === undefined){
+        if(taroReq.length < 1){
             router.push('/taro');
         }
     })

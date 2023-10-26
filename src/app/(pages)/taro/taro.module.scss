@@ -1,38 +1,38 @@
 @import '/src/styles/mixins';
 @import '/src/styles/letterals';
 
-.taro{
-    &_container{
-        width: 1152px;
-        height: 700px;
 
-        position: relative;
-        @include flex(column,center,center);
-        @media (max-width: $mobile) {
-            width: 100%;
-            height: fit-content;
-            min-height: 800px;
-        }
+.container{
+    width: 1152px;
+    height: 700px;
+    padding-top:20px;
+    position: relative;
+    @include flex(column,center,center);
+    @media (max-width: $mobile) {
+        width: 100%;
+        height: fit-content;
+        min-height: 800px;
     }
 }
 
-
 .content{
+
     height: 100%;
     width: 1019px;
     margin-top: 30px;
     margin-bottom: 50px;
-    @include flex(row,space-between,flex-start);
+    @include flex(column-reverse,space-between,center);
+    gap:50px;
     @media (max-width: $mobile) {
         @include flex(column,space-between,center);
         height: 650px;
         width: 100%;
         margin: 10px 0px;
     }
-    &_left{
+    &_bottom{
         gap: 20px;
-        width: 50%;
-        height: 100%;
+        width: 100%;
+        height: 50%;
         @include flex(row,space-between,flex-start);
         @media (max-width: $mobile) {
             gap:10px;
@@ -44,13 +44,12 @@
             }
         }
     }
-    &_right{
+    &_top{
         gap: 20px;
-        width: 50%;
-        height: 100%;
-        @include flex(row-reverse,space-between,flex-end);
+        width: 100%;
+        height: 50%;
+        @include flex(row-reverse,space-between,flex-start);
         @media (max-width: $mobile) {
-            @include flex(row-reverse,space-between,flex-end);
             gap:10px;
             width: 100%;
             height: 50%;
@@ -62,9 +61,8 @@
     }
     &_text{
         @include GwenFont(25px);
-        width: 300px;
-        height: 200px;
-        overflow: hidden;
+        width: 90%;
+        height: fit-content;
         @media (max-width: $mobile) {
             font-size: 20px;
             width: 200px;
@@ -73,8 +71,8 @@
 }
 
 .image{
-    &_left{
-        width: 205px;
+    &_top{
+        width: 244px;
         height: 244px;
         position: relative;
         @media (max-width: $mobile) {
@@ -82,8 +80,8 @@
             height: 149px;  
         }
     }
-    &_right{
-       width: 207px;
+    &_bottom{
+       width: 250px;
        height: 207px;
        position: relative;
        @media (max-width: $mobile) {

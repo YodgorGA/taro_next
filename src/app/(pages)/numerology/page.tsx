@@ -3,8 +3,8 @@ import S from './numerology.module.scss';
 import { Title } from '@/components/shared';
 import Image from 'next/image';
 import { FormModal } from '@/components/widgets';
-import numerologyLeft from '/public/assets/images/numerologyLeft.png';
-import numerologyRight from '/public/assets/images/numerologyRight.png';
+import numerology1 from '/public/assets/images/numerologyLeft.png';
+import numerology2 from '/public/assets/images/numerologyRight.png';
 
 interface NumerologyProps {
     
@@ -13,26 +13,26 @@ interface NumerologyProps {
 export const Numerology:FC<NumerologyProps> = ({...NumerologyProps}) =>{
     
     return ( 
-        <section className={S.numerology_container}>
+        <section className={S.container}>
             <Title children='Нумерология'/>
             <div className={S.content}>
-                <div className={S.content_left}>
-                    <div className={S.image_right}>
-                        <Image fill src={numerologyLeft} alt=''/>
+                <div className={S.content_top}>
+                    <div className={S.image_top}>
+                        <Image fill src={numerology1} alt=''/>
                     </div>
                     <div className={S.content_text}>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta eaque quos harum quaerat esse sed officia nulla possimus veritatis maxime doloremque id suscipit hic, culpa quis? Voluptas ullam debitis totam.
+                            Сонник - это справочник символов и интерпретаций, связанных со снами. Ваши сновидения могут содержать ключи к пониманию вашего подсознания и скрытых желаний. С помощью сонника, вы можете разгадать символику ваших снов и получать ценные инсайты.
                         </p>
                     </div>
                 </div>
-                <div className={S.content_right}>
-                    <div className={S.image_right}>
-                        <Image fill src={numerologyRight} alt=''/>
+                <div className={S.content_bottom}>
+                    <div className={S.image_bottom}>
+                        <Image fill src={numerology2} alt=''/>
                     </div>
                     <div className={S.content_text}>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio omnis veritatis vero! Ratione libero sint veniam beatae quas magnam autem culpa mollitia reprehenderit cumque quaerat ea repellendus vitae, explicabo nesciunt.
+                        Добро пожаловать на страницу, посвященную соннику, инструменту, который поможет вам понять символику и значения ваших снов. Мы предоставляем вам возможность исследовать тайны своего подсознания через анализ снов.
                         </p>
                     </div>
                 </div>
