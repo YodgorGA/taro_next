@@ -7,9 +7,9 @@
     @include flex(row,center,center);
     margin-top: 20px;
     margin-bottom: 10px;
-    @include GwenFont(80px);
+    @include GwenFont(50px);
     @media (max-width: $mobile) {
-        font-size: 50px;
+        font-size: 30px;
         height: 80px;
         margin: 10px 0px;
     }

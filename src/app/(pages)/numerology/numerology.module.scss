@@ -4,92 +4,173 @@
 
 .container{
     width: 1152px;
-    height: 700px;
+    height: fit-content;
     padding-top:20px;
     position: relative;
-    @include flex(column,center,center);
+    @include flex(column,flex-start,center);
+    @include GwenFont(25px);
     @media (max-width: $mobile) {
         width: 100%;
         height: fit-content;
-        min-height: 800px;
+        font-size: 20px;
     }
 }
 
-.content{
 
+
+
+.content{
+    .withImage{
+        &__top{
+            width: 100%;
+            @include flex(row,space-between,flex-start);
+            .withImage{
+                &_text{
+                    width: 100%;
+                    @include flex(column,flex-start,center);
+                }
+                &_image{
+                    width: 244px;
+                    height: 244px;
+                    position: relative;
+                    @media (max-width: $mobile) {
+                        width: 120px;
+                        height: 149px;  
+                    }
+                }
+                &_title{
+                    width: 100%;
+                    text-align: center;
+                    margin-bottom: 20px;
+                    height: fit-content;
+                }
+                &_description{
+                    width: 100%;
+                    text-align: start;
+                }
+        
+            }
+            
+        }
+    
+        &__bottom{
+            width: 100%;
+            @include flex(row,space-between,flex-start);
+            .withImage{
+                &_text{
+                    width: 100%;
+                    @include flex(column,flex-start,center);
+                }
+                &_image{
+                    width: 250px;
+                    height: 207px;
+                    position: relative;
+                    @media (max-width: $mobile) {
+                        width: 140px;
+                        height: 132px; 
+                    } 
+                }
+                &_title{
+                    width: 100%;
+                    text-align: center;
+                    margin-bottom: 20px;
+                    height: fit-content;
+                }
+                &_description{
+                    width: 100%;
+                    text-align: end;
+                }
+            }
+            
+        }
+    }
     height: 100%;
     width: 1019px;
     margin-top: 30px;
     margin-bottom: 50px;
-    @include flex(column-reverse,space-between,center);
+    @include flex(column,flex-start,center);
     gap:50px;
     @media (max-width: $mobile) {
-        @include flex(column,space-between,center);
+        @include flex(column,flex-start,center);
         height: 650px;
         width: 100%;
         margin: 10px 0px;
     }
-    &_bottom{
-        gap: 20px;
+}
+
+
+.services{
+    &_container{
         width: 100%;
-        height: 50%;
-        @include flex(row,space-between,flex-start);
+        margin-top: 50px;
+        margin-bottom: 50px;
         @media (max-width: $mobile) {
-            gap:10px;
             width: 100%;
-            height: 40%;
-            padding: 0px 30px;
-            .content_text{
-                height: fit-content;
-            }
         }
     }
-    &_top{
-        gap: 20px;
-        width: 100%;
-        height: 50%;
-        @include flex(row-reverse,space-between,flex-start);
-        @media (max-width: $mobile) {
-            gap:10px;
-            width: 100%;
-            height: 50%;
-            padding: 0px 30px;
-            .content_text{
-                height: fit-content;
-            }
-        }
+    &_header{
+        @include GwenFont(30px);
+        text-align: center;
+        color: $white; 
+        margin-bottom: 20px;
     }
-    &_text{
+    &_list{
         @include GwenFont(25px);
-        width: 90%;
-        height: fit-content;
+        & li{
+            margin-top: 20px;
+        }
+    }
+    &_description{
+
+    }
+}
+
+.purposes{
+    &_container{
+        width: 100%;
+        margin-bottom: 50px;
         @media (max-width: $mobile) {
-            font-size: 20px;
-            width: 200px;
+            width: 100%;
+        }
+    }
+    &_description{
+        @include GwenFont(25px);
+    }
+    &_header{
+        @include GwenFont(30px);
+        text-align: center;
+        color: $white;
+        margin-bottom: 10px;
+    }
+    &_list{
+        @include GwenFont(25px);
+        & li{
+            margin-top: 20px;
         }
     }
 }
 
-.image{
-    &_top{
-        width: 244px;
-        height: 244px;
-        position: relative;
+.afterall{
+    &_container{
+        width: 100%;
         @media (max-width: $mobile) {
-            width: 120px;
-            height: 149px;  
+            width: 100%;
         }
     }
-    &_bottom{
-       width: 250px;
-       height: 207px;
-       position: relative;
-       @media (max-width: $mobile) {
-        width: 140px;
-        height: 132px; 
-       } 
+    &_description{
+        @include GwenFont(25px);
+        margin-top: 20px;
+        width: 100%;
+        @media (max-width: $mobile) {
+            text-align: center;
+        }
+    }
+    &_header{
+        @include GwenFont(30px);
+        color: $white;
+        margin-top: 50px;
+        text-align: center;
     }
 }
-
 
 

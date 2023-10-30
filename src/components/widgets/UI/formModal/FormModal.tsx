@@ -1,5 +1,5 @@
 "use client"
-import {FC, useEffect, useState} from 'react';
+import {FC,useState} from 'react';
 import S from './formModal.module.scss';
 import {usePathname, useRouter} from 'next/navigation';
 import { DreamcatcherStore, TaroStore, NumerologyStore } from '@/store';
