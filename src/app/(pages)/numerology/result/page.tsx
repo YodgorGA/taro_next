@@ -9,7 +9,7 @@ interface ResultProps {
     
 }
 
-export const Result:FC<ResultProps> = ({...ResultProps}) =>{
+const Result:FC<ResultProps> = ({...ResultProps}) =>{
     const router = useRouter();
     const answer = NumerologyStore((state)=>state.numerologyAnswer);
     const numerologyReq = NumerologyStore((state)=>state.numerologyReq);
@@ -24,7 +24,7 @@ export const Result:FC<ResultProps> = ({...ResultProps}) =>{
         <section className={S.container}>
             <Cross href='/numerology'/>
             <div className={S.wrapper}>
-                <Title children='Результат'/>
+                <Title>Результат</Title>
                 <div className={S.result_container}>
                     <pre>{answer}</pre>
                 </div>

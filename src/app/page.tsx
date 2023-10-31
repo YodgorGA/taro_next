@@ -15,7 +15,7 @@ interface MainPageProps {
     
 }
 
-export const MainPage:FC<MainPageProps> = ({...MainPageProps}) =>{
+const MainPage:FC<MainPageProps> = ({...MainPageProps}) =>{
     
     return ( 
         <main className={S.main_container}>

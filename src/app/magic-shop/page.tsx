@@ -11,7 +11,7 @@ interface MagicShopProps {
     
 }
 
-export const MagicShop:FC<MagicShopProps> = ({...MagicShopProps}) =>{
+const MagicShop:FC<MagicShopProps> = ({...MagicShopProps}) =>{
     const [isModalOpen,setIsModalOpen] = useState<boolean>(false);
 
     const toggleModal = () =>{
@@ -21,7 +21,7 @@ export const MagicShop:FC<MagicShopProps> = ({...MagicShopProps}) =>{
         <section className={S.container}>
             <div className={S.wrapper}>
                 <div className={S.shop_container}>
-                <Title children='Лавка магии'/>
+                <Title>Лавка магии</Title>
                     <div className={S.shop_items}>
                         {Items.map((item:ICardItem)=>{
                             return(

@@ -13,11 +13,11 @@ interface TaroPageProps {
 
 
 
-export const TaroPage:FC<TaroPageProps> = ({...TaroPageProps}) =>{
+const TaroPage:FC<TaroPageProps> = ({...TaroPageProps}) =>{
     
     return ( 
         <section className={S.container}>
-            <Title children='Сквозь карты к самопознанию'/>
+            <Title>Сквозь карты к самопознанию</Title>
             <div className={S.content}>
                 <div className={S.withImage__top}>
                     <div className={S.withImage_text}>

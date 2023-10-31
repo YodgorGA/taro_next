@@ -9,7 +9,7 @@ interface TaroProcessingProps {
     
 }
 
-export const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps}) =>{
+const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps}) =>{
     const router = useRouter()
     const numerologyReq = NumerologyStore(state=>state.numerologyReq);
 
@@ -41,7 +41,7 @@ export const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps})
         <section className={S.container}>
             <Cross href='/numerology'/>
             <div className={S.wrapper}>
-                <Title children='Оплата'/>
+                <Title>Оплата</Title>
                 <div className={S.question}>
                     <p>
                     Добро пожаловать в увлекательное приключение с нумерологом, где цифры раскроют вам тайны вашей жизни и помогут расшифровать путь к успеху и счастью.

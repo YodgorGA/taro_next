@@ -5,6 +5,7 @@ const openai = new OpenAI();
 
 
 
+
 const getChatResp = async (request:{taroReq:string,taroCardNames:string}) => {
     
     const completion = await openai.chat.completions.create({

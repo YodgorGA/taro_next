@@ -10,11 +10,11 @@ interface NumerologyProps {
     
 }
 
-export const Numerology:FC<NumerologyProps> = ({...NumerologyProps}) =>{
+const Numerology:FC<NumerologyProps> = ({...NumerologyProps}) =>{
     
     return ( 
         <section className={S.container}>
-            <Title children='Открытие смысла чисел в вашей жизни'/>
+            <Title>Открытие смысла чисел в вашей жизни</Title>
             <div className={S.content}>
                 <div className={S.withImage__top}>
                     <div className={S.withImage_text}>

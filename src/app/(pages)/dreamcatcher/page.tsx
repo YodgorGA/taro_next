@@ -10,11 +10,11 @@ interface DreamcatcherProps {
     
 }
 
-export const Dreamcatcher:FC<DreamcatcherProps> = ({...DreamcatcherProps}) =>{
+const Dreamcatcher:FC<DreamcatcherProps> = ({...DreamcatcherProps}) =>{
     
     return ( 
         <section className={S.container}>
-            <Title children='Расшифруйте символику своих снов'/>
+            <Title >Расшифруйте символику своих снов</Title>
             <div className={S.content}>
                 <div className={S.withImage__top}>
                     <div className={S.withImage_text}>

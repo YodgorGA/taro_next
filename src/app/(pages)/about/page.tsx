@@ -10,7 +10,7 @@ interface AboutPageProps {
     
 }
 
-export const AboutPage:FC<AboutPageProps> = ({...AboutPageProps}) =>{
+const AboutPage:FC<AboutPageProps> = ({...AboutPageProps}) =>{
     
     return ( 
         <section className={S.about_container}>

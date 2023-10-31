@@ -9,7 +9,7 @@ interface TaroProcessingProps {
     
 }
 
-export const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps}) =>{
+const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps}) =>{
     const router = useRouter()
 
     const dreamcatcherReq = DreamcatcherStore(state=>state.dreamcatcherReq);
@@ -39,7 +39,7 @@ export const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps})
         <section className={S.container}>
             <Cross href='/dreamcatcher'/>
             <div className={S.wrapper}>
-                <Title children='Оплата'/>
+                <Title>Оплата</Title>
                 <div className={S.question}>
                     <p>
                     Добро пожаловать в захватывающий мир толкования сновидений, где каждая ночь становится загадочным путешествием в глубины вашей подсознательной вселенной. <br/><br/> Желаете продолжить путешествие?

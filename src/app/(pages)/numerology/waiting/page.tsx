@@ -9,7 +9,7 @@ interface WaitingProps {
     
 }
 
-export const Waiting:FC<WaitingProps> = ({...WaitingProps}) =>{
+const Waiting:FC<WaitingProps> = ({...WaitingProps}) =>{
     const router = useRouter();
     
     const numerologyReq = NumerologyStore(state=>state.numerologyReq);
@@ -40,7 +40,7 @@ export const Waiting:FC<WaitingProps> = ({...WaitingProps}) =>{
         <section className={S.container}>
             <Cross href='/numerology'/>
             <div className={S.wrapper}>
-                <Title children={'Ожидайте'}/>
+                <Title>Ожидайте</Title>
                 <div className={S.timer_container}>
                     <div className={S.timer_remaining__text}>
                         <p>Время ожидания составит:</p>

@@ -13,7 +13,7 @@ interface MagicShopBuyProps {
 }
 
 
-export const MagicShopBuy:FC<MagicShopBuyProps> = ({...MagicShopBuyProps}) =>{
+const MagicShopBuy:FC<MagicShopBuyProps> = ({...MagicShopBuyProps}) =>{
     const pathname = usePathname()
 
     const returnMagicShopGoodName = ()=>{
