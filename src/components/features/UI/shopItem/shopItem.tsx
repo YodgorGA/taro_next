@@ -1,6 +1,6 @@
 "use client"
 import {FC} from 'react';
-import S from './shopitem.module.scss';
+import S from './shopItem.module.scss';
 import Image from 'next/image';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import Link from 'next/link';
