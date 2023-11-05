@@ -6,7 +6,7 @@ const nextConfig = {
         deviceSizes:[1920,1152,1151,640]
     },
     reactStrictMode:false,
-    assetPrefix: isProd ? 'https://portalofmagic.ru' : undefined,
+    assetPrefix: isProd ? 'https://cdn.portalofmagic.ru' : undefined,
 }
 
 module.exports = nextConfig
