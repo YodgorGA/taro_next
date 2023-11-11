@@ -1,46 +1,39 @@
-@import '/src/styles/mixins.scss';
-@import '/src/styles/letterals.scss';
+@import '/src/styles/mixins';
+@import '/src/styles/letterals';
 
-.about{
-    &_container{
-        width: 1152px;
+
+.container{
+    width: 1152px;
+    height: fit-content;
+    padding-top:20px;
+    position: relative;
+    @include flex(column,flex-start,center);
+    @include GwenFont(25px);
+    @media (max-width: $mobile) {
+        width: 100%;
         height: fit-content;
-        position: relative;
-        z-index: 2;
-        @include flex(row,space-between,flex-start);
-        @media (max-width: $desktop){
-            @include flex(column,flex-start,center);
-        }
+        font-size: 20px;
     }
 }
 
 .text{
-    width: 60%;
-    height: 100%;
-    @include flex(column,flex-start,flex-start);
-    @include GwenFont(30px);
-    @media (max-width: $mobile){
-        @include flex(column,flex-start,center);
+    &_title{
+        text-align: center;
+        margin-bottom: 20px;
+        @include GwenFont(33px);
+    }
+    &_content{
+        width: 85%;
+        @include GwenFont(30px);
+        line-height: 150%;
     }
 }
 
-.title{
-    font-size: 60px;
-    margin: 44px 0px 60px 50px;
-    @media (max-width: $mobile){
-         font-size: 40px;
-         margin:20px 0px 0px 0px;
-    }
-}
-.description{
-    margin-left: 70px;
-    @media (max-width: $desktop){
-        height: 400px;
-        font-size: 25px;
-    }
-    @media (max-width: $mobile){
-         height: 300px;
-         margin:20px 0px 0px 0px;
+.hero{
+    width: 100%;
+    @include flex(row,flex-end,center);
+    & .text{
+        margin-right: 30px;
     }
 }
 
@@ -86,7 +79,7 @@
             position: relative;
             width: 194px;
             height: 335px;
-            margin: 0px 50px 112px 0px;
+            margin: 0px 0px 112px 0px;
             @media (max-width: $mobile){
                 margin: 0px 0px 0px 20px;
                 width: 134px;
@@ -94,6 +87,164 @@
             }
 
         }
+    }
+}
+
+
+.content{
+    .withImage{
+        &__top{
+            width: 100%;
+            @include flex(row,space-between,flex-start);
+            .withImage{
+                &_text{
+                    width: 100%;
+                    @include flex(column,flex-start,center);
+                }
+                &_image{
+                    width: 244px;
+                    height: 244px;
+                    position: relative;
+                    @media (max-width: $mobile) {
+                        width: 120px;
+                        height: 149px;  
+                    }
+                }
+                &_title{
+                    width: 100%;
+                    text-align: center;
+                    margin-bottom: 20px;
+                    height: fit-content;
+                }
+                &_description{
+                    width: 100%;
+                    text-align: start;
+                }
+        
+            }
+            
+        }
+    
+        &__bottom{
+            width: 100%;
+            @include flex(row,space-between,flex-start);
+            .withImage{
+                &_text{
+                    width: 100%;
+                    @include flex(column,flex-start,center);
+                }
+                &_image{
+                    width: 250px;
+                    height: 207px;
+                    position: relative;
+                    @media (max-width: $mobile) {
+                        width: 140px;
+                        height: 132px; 
+                    } 
+                }
+                &_title{
+                    width: 100%;
+                    text-align: center;
+                    margin-bottom: 20px;
+                    height: fit-content;
+                }
+                &_description{
+                    width: 100%;
+                    text-align: end;
+                }
+            }
+            
+        }
+    }
+    height: 100%;
+    width: 1019px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    @include flex(column,flex-start,center);
+    gap:50px;
+    @media (max-width: $mobile) {
+        @include flex(column,flex-start,center);
+        height: 650px;
+        width: 100%;
+        margin: 10px 0px;
+    }
+}
+
+
+.services{
+    &_container{
+        width: 100%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        @media (max-width: $mobile) {
+            width: 100%;
+        }
+    }
+    &_description{
+        @include GwenFont(25px);
+    }
+    &_header{
+        @include GwenFont(30px);
+        text-align: center;
+        color: $white; 
+        margin-bottom: 20px;
+    }
+    &_list{
+        @include GwenFont(25px);
+        & li{
+            margin-top: 20px;
+        }
+    }
+    &_description{
+
+    }
+}
+
+.purposes{
+    &_container{
+        width: 100%;
+        margin-bottom: 50px;
+        @media (max-width: $mobile) {
+            width: 100%;
+        }
+    }
+    &_description{
+        @include GwenFont(25px);
+    }
+    &_header{
+        @include GwenFont(30px);
+        text-align: center;
+        color: $white;
+        margin-bottom: 10px;
+    }
+    &_list{
+        @include GwenFont(25px);
+        & li{
+            margin-top: 20px;
+        }
+    }
+}
+
+.afterall{
+    &_container{
+        width: 100%;
+        @media (max-width: $mobile) {
+            width: 100%;
+        }
+    }
+    &_description{
+        @include GwenFont(25px);
+        margin-top: 20px;
+        width: 100%;
+        @media (max-width: $mobile) {
+            text-align: center;
+        }
+    }
+    &_header{
+        @include GwenFont(30px);
+        color: $white;
+        margin-top: 50px;
+        text-align: center;
     }
 }
 
