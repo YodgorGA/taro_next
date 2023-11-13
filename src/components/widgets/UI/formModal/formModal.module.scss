@@ -24,6 +24,9 @@
         height: 100%;
         position: relative;
         @include flex(column,center,center);
+        @media (max-width: $mobile) {
+            justify-content: flex-end;
+        }
     }
     &_blur{
         width: 100%;
@@ -46,8 +49,7 @@
         @media (max-width: $mobile) {
             flex-direction: column;
             border-radius:0px;
-            flex-direction: column;
-            height: 60%;
+            height: 25%;
         }
 
     }
@@ -169,6 +171,12 @@
     @include GwenFont($d_l);
     border-radius: 30px;
     @include flex(column,center,center);
+    @media (max-width: $mobile) {
+        width: 200px;
+        height: 40px;
+        padding: 20px 10px;
+        font-size: $m_l;
+    }
     &_container{
         width: 100%;
         height: 100px;

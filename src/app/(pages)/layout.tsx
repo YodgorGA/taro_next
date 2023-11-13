@@ -32,6 +32,7 @@ export const Layout:FC<LayoutProps> = ({children,...LayoutProps}) =>{
                 </div>
                 {children}
                 <Footer/>
+
             </div>
         </>
     )

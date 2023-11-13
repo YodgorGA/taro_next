@@ -1,3 +1,4 @@
+import { StoreUpdater } from '@/components/shared'
 import '@/styles/index.scss'
 import type { Metadata } from 'next'
 import localFont  from 'next/font/local'
@@ -35,7 +36,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={
         `${Gwen.variable} ${Antarctic.variable}`
-      }>{children}</body>
+      }>
+        <StoreUpdater/>
+        {children}
+        </body>
     </html>
   )
 }

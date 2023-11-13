@@ -1,6 +1,5 @@
 import {FC} from 'react';
 import S from './footer.module.scss';
-import Link from 'next/link';
 
 interface FooterProps {
     

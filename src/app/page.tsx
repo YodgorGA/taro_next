@@ -19,7 +19,6 @@ const MainPage:FC<MainPageProps> = ({...MainPageProps}) =>{
     
     return ( 
         <main className={S.main_container}>
-            <StoreUpdater/>
             <div className={S.backgroundImage_container}>
                 <div className={S.backgroundImage_darkSphere}>
                     

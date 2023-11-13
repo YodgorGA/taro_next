@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Taro1 from '/public/assets/images/taroLeft.png';
 import Taro2 from '/public/assets/images/taroRight.png';
 import { FormModal } from '@/components/widgets';
-import {Title } from '@/components/shared';
+import {Footer, Title } from '@/components/shared';
 
 
 interface TaroPageProps {

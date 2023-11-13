@@ -9,14 +9,7 @@
     margin-bottom: 10px;
     @include GwenFont(50px);
     @media (max-width: $mobile) {
-        font-size: 30px;
+        font-size: $m_xxl;
         height: 80px;
-        margin: 10px 0px;
-    }
-    &_backArrow{
-        width: 40px;
-        height: 30px;
-        margin-right: 20px;
-        @include flex(column,center,center)
     }
 }

@@ -44,7 +44,9 @@ export const FormModal:FC<FormModalProps> = ({href,...FormModalProps}) =>{
         pathname.includes('/dreamcatcher') && setDreamCatcherReq(e.currentTarget.value);
     }
 
-
+    const hideModal = () =>{
+        setIsHidden(true)
+    }
     return ( 
         <>
             <div className={S.button_container}>
@@ -54,7 +56,7 @@ export const FormModal:FC<FormModalProps> = ({href,...FormModalProps}) =>{
                 isHidden === false && 
                 <div className={S.modal_container}>
                     <div className={S.modal_wrapper}>
-                        <div className={S.modal_blur}/>
+                        <div className={S.modal_blur} onClick={hideModal}/>
                         <div className={S.modal_fiedls}>
                             <div className={S.modal_question}>
                                 <p>
