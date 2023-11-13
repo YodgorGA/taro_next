@@ -135,7 +135,7 @@
     text-align:center;
     @include GwenFont($d_xl);
     @media (max-width: $mobile) {
-        width: 350px;
+        width: 95%;
         height: 70px;
         font-size:25px;
         padding-top:0px;
@@ -147,6 +147,7 @@
 
 .image_container{
     @include flex(column,$ai:center,$jc:center);
+    width: 100%;
     .divider{
         width: 2px;
         height: 169px;
@@ -164,9 +165,8 @@
     width:890px;
     height: 500px;
     @media (max-width: $mobile) {
-        padding:0px 40px;
+        width: 100%;
         box-sizing:border-box;
-        width:400px;
         height: 220px;
     }
 }
@@ -177,7 +177,7 @@
         @include AntarcticFont(190px);
         transform:translateY(-230px);
         @media (max-width: $mobile) {
-            font-size: 66px;
+            font-size: 62px;
             transform:translateY(-80px);
         }
     }

@@ -16,14 +16,27 @@ export const metadata: Metadata = {
 }
 
 const Antarctic = localFont({
-  src: './../../public/fonts/Antarctic.otf',
-  variable:'--font-antarctic'
+  src: [{
+    path:'./../../public/fonts/Antarctic.otf',
+    },
+    {
+      path:'./../../public/fonts/Antarctic.woff',
+    },
+  ],
+  weight:'400',
+  style:'normal',
+  variable:'--font-antarctic',
 })
 const Gwen = localFont({
   src: [{
-      path:'./../../public/fonts/GwenTrialRegular.otf'
+      path:'./../../public/fonts/GwenTrialRegular.otf',
     },
+    {
+      path:'./../../public/fonts/GwenTrialRegular.woff',
+    }
   ],
+  weight:'400',
+  style:'normal',
   variable:'--font-gwen'
 })
 
