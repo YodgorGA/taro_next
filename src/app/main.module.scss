@@ -133,7 +133,7 @@
     padding-top:20px;
     height:fit-content;
     text-align:center;
-    @include GwenFont(40px);
+    @include GwenFont($d_xl);
     @media (max-width: $mobile) {
         width: 350px;
         height: 70px;

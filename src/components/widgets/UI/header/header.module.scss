@@ -4,10 +4,12 @@
 .header{
     &_container{
         width: 100%;
+        max-width: 1152px;
         height: 80px;
         border-bottom: 1px solid $beije;
         position: relative;
         z-index: 5;
+        background-color: $black;
     }
 }
 

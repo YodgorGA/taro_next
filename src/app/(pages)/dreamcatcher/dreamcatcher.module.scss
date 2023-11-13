@@ -8,7 +8,7 @@
     padding-top:20px;
     position: relative;
     @include flex(column,flex-start,center);
-    @include GwenFont(25px);
+    @include GwenFont($d_m);
     @media (max-width: $mobile) {
         width: 100%;
         height: fit-content;
@@ -111,13 +111,13 @@
         }
     }
     &_header{
-        @include GwenFont(30px);
+        @include GwenFont($d_l);
         text-align: center;
         color: $white; 
         margin-bottom: 20px;
     }
     &_list{
-        @include GwenFont(25px);
+        @include GwenFont($d_m);
         & li{
             margin-top: 20px;
         }
@@ -136,16 +136,16 @@
         }
     }
     &_description{
-        @include GwenFont(25px);
+        @include GwenFont($d_m);
     }
     &_header{
-        @include GwenFont(30px);
+        @include GwenFont($d_l);
         text-align: center;
         color: $white;
         margin-bottom: 10px;
     }
     &_list{
-        @include GwenFont(25px);
+        @include GwenFont($d_m);
         & li{
             margin-top: 20px;
         }
@@ -160,7 +160,7 @@
         }
     }
     &_description{
-        @include GwenFont(25px);
+        @include GwenFont($d_m);
         margin-top: 20px;
         width: 100%;
         @media (max-width: $mobile) {
@@ -168,7 +168,7 @@
         }
     }
     &_header{
-        @include GwenFont(30px);
+        @include GwenFont($d_l);
         color: $white;
         margin-top: 50px;
         text-align: center;

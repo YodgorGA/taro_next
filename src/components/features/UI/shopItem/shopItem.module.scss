@@ -16,11 +16,11 @@
         }
     }
     &_title{
-        @include GwenFont(25px);
+        @include GwenFont($d_m);
         color:$white;
     }
     &_price{
-        @include GwenFont(25px);
+        @include GwenFont($d_m);
         color:$beije;
     }
     &_button{
@@ -28,7 +28,7 @@
         width: 125px;
         height: 35px;
         padding: 0px 5px;
-        @include GwenFont(25px);
+        @include GwenFont($d_m);
         color:$black;
         background-color: $beije;
         border-radius: 20px;

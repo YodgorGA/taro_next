@@ -19,7 +19,7 @@
     width: 90%;
     height: 300px;
     color:$white;
-    @include GwenFont(40px);
+    @include GwenFont($d_xl);
     text-align: center;
     margin: 50px 0px;
 }

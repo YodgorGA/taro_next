@@ -14,7 +14,7 @@
     &_items{
         @include flex(row,space-around,center);
         color:$beije;
-        @include GwenFont(40px);
+        @include GwenFont($d_xl);
         &> li{
             cursor: pointer;
         }

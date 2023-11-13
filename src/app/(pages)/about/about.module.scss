@@ -20,11 +20,11 @@
     &_title{
         text-align: center;
         margin-bottom: 20px;
-        @include GwenFont(33px);
+        @include GwenFont($d_l);
     }
     &_content{
         width: 85%;
-        @include GwenFont(30px);
+        @include GwenFont($d_m);
         line-height: 150%;
     }
 }
@@ -184,7 +184,7 @@
         @include GwenFont(25px);
     }
     &_header{
-        @include GwenFont(30px);
+        @include GwenFont($d_m);
         text-align: center;
         color: $white; 
         margin-bottom: 20px;
@@ -212,7 +212,7 @@
         @include GwenFont(25px);
     }
     &_header{
-        @include GwenFont(30px);
+        @include GwenFont($d_m);
         text-align: center;
         color: $white;
         margin-bottom: 10px;
@@ -241,7 +241,7 @@
         }
     }
     &_header{
-        @include GwenFont(30px);
+        @include GwenFont($d_m);
         color: $white;
         margin-top: 50px;
         text-align: center;

@@ -23,7 +23,7 @@
         width: 90%;
         height: 80%;
         text-align: center;
-        @include GwenFont(30px);
+        @include GwenFont($d_l);
         @media (max-width: $mobile) {
             font-size: 25px;
         }

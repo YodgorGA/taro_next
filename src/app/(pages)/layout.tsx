@@ -3,6 +3,7 @@ import S from './layout.module.scss';
 import Image from 'next/image'
 import Darkball from '/public/assets/images/dbl.png';
 import Lightball from '/public/assets/images/lbl.png';
+import { Header } from '@/components/widgets';
 
 interface LayoutProps {
     children:React.ReactNode,
@@ -11,8 +12,9 @@ interface LayoutProps {
 export const Layout:FC<LayoutProps> = ({children,...LayoutProps}) =>{
     
     return ( 
-        <>
+        <>  
             <div className={S.layout_container}>
+                <Header/>
                 <div className={S.layout_background}>
                     <div className={S.background_container}>
                         <div className={S.darkBall}>

@@ -6,6 +6,7 @@ import magicShopBackground from '/public/assets/images/magicShopBackground.png';
 import { ICardItem, Title } from '@/components/shared';
 import { Items } from '@/components/shared';
 import { ShopItem } from '@/components/features';
+import { Header } from '@/components/widgets';
 
 interface MagicShopProps {
     
@@ -21,6 +22,7 @@ const MagicShop:FC<MagicShopProps> = ({...MagicShopProps}) =>{
         <section className={S.container}>
             <div className={S.wrapper}>
                 <div className={S.shop_container}>
+                <Header/>
                 <Title>Лавка магии</Title>
                     <div className={S.shop_items}>
                         {Items.map((item:ICardItem)=>{

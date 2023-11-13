@@ -166,7 +166,7 @@
     height: 60px;
     padding: 30px 10px;
     background-color: $beije;
-    @include GwenFont(30px);
+    @include GwenFont($d_l);
     border-radius: 30px;
     @include flex(column,center,center);
     &_container{

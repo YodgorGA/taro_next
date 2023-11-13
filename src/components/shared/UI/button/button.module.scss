@@ -5,7 +5,7 @@
     color:$black;
     @include flex(column,center,center);
     text-align: center;
-    @include GwenFont(30px);
+    @include GwenFont($d_l);
     border-radius: 40px;
     background-color: $beije;
     padding: 20px;

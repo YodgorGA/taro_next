@@ -7,7 +7,7 @@
     @include flex(column,flex-start,flex-start);
     gap: 10px;
     &_label{
-        @include GwenFont(30px);
+        @include GwenFont($d_l);
         @media (max-width: $mobile) {
             font-size: 24px;
         }
@@ -31,7 +31,7 @@
     color: $black;
     width: 160px;
     height: 60px;
-    @include GwenFont(30px);
+    @include GwenFont($d_l);
     @media (max-width: $mobile) {
         font-size: 24px;
     }

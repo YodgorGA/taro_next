@@ -70,14 +70,14 @@
         }
     }
     &_title{
-        @include GwenFont(30px);
+        @include GwenFont($d_l);
         color:$white;
         @media (max-width: $mobile) {
             font-size: 24px;
         }
     }
     &_price{
-        @include GwenFont(30px);
+        @include GwenFont($d_l);
         color: $beije;
         @media (max-width: $mobile) {
             font-size: 24px;
