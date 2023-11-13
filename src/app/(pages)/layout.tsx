@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Darkball from '/public/assets/images/dbl.png';
 import Lightball from '/public/assets/images/lbl.png';
 import { Header } from '@/components/widgets';
+import { Footer } from '@/components/shared';
 
 interface LayoutProps {
     children:React.ReactNode,
@@ -30,6 +31,7 @@ export const Layout:FC<LayoutProps> = ({children,...LayoutProps}) =>{
                     </div>
                 </div>
                 {children}
+                <Footer/>
             </div>
         </>
     )

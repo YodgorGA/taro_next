@@ -11,6 +11,8 @@ import { getTimerDigits,getTimerDigitLink } from "./lib/cardTimerHelper"
 import { getCardsNames } from "./lib/getStoreData"
 import DigitTimer from "./UI/digitTimer/DigitTimer"
 import DreamcatcherTimer from "./UI/dreamcatcherTimer/dreamcatcherTimer"
+import Footer from "./UI/footer/Footer"
+
 
 
 
@@ -21,7 +23,7 @@ export {
     StoreUpdater,getTimerDigits,getTimerDigitLink,getCardsNames,
     Burger,
     Navbar,
-    Title,
+    Title,Footer,
     CardTimer,DigitTimer,DreamcatcherTimer,
     ICardItem,ICardInfo,ITimerCardInfo,
     Items,

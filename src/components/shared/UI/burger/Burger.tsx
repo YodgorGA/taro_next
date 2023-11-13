@@ -25,11 +25,12 @@ export const Burger:FC<BurgerProps> = ({...BurgerProps}) =>{
                 isModalOpen && 
                 <div className={S.modal_container}>
                     <ul className={S.modal_navlist}>
+                        {/* <li key={Math.random()}><Link href={'/magic-shop'}>Лавка магии</Link></li> */}
+                        <li key={Math.random()}><Link href={'/'}>Главная</Link></li>
                         <li key={Math.random()}><Link href={'/taro'}>Таро</Link></li>
-                        <li key={Math.random()}><Link href={'/about'}>История</Link></li>
                         <li key={Math.random()}><Link href={'/numerology'}>Нумерология</Link></li>
                         <li key={Math.random()}><Link href={'/dreamcatcher'}>Сонник</Link></li>
-                        <li key={Math.random()}><Link href={'/magic-shop'}>Лавка магии</Link></li>
+                        <li key={Math.random()}><Link href={'/about'}>История</Link></li>
                     </ul>
                 </div>
             }

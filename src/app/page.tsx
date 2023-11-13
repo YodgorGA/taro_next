@@ -6,7 +6,7 @@ import TelegramIcon from '/public/assets/icons/telegram 1.png'
 import EmaiIcon from '/public/assets/icons/email 1.png'
 import Logo from '/public/assets/icons/magic_portal.png'
 import { Header } from '@/components/widgets';
-import { StoreUpdater } from '@/components/shared';
+import { Footer, StoreUpdater } from '@/components/shared';
 import Darkball from '/public/assets/images/dbl.png';
 import Lightball from '/public/assets/images/lbl.png';
 import Link from 'next/link';
@@ -46,7 +46,7 @@ const MainPage:FC<MainPageProps> = ({...MainPageProps}) =>{
                        
                     </div>
                     <div className={S.description_container}>
-                        <p>Краткое и заманивающее описание услуг</p>
+                        <p>Таро, числа, сны. Откройте двери к своему волшебному будущему</p>
                     </div>
                 </div>
                 <div className={S.image_container}>
@@ -56,10 +56,10 @@ const MainPage:FC<MainPageProps> = ({...MainPageProps}) =>{
                         <p>Портал магии</p>
                     </div>
                 </div>
-                <div className={S.buttons_container}>
+                {/* <div className={S.buttons_container}>
                     <div className={S.button__shop}><Link href={'/magic-shop'}>Купить амулет</Link></div>
-                </div>
-
+                </div> */}
+                <Footer/>
             </div>
 
         </main>
