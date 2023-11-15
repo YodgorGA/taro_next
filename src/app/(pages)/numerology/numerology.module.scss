@@ -11,8 +11,10 @@
     @include GwenFont($d_m);
     @media (max-width: $mobile) {
         width: 100%;
-        height: fit-content;
-        font-size: 20px;
+        font-size: $m_m;
+    }
+    & label{
+        text-align: center;
     }
 }
 
@@ -34,8 +36,9 @@
                     height: 244px;
                     position: relative;
                     @media (max-width: $mobile) {
-                        width: 120px;
-                        height: 149px;  
+                        width: 150px;
+                        height: 149px; 
+                        margin-right: 10px;
                     }
                 }
                 &_title{
@@ -47,19 +50,23 @@
                 &_description{
                     width: 100%;
                     text-align: start;
+                    @media (max-width: $mobile) {
+                        padding: 0px 10px;
+                        width: 100%;
+                        text-align: end;
+                    }
                 }
-        
             }
-            
         }
     
         &__bottom{
             width: 100%;
-            @include flex(row,space-between,center);
+            @include flex(row,space-between,flex-end);
             .withImage{
                 &_text{
                     width: 100%;
                     @include flex(column,flex-start,center);
+
                 }
                 &_image{
                     width: 250px;
@@ -68,6 +75,9 @@
                     @media (max-width: $mobile) {
                         width: 140px;
                         height: 132px; 
+                        align-self: flex-start;
+                        margin-top: 45px;
+                        margin-left: 10px;
                     } 
                 }
                 &_title{
@@ -79,12 +89,17 @@
                 &_description{
                     width: 100%;
                     text-align: end;
+                    @media (max-width: $mobile) {
+                        padding: 0px 10px;
+                        width: 100%;
+                        text-align: start;
+                    }
                 }
             }
             
         }
     }
-    height: 100%;
+    height: fit-content;
     width: 1019px;
     margin-top: 30px;
     margin-bottom: 50px;
@@ -92,7 +107,6 @@
     gap:50px;
     @media (max-width: $mobile) {
         @include flex(column,flex-start,center);
-        height: 650px;
         width: 100%;
         margin: 10px 0px;
     }
@@ -106,6 +120,7 @@
         margin-bottom: 50px;
         @media (max-width: $mobile) {
             width: 100%;
+            padding: 0px 10px;
         }
     }
     &_header{
@@ -113,9 +128,15 @@
         text-align: center;
         color: $white; 
         margin-bottom: 20px;
+        @media (max-width: $mobile) {
+            font-size: $m_l;
+        }
     }
     &_list{
         @include GwenFont($d_m);
+        @media (max-width: $mobile) {
+            font-size: $m_m;
+        }
         & li{
             margin-top: 20px;
         }
@@ -131,19 +152,29 @@
         margin-bottom: 50px;
         @media (max-width: $mobile) {
             width: 100%;
+            padding: 0px 10px;
         }
     }
     &_description{
         @include GwenFont($d_m);
+        @media (max-width: $mobile) {
+            font-size: $m_m;
+        }
     }
     &_header{
         @include GwenFont($d_l);
+        @media (max-width: $mobile) {
+            font-size: $m_l;
+        }
         text-align: center;
         color: $white;
         margin-bottom: 10px;
     }
     &_list{
         @include GwenFont($d_m);
+        @media (max-width: $mobile) {
+            font-size: $m_m;
+        }
         & li{
             margin-top: 20px;
         }
@@ -163,6 +194,7 @@
         width: 100%;
         @media (max-width: $mobile) {
             text-align: center;
+            font-size: $m_m;
         }
     }
     &_header{
@@ -170,6 +202,9 @@
         color: $white;
         margin-top: 50px;
         text-align: center;
+        @media (max-width: $mobile) {
+            font-size: $m_l;
+        }
     }
 }
 
