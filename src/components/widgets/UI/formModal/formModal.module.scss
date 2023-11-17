@@ -5,23 +5,24 @@
     
     &_container{
         position: absolute;
-        top:70%;
+        top:80%;
         left:0;
         right: 0;
         bottom: 0;
         margin: 0 auto;
         width: 80%;
-        height: 20%;
+        height: fit-content;
         @media (max-width: $mobile) {
             width: 100%;
             height: 100%;
             top:0px;
         }
+        @include flex(column,flex-end,center);
 
     }
     &_wrapper{
         width: 100%;
-        height: 100%;
+        height: fit-content;
         position: relative;
         @include flex(column,center,center);
         @media (max-width: $mobile) {
@@ -157,7 +158,7 @@
             height: 50px;
         }
         background-color: $beije;
-        border: none;
+        border:2px solid $black;
     }
 
 

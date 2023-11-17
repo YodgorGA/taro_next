@@ -8,11 +8,13 @@
     padding-top:20px;
     position: relative;
     @include flex(column,flex-start,center);
-    @include GwenFont(25px);
+    @include GwenFont($d_m);
     @media (max-width: $mobile) {
         width: 100%;
-        height: fit-content;
-        font-size: 20px;
+        font-size: $m_m;
+    }
+    & label{
+        text-align: center;
     }
 }
 
@@ -21,10 +23,18 @@
         text-align: center;
         margin-bottom: 20px;
         @include GwenFont($d_l);
+        @media (max-width: $mobile) {
+            font-size: $m_l;
+        }
     }
     &_content{
         width: 85%;
         @include GwenFont($d_m);
+        @media (max-width: $mobile) {
+            font-size: $m_m;
+            text-align: center;
+            padding-left: 15px;
+        }
         line-height: 150%;
     }
 }
@@ -54,15 +64,19 @@
         @media (max-width: $mobile){
              width: 70px;
              height: 70px;
-             left: 130px;
+             left: 0px;
              bottom: 10px;
         }
     }
     .image{
         &_container{
             @include flex(row,center,flex-end);
+            width: 100%;
             height: 100%;
-
+            @media (max-width: $mobile) {
+                padding-right: 10px;
+                box-sizing: border-box;
+            }
         }
         &_candle{
             position: relative;
@@ -71,8 +85,8 @@
             margin: 100px 25px 240px 0px;
             @media (max-width: $mobile){
                 margin: 0px 0px 100px 0px;
-                width: 134px;
-                height: 232px;
+                width: 100%;
+                height: 120px;
             }
         }
         &_cards{
@@ -82,8 +96,8 @@
             margin: 0px 0px 112px 0px;
             @media (max-width: $mobile){
                 margin: 0px 0px 0px 20px;
-                width: 134px;
-                height: 232px;
+                width: 150px;
+                height: 120px;
             }
 
         }
@@ -106,8 +120,9 @@
                     height: 244px;
                     position: relative;
                     @media (max-width: $mobile) {
-                        width: 120px;
-                        height: 149px;  
+                        width: 150px;
+                        height: 149px; 
+                        margin-right: 10px;
                     }
                 }
                 &_title{
@@ -119,19 +134,23 @@
                 &_description{
                     width: 100%;
                     text-align: start;
+                    @media (max-width: $mobile) {
+                        padding: 0px 10px;
+                        width: 100%;
+                        text-align: end;
+                    }
                 }
-        
             }
-            
         }
     
         &__bottom{
             width: 100%;
-            @include flex(row,space-between,flex-start);
+            @include flex(row,space-between,flex-end);
             .withImage{
                 &_text{
                     width: 100%;
                     @include flex(column,flex-start,center);
+
                 }
                 &_image{
                     width: 250px;
@@ -140,6 +159,9 @@
                     @media (max-width: $mobile) {
                         width: 140px;
                         height: 132px; 
+                        align-self: flex-start;
+                        margin-top: 45px;
+                        margin-left: 10px;
                     } 
                 }
                 &_title{
@@ -151,12 +173,17 @@
                 &_description{
                     width: 100%;
                     text-align: end;
+                    @media (max-width: $mobile) {
+                        padding: 0px 10px;
+                        width: 100%;
+                        text-align: start;
+                    }
                 }
             }
             
         }
     }
-    height: 100%;
+    height: fit-content;
     width: 1019px;
     margin-top: 30px;
     margin-bottom: 50px;
@@ -164,7 +191,6 @@
     gap:50px;
     @media (max-width: $mobile) {
         @include flex(column,flex-start,center);
-        height: 650px;
         width: 100%;
         margin: 10px 0px;
     }
@@ -178,21 +204,34 @@
         margin-bottom: 50px;
         @media (max-width: $mobile) {
             width: 100%;
+            padding: 0px 10px;
         }
     }
     &_description{
-        @include GwenFont(25px);
+        @include GwenFont($d_m);
+        @media (max-width: $mobile) {
+            font-size: $m_m;
+        }
     }
     &_header{
         @include GwenFont($d_m);
+        @media (max-width: $mobile) {
+            font-size: $m_m;
+        }
         text-align: center;
         color: $white; 
         margin-bottom: 20px;
+        @media (max-width: $mobile) {
+            font-size: $m_m;
+        }
     }
     &_list{
-        @include GwenFont(25px);
+        @include GwenFont($d_m);
         & li{
             margin-top: 20px;
+        }
+        @media (max-width: $mobile) {
+            font-size: $m_m;
         }
     }
     &_description{
@@ -206,19 +245,29 @@
         margin-bottom: 50px;
         @media (max-width: $mobile) {
             width: 100%;
+            padding: 0px 10px;
         }
     }
     &_description{
-        @include GwenFont(25px);
+        @include GwenFont($d_m);
+        @media (max-width: $mobile) {
+            font-size: $m_m;
+        }
     }
     &_header{
         @include GwenFont($d_m);
+        @media (max-width: $mobile) {
+            font-size: $m_m;
+        }
         text-align: center;
         color: $white;
         margin-bottom: 10px;
     }
     &_list{
-        @include GwenFont(25px);
+        @include GwenFont($d_m);
+        @media (max-width: $mobile) {
+            font-size: $m_m;
+        }
         & li{
             margin-top: 20px;
         }
@@ -230,14 +279,16 @@
         width: 100%;
         @media (max-width: $mobile) {
             width: 100%;
+            padding: 0px 10px;
         }
     }
     &_description{
-        @include GwenFont(25px);
+        @include GwenFont($d_m);
         margin-top: 20px;
         width: 100%;
         @media (max-width: $mobile) {
             text-align: center;
+            font-size: $m_m;
         }
     }
     &_header{
