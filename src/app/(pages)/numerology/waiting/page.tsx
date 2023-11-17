@@ -38,7 +38,6 @@ const Waiting:FC<WaitingProps> = ({...WaitingProps}) =>{
 
     return ( 
         <section className={S.container}>
-            <Cross href='/numerology'/>
             <div className={S.wrapper}>
                 <Title>Ожидайте</Title>
                 <div className={S.timer_container}>

@@ -39,7 +39,6 @@ const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps}) =>{
     })
     return ( 
         <section className={S.container}>
-            <Cross href='/numerology'/>
             <div className={S.wrapper}>
                 <Title>Оплата</Title>
                 <div className={S.question}>

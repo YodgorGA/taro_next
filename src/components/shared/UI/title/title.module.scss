@@ -10,6 +10,6 @@
     @include GwenFont(50px);
     @media (max-width: $mobile) {
         font-size: $m_xxl;
-        height: 80px;
+        height: 20px;
     }
 }

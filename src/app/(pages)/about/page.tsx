@@ -18,9 +18,6 @@ const AboutPage:FC<AboutPageProps> = ({...AboutPageProps}) =>{
             <div className={S.content}>
                 <div className={S.hero}>
                     <div className={S.text}>
-                        <div className={S.text_title}>
-                            Наша команда
-                        </div>
                         <div className={S.text_content}>
                             Мы - команда профессиональных разработчиков и аналитиков, увлеченных миром Таро, нумерологии и сонников. Мы объединили свои усилия, чтобы создать уникальные алгоритмы и инструменты, которые помогут вам исследовать и понимать тайны вашей жизни
                         </div>

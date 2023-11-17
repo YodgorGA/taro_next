@@ -43,9 +43,6 @@ const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps}) =>{
     })
     return ( 
         <section className={S.container}>
-            <div className={S.cross_container}>
-                <Cross href='/taro'/>
-            </div>
             <div className={S.wrapper}>
                 <Title>Раcклад</Title>
                 <TaroCards />

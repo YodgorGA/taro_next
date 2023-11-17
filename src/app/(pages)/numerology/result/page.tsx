@@ -22,7 +22,7 @@ const Result:FC<ResultProps> = ({...ResultProps}) =>{
     })
     return ( 
         <section className={S.container}>
-            <Cross href='/numerology'/>
+            
             <div className={S.wrapper}>
                 <Title>Результат</Title>
                 <div className={S.result_container}>
