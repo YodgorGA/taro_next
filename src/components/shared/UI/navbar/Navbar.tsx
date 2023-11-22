@@ -16,7 +16,7 @@ export const Navbar:FC<NavbarProps> = ({...NavbarProps}) =>{
             <li key={Math.random()}><Link href={'/taro'}>Таро</Link></li>
             <li key={Math.random()}><Link href={'/numerology'}>Нумерология</Link></li>
             <li key={Math.random()}><Link href={'/dreamcatcher'}>Сонник</Link></li>
-            <li key={Math.random()}><Link href={'/about'}>История</Link></li>
+            <li key={Math.random()}><Link href={'/about'}>О нас</Link></li>
             </ul>
         </nav>
     )

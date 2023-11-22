@@ -29,7 +29,7 @@ export const Burger:FC<BurgerProps> = ({...BurgerProps}) =>{
                         <li onClick={burgerClickHandler} key={Math.random()}><Link href={'/taro'}>Таро</Link></li>
                         <li onClick={burgerClickHandler} key={Math.random()}><Link href={'/numerology'}>Нумерология</Link></li>
                         <li onClick={burgerClickHandler} key={Math.random()}><Link href={'/dreamcatcher'}>Сонник</Link></li>
-                        <li onClick={burgerClickHandler} key={Math.random()}><Link href={'/about'}>История</Link></li>
+                        <li onClick={burgerClickHandler} key={Math.random()}><Link href={'/about'}>О нас</Link></li>
                     </ul>
                 </div>
             }
