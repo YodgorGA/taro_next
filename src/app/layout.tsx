@@ -2,8 +2,6 @@ import { StoreUpdater } from '@/components/shared'
 import '@/styles/index.scss'
 import type { Metadata } from 'next'
 import localFont  from 'next/font/local'
-import Head from 'next/head'
-
 
 export const metadata: Metadata = {
   title: 'Портал магии',
@@ -48,9 +46,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${Gwen.variable} ${Antarctic.variable}`}>
+      <body className={
+        `${Gwen.variable} ${Antarctic.variable}`
+      }>
         <StoreUpdater/>
-        {children}
+          {children}
         </body>
     </html>
   )

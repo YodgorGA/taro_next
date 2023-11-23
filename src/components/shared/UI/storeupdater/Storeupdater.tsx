@@ -1,6 +1,5 @@
 "use client"
 import { useDefinition } from '@/store';
-import { YandexMetricaProvider } from 'next-yandex-metrica';
 import { useEffect } from 'react';
 
 export const StoreUpdater = ({...StoreUpdaterProps}) =>{
@@ -13,15 +12,7 @@ export const StoreUpdater = ({...StoreUpdaterProps}) =>{
         setIsMobile()
         console.log(`currentDefinition:${currentDefinition}\nisMobile:${isMobile}`);
     })
-    return (
-    <div>
-        <noscript>
-            <div>
-                <img src="https://mc.yandex.ru/watch/95657739" style={{position:"absolute", left:"-9999px"}} alt="" />
-            </div>
-        </noscript>
-    </div>
-    )
+    return (<div></div>)
 }
 
 export default StoreUpdater
