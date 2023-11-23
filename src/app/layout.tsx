@@ -2,7 +2,6 @@ import { StoreUpdater } from '@/components/shared'
 import '@/styles/index.scss'
 import type { Metadata } from 'next'
 import localFont  from 'next/font/local'
-import { YandexMetricaProvider } from 'next-yandex-metrica'
 
 
 export const metadata: Metadata = {
@@ -48,16 +47,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={
-        `${Gwen.variable} ${Antarctic.variable}`
-      }>
+      <body className={`${Gwen.variable} ${Antarctic.variable}`}>
         <StoreUpdater/>
-        <YandexMetricaProvider
-          tagID={95657739}
-          initParameters={{ clickmap: true, trackLinks: true, accurateTrackBounce: true }}
-        >
-          {children}
-        </YandexMetricaProvider>
+        {children}
         </body>
     </html>
   )

@@ -1,5 +1,6 @@
 "use client"
 import { useDefinition } from '@/store';
+import { YandexMetricaProvider } from 'next-yandex-metrica';
 import { useEffect } from 'react';
 
 export const StoreUpdater = ({...StoreUpdaterProps}) =>{
@@ -12,7 +13,13 @@ export const StoreUpdater = ({...StoreUpdaterProps}) =>{
         setIsMobile()
         console.log(`currentDefinition:${currentDefinition}\nisMobile:${isMobile}`);
     })
-    return (<div></div>)
+    return (
+    <div>
+        <YandexMetricaProvider
+            tagID={95657739}
+            initParameters={{ clickmap: true, trackLinks: true, accurateTrackBounce: true }} children={undefined}
+        />
+    </div>)
 }
 
 export default StoreUpdater
