@@ -29,12 +29,15 @@
             @include GwenFont($d_l);
             text-align: center;
             @media (max-width: $mobile) {
-                font-size: 25px;
+                font-size: $m_l;
             }
         }
     }
     &_numbers{
         @include AntarcticFont(70px);
+        @media (max-width: $mobile) {
+            font-size: 50px;
+        }
     }
 }
 

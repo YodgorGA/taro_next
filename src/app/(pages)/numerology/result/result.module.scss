@@ -25,7 +25,7 @@
         text-align: center;
         @include GwenFont($d_l);
         @media (max-width: $mobile) {
-            font-size: 25px;
+            font-size: $m_l;
         }
         & pre{
             width: 100%;

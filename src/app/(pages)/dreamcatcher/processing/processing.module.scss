@@ -20,6 +20,10 @@
     height: 300px;
     color:$white;
     @include GwenFont($d_xl);
+    @media (max-width: $mobile) {
+        font-size: $m_l;
+        line-height: 1.7;
+    }
     text-align: center;
     margin: 50px 0px;
 }
