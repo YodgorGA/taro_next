@@ -15,11 +15,13 @@ export const StoreUpdater = ({...StoreUpdaterProps}) =>{
     })
     return (
     <div>
-        <YandexMetricaProvider
-            tagID={95657739}
-            initParameters={{ clickmap: true, trackLinks: true, accurateTrackBounce: true }} children={undefined}
-        />
-    </div>)
+        <noscript>
+            <div>
+                <img src="https://mc.yandex.ru/watch/95657739" style={{position:"absolute", left:"-9999px"}} alt="" />
+            </div>
+        </noscript>
+    </div>
+    )
 }
 
 export default StoreUpdater
