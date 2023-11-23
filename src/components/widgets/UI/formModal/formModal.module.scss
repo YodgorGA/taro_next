@@ -123,6 +123,7 @@
         border: none;
         box-shadow: none;
         border-bottom: 2px solid $black;
+        margin-bottom: 30px;
         &::-webkit-input-placeholder{
             @include GwenFont(16px);
             color:$black;
@@ -135,6 +136,7 @@
         @media (max-width: $mobile) {
             width: 90%;
             margin-top: 30px;
+            margin-bottom: 0px;
         }
     }
     &_buttonContainer{
