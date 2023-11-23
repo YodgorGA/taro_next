@@ -2,6 +2,7 @@ import { StoreUpdater } from '@/components/shared'
 import '@/styles/index.scss'
 import type { Metadata } from 'next'
 import localFont  from 'next/font/local'
+import { YMInitializer } from 'react-yandex-metrika'
 
 
 export const metadata: Metadata = {
@@ -52,6 +53,7 @@ export default function RootLayout({
       }>
         <StoreUpdater/>
         {children}
+        <YMInitializer accounts={[95657739]}/>
         </body>
     </html>
   )

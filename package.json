@@ -9,11 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "i": "^0.3.7",
     "next": "latest",
     "node-fetch": "^3.3.2",
+    "npm": "^10.2.4",
     "openai": "^4.0.0",
     "react": "latest",
     "react-dom": "latest",
+    "react-yandex-metrika": "^2.6.0",
     "sharp": "^0.32.6",
     "zustand": "^4.4.1"
   },
