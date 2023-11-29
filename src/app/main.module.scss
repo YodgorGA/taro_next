@@ -162,23 +162,167 @@
 }
 
 .sandclockImage{
-    width:890px;
-    height: 500px;
+    margin-top: 40px;
+    width:500px;
+    height: 289px;
     @media (max-width: $mobile) {
-        width: 100%;
+        width: 70%;
+        margin-top: 25px;
         box-sizing:border-box;
-        height: 220px;
+        height: 120px;
     }
 }
 
+.welcomeText{
+    @include GwenFont($d_xxl);
+    width: 50%;
+    text-align: center;
+    margin-top: 50px;
+    text-shadow: 0px 0px 10px $beije;
+    @media (max-width: $mobile){
+        font-size: $m_xxl;
+        width: 80%;
+        margin-top: 25px;
+    }
+}
+.aboutText{
+    @include flex(row,center,center);
+    margin-top: 40px;
+    @media (max-width: $mobile){
+         margin-top: 20px;
+    }
+    &_heroText{
+        @include GwenFont($d_m);
+        text-align:center;
+        width: 80%;
+
+        @media (max-width: $mobile){
+            font-size: $m_m;
+        }
+    }
+}
+
+.offers{
+    margin-top: 100px;
+    @media (max-width: $mobile){
+        width: 90%;
+        margin-top: 50px;
+    }
+    &_header{
+        @include GwenFont($d_xxl);
+        text-align: center;
+        @media (max-width: $mobile){
+            font-size: $m_xxl;
+        }
+    }
+    &_list{
+        margin-top: 40px;
+        @include flex(column,flex-start,flex-start);
+        gap: 40px;
+        width: 100%;
+    }
+    &_listItem{
+        @include flex(row,flex-start,center);
+        @include GwenFont($d_sm);
+        @media (max-width: $mobile){
+            font-size: $m_sm;
+            & p{
+                width: 80%;
+            }
+        }
+        .listItemImg_container{
+            position: relative;
+            margin-right: 20px;
+            width: 60px;
+            height:60px;
+            
+            & :first-child{
+                filter: drop-shadow(0px 0px 5px $beije);
+                @media (max-width: $mobile){
+                    filter: drop-shadow(0px 0px 2px $beije);
+                }
+            }
+            @media (max-width: $mobile){
+                width: 25px;
+                height: 25px;
+            }
+        }
+    }
+}
+
+.purposes{
+    width: 100%;
+    margin-bottom: 50px;
+    margin-top: 70px;
+    @media (max-width: $mobile) {
+        width: 100%;
+        padding: 0px 10px;
+    }
+    &_description{
+        @include GwenFont($d_sm);
+        @media (max-width: $mobile) {
+            font-size: $m_sm;
+        }
+    }
+    &_header{
+        @include GwenFont($d_xxl);
+        @media (max-width: $mobile) {
+            font-size: $m_xxl;
+        }
+        text-align: center;
+        color: $white;
+        margin-bottom: 10px;
+    }
+    &_list{
+        @include GwenFont($d_sm);
+        gap:30px;
+        @include flex(column,flex-start,flex-start);
+        @media (max-width: $mobile) {
+            font-size: $m_m;
+        }
+        & li{
+            margin-top: 20px;
+        }
+    }
+}
+
+
+.afterall{
+    width: 100%;
+    margin-top: 80px;
+    @media (max-width: $mobile) {
+        width: 100%;
+        padding: 0px 10px;
+    }
+    &_description{
+        @include GwenFont($d_m);
+        margin-top: 20px;
+        line-height: 170%;
+        width: 100%;
+        text-align: center;
+        @media (max-width: $mobile) {
+            text-align: center;
+            font-size: $m_m;
+        }
+    }
+    &_header{
+        @include GwenFont($d_m);
+        color: $white;
+        margin-top: 50px;
+        text-align: center;
+        @media (max-width: $mobile){
+            font-size: $m_m;
+        }
+    }
+}
 .brandname_container{
     & p {
         color: $white;
-        @include AntarcticFont(190px);
-        transform:translateY(-230px);
+        @include AntarcticFont(120px);
+        transform:translateY(-120px);
         @media (max-width: $mobile) {
-            font-size: 62px;
-            transform:translateY(-80px);
+            font-size: 45px;
+            transform:translateY(-50px);
         }
     }
 }
@@ -194,15 +338,16 @@
         &__shop{
             color: #000;
             text-align: center;
-            @include GwenFont(50px);
+            @include GwenFont($d_xxl);
             background-color: $beije;
             padding: 30px;
             border-radius: 100px;
             @media (max-width: $mobile) {
                 width: 250px;
                 height: 70px;
-                font-size: 30px;
+                font-size: $m_xxl;
                 padding: 15px 0px 0px 0px;
+                
             }
         }
 
