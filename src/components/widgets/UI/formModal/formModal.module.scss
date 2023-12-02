@@ -114,6 +114,10 @@
         }
 
     }
+    
+    &_inputGroup{
+        @include flex(row,flex-start,center);
+    }
     &_input{
         margin-top: 20px;
         width: 70%;
@@ -124,6 +128,7 @@
         box-shadow: none;
         border-bottom: 2px solid $black;
         margin-bottom: 30px;
+
         &::-webkit-input-placeholder{
             @include GwenFont(16px);
             color:$black;
@@ -168,8 +173,30 @@
         border:2px solid $black;
     }
 
+}
 
+.arrow{
+    width: 30px;
 
+    height: 15px;
+    background-image: url('/assets/icons/ArrowBlack.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    &_container{
+        @include flex(row,flex-start,center);
+    }
+    &_controlledCounter{
+        @include GwenFont($d_l);
+    }
+    &__left{
+        transform: none;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    &__right{
+        transform: scale(-1,1) ;
+        margin-left: 10px
+    }
 }
 
 .button{

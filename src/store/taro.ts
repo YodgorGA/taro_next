@@ -1,13 +1,13 @@
 import { create } from "zustand";
-import { ICardInfo } from "@/components/shared";
+import { ICardInfo, ITaroReq } from "@/components/shared";
 import { devtools } from 'zustand/middleware'
 
 interface ITaroStore {
-    taroReq:string,
+    taroReq:ITaroReq,
     taroCardItems:ICardInfo[],
     taroAnswer:string,
-    taroCardNames:string,
-    setTaroReq:(reqText:string)=>void,
+    taroCardNames:ITaroReq,
+    setTaroReq:(reqObj:ITaroReq)=>void,
     setTaroCardItems:(cardItems:ICardInfo[])=>void,
     setTaroAnswer:(answer:string)=>void,
     setTaroCardNames:()=>void,
@@ -16,12 +16,12 @@ interface ITaroStore {
 export const TaroStore = create<ITaroStore>()(
     devtools(
         (set)=>({
-            taroReq:'',
+            taroReq:{},
             taroCardItems:[],
             taroAnswer:'',
-            taroCardNames:'',
-            setTaroReq: (reqText:string) =>{
-                set({taroReq: reqText})
+            taroCardNames:{},
+            setTaroReq: (reqObj:ITaroReq) =>{
+                set({taroReq: reqObj})
             },
             setTaroCardItems:(cardItems:ICardInfo[])=>{
                 set({taroCardItems: cardItems})
@@ -39,7 +39,13 @@ export const TaroStore = create<ITaroStore>()(
                         newCardNamesArr.push(`${item[cardName].quantor !== null? item[cardName].quantor:''} ${item[cardName].type}`) 
                     })
                     set({
-                        taroCardNames: newCardNamesArr.join(',')
+                        taroCardNames: {
+                            1:newCardNamesArr[0],
+                            2:newCardNamesArr[1],
+                            3:newCardNamesArr[2],
+                            4:newCardNamesArr[3],
+                            5:newCardNamesArr[4],
+                        }
                     })
                 }     
             }

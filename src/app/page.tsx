@@ -21,10 +21,10 @@ const MainPage:FC<MainPageProps> = ({...MainPageProps}) =>{
             <div className={S.backgroundImage_container}>
                 <div className={S.backgroundImage_darkSphere}>
                     
-                    <Image priority fill sizes={'(min-width:640px) 100vh,(max-width:640px) 25vh'} src={Darkball} alt={''}/>
+                    <Image priority fill sizes={'(min-width:640px) fit-content,(max-width:640px) 25vh'} src={Darkball} alt={''}/>
                 </div>
                 <div className={S.backgroundImage_lightSphere}>
-                    <Image priority fill sizes={'(min-width:640px) 100vh,(max-width:640px) 25vh'} src={Lightball} alt={''}/>
+                    <Image priority fill sizes={'(min-width:640px) fit-content,(max-width:640px) 25vh'} src={Lightball} alt={''}/>
                 </div>
             </div>
             <Header/>

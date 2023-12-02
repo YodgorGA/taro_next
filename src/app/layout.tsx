@@ -51,6 +51,8 @@ export default function RootLayout({
       }>
         <StoreUpdater/>
           {children}
+          <script>
+          </script>
         </body>
     </html>
   )

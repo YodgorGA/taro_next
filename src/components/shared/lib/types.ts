@@ -19,3 +19,8 @@ export interface ITimerCardInfo{
     value:number,
     link:string,
 }
+
+
+export interface ITaroReq{
+    [key:string]:string
+}

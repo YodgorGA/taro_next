@@ -4,7 +4,7 @@ import Navbar from "./UI/navbar/Navbar"
 import Burger from "./UI/burger/Burger"
 import Title from "./UI/title/Title"
 import CardTimer from "./UI/cardTimer/CardTimer"
-import type {ICardItem,ICardInfo,ITimerCardInfo} from "./lib/types";
+import type {ICardItem,ICardInfo,ITimerCardInfo,ITaroReq} from "./lib/types";
 import { Items,Item } from "./lib/mock"
 import Cross from "./UI/cross/Cross"
 import { getTimerDigits,getTimerDigitLink } from "./lib/cardTimerHelper"
@@ -25,7 +25,7 @@ export {
     Navbar,
     Title,Footer,
     CardTimer,DigitTimer,DreamcatcherTimer,
-    ICardItem,ICardInfo,ITimerCardInfo,
+    ICardItem,ICardInfo,ITimerCardInfo,ITaroReq,
     Items,
     Item,
     Cross

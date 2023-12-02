@@ -3,7 +3,7 @@
 
 .container{
     width: 1152px;
-    height: 100vh;
+    height: fit-content;
     position: relative;
     margin: 0 auto;
     @media (max-width: $desktop) {

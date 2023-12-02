@@ -3,7 +3,7 @@
 
 .container{
     width: 1152px;
-    height: 100vh;
+    height: fit-content;
     position: relative;
     @media (max-width: $mobile) {
         width: 100%;
