@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "encoding": "^0.1.13",
     "i": "^0.3.7",
     "next": "latest",
     "node-fetch": "^3.3.2",

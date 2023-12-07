@@ -29,7 +29,9 @@ const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps}) =>{
             payment.then(response =>{
                 if(response.status === true){
                     router.push('/taro/waiting');
+                    console.log("should go to waiting")
                     clearInterval(interval)
+                    console.log("clearInterval(interval)")
                 }
             });
             

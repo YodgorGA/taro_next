@@ -34,9 +34,9 @@ const Waiting:FC<WaitingProps> = ({...WaitingProps}) =>{
         }
     }
     useEffect(()=>{
-        if(taroReq[5] !== '' || taroReq === undefined){
-            router.push('/taro');
-        }
+        //if(taroReq[5] !== '' || taroReq === undefined){
+       //     router.push('/taro');
+       // }
         if(taroCardItems.length > 0){
             setTaroCardNames();
             postQuestion(taroReq,taroCardNames)
