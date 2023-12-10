@@ -18,7 +18,7 @@ const Result:FC<ResultProps> = ({...ResultProps}) =>{
     const taroReq = TaroStore((state)=>state.taroReq);
 
     useEffect(()=>{
-        if(taroReq === '' || taroReq === undefined){
+        if(taroReq[0] === '' || taroReq === undefined){
             router.push('/taro');
         }
         console.log(answer)

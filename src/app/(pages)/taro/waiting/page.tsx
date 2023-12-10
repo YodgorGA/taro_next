@@ -18,8 +18,10 @@ const Waiting:FC<WaitingProps> = ({...WaitingProps}) =>{
     const taroCardItems = TaroStore((state)=>state.taroCardItems);
     const setTaroCardNames = TaroStore((state)=>state.setTaroCardNames);
     const setTaroAnswer = TaroStore((state)=>state.setTaroAnswer);
+    const taroAnswer = TaroStore((state)=>state.taroAnswer);
 
     const postQuestion = async (taroReq:ITaroReq,taroCardNames:ITaroReq) =>{
+        console.log(taroReq,taroCardNames);
         if(taroReq[5] !== '' && taroCardNames[5] !== ''){
             const response = await fetch('/api/taro/question',{
                 method:'POST',
@@ -34,12 +36,17 @@ const Waiting:FC<WaitingProps> = ({...WaitingProps}) =>{
         }
     }
     useEffect(()=>{
-        //if(taroReq[5] !== '' || taroReq === undefined){
-       //     router.push('/taro');
-       // }
+        if(taroReq[1] !== '' || taroReq === undefined){
+           router.push('/taro');
+       }
         if(taroCardItems.length > 0){
             setTaroCardNames();
-            postQuestion(taroReq,taroCardNames)
+            console.log(taroCardNames)
+            if(taroCardNames[1] !== undefined){
+                postQuestion(taroReq,taroCardNames).then(result=>{
+                    console.log(result);
+                })       
+            }            
         } 
     },[taroReq])
     return ( 
@@ -50,7 +57,7 @@ const Waiting:FC<WaitingProps> = ({...WaitingProps}) =>{
                     <div className={S.timer_remaining__text}>
                         <p>Время ожидания составит:</p>
                     </div>
-                   <CardTimer propTime={60}/>
+                   <CardTimer propTime={5}/>
                 </div>
             </div>
         </section>

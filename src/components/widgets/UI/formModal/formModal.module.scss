@@ -1,6 +1,10 @@
 @import '/src/styles/mixins.scss';
 @import '/src/styles/letterals.scss';
 
+
+.hidden {
+    visibility: hidden;
+}
 .modal{
     
     &_container{
