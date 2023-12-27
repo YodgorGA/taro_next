@@ -18,11 +18,17 @@ const Result:FC<ResultProps> = ({...ResultProps}) =>{
     const taroReq = TaroStore((state)=>state.taroReq);
 
     useEffect(()=>{
-        if(taroReq[0] === '' || taroReq === undefined){
+        let hasError = false;
+        for(let key in taroReq){
+            if (taroReq[key] === '' || taroReq === undefined){
+                hasError = true
+            }
+            return
+        }
+        if(!hasError){
             router.push('/taro');
         }
-        console.log(answer)
-    })
+    },[answer])
     return ( 
         <section className={S.container}>
             <div className={S.wrapper}>

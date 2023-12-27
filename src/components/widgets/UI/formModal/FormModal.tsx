@@ -46,6 +46,7 @@ export const FormModal:FC<FormModalProps> = ({href,...FormModalProps}) =>{
     }
     const buttonClickHandler = () =>{
         if(pathname.includes('/taro')){
+            console.log('taroQuestions:');
             console.log(taroQuestions)
             taroQuestions && setTaroReq(taroQuestions)
             taroReq && taroReq[5] !== '' && router.push(href)

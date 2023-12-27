@@ -27,7 +27,7 @@ export const StoreUpdater = ({...StoreUpdaterProps}) =>{
     useEffect(()=>{
         setCurrentDefinition();
         setIsMobile()
-        console.log(`currentDefinition:${currentDefinition}\nisMobile:${isMobile}`);
+        // console.log(`currentDefinition:${currentDefinition}\nisMobile:${isMobile}`);
     })
     return (<div></div>)
 }

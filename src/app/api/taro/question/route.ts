@@ -3,9 +3,6 @@ import OpenAI from "openai";
 const openai = new OpenAI();
 
 
-
-
-
 const getChatResp = async (request:{taroReq:{1:string,2:string,3:string,4:string,5:string},taroCardNames:{1:string,2:string,3:string,4:string,5:string}}) => {
     const {taroReq,taroCardNames} = request;
     const query = `Сделай анализ расклада таро. Первая карта ${taroCardNames[1]} и мой вопрос ${taroReq[1]}, вторая карта ${taroCardNames[2]} и мой вопрос ${taroReq[2]}, третья карта ${taroCardNames[3]} и мой вопрос ${taroReq[3]}, четвертая карта ${taroCardNames[4]} и мой вопрос ${taroReq[4]},  пятая карта ${taroCardNames[5]} и мой вопрос ${taroReq[5]},`
@@ -29,5 +26,6 @@ const getChatResp = async (request:{taroReq:{1:string,2:string,3:string,4:string
 export async function POST(request:Request){
     const response = await request.json()
     const chatResp = await getChatResp(response);
+    console.log(chatResp);
     return NextResponse.json({chatResp});
 }

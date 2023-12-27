@@ -20,8 +20,17 @@ const Waiting:FC<WaitingProps> = ({...WaitingProps}) =>{
     const setTaroAnswer = TaroStore((state)=>state.setTaroAnswer);
 
     const postQuestion = async (taroReq:ITaroReq,taroCardNames:ITaroReq) =>{
-        console.log(taroReq,taroCardNames);
-        if(taroReq[5] !== '' && taroCardNames[5] !== ''){
+        console.log('Waiting\ntaroReq before if')
+        console.log(taroReq)
+        console.log('Waiting\ntaroCardNames before if')
+        console.log(taroCardNames)
+        let haveError = false;
+        for(let key in taroReq){
+            if(taroReq[key].length < 1 || taroCardNames[key].length < 1){
+                haveError = true
+            }
+        }
+        if(!haveError){
             const response = await fetch('/api/taro/question',{
                 method:'POST',
                 body: JSON.stringify({taroReq,taroCardNames}),
@@ -32,11 +41,23 @@ const Waiting:FC<WaitingProps> = ({...WaitingProps}) =>{
             const data:{chatResp:string} = await response.json();
 
             setTaroAnswer(data.chatResp);
+            console.log('Waiting\ntaroReq after if')
+            console.log(taroReq)
+            console.log('Waiting\ntaroCardNames after if')
+            console.log(taroCardNames);
+            
         }
     }
     useEffect(()=>{
+        console.log('Waiting/useEffect/taroCardItems')
+        console.log(taroCardItems);
+        console.log('Waiting/useEffect/taroReq')
+        console.log(taroReq);
+        
         if(taroCardItems.length > 0){
             setTaroCardNames();
+            console.log('Waiting/useEffect/if/taroCardNames after setTaroCardNames')
+            console.log(taroCardNames)
             if(taroCardNames[1] !== undefined){
                 postQuestion(taroReq,taroCardNames).then(result=>{
                 })       
@@ -51,7 +72,7 @@ const Waiting:FC<WaitingProps> = ({...WaitingProps}) =>{
                     <div className={S.timer_remaining__text}>
                         <p>Время ожидания составит:</p>
                     </div>
-                   <CardTimer propTime={60}/>
+                   <CardTimer propTime={5}/>
                 </div>
             </div>
         </section>

@@ -45,9 +45,9 @@ const MainPage:FC<MainPageProps> = ({...MainPageProps}) =>{
                         <p>Что мы предлагаем?</p>
                     </div>
                     <div className={S.offers_list}>
-                        <li className={S.offers_listItem}><div className={S.listItemImg_container}><Image fill src={TaroCardIcon} alt={"https://www.flaticon.com/ru/free-icons/"}/></div><p><span style={{color:'#E5C59E'}}>Таро:</span> Разгадайте символику карт Таро, предсказывайте будущее и познайте себя с помощью мудрости старинных карт</p></li>
-                        <li className={S.offers_listItem}><div className={S.listItemImg_container}><Image fill src={NubmerologyIcon } alt={"https://www.flaticon.com/ru/free-icons/"}/></div><p><span style={{color:'#E5C59E'}}>Нумерология:</span> Понимайте, как числа влияют на вашу жизнь и открывают вам путь к самопознанию</p></li>
-                        <li className={S.offers_listItem}><div className={S.listItemImg_container}><Image fill src={DreamcatcherIcon} alt={"https://www.flaticon.com/ru/free-icons/"}/></div><p><span style={{color:'#E5C59E'}}>Сонник:</span> Интерпретируйте ваши сновидения, раскрывайте их смысл и получайте ценные инсайты.</p></li>
+                        <li className={S.offers_listItem}><div className={S.listItemImg_container}><Image fill sizes='' src={TaroCardIcon} alt={"https://www.flaticon.com/ru/free-icons/"}/></div><p><span style={{color:'#E5C59E'}}>Таро:</span> Разгадайте символику карт Таро, предсказывайте будущее и познайте себя с помощью мудрости старинных карт</p></li>
+                        <li className={S.offers_listItem}><div className={S.listItemImg_container}><Image fill sizes='' src={NubmerologyIcon } alt={"https://www.flaticon.com/ru/free-icons/"}/></div><p><span style={{color:'#E5C59E'}}>Нумерология:</span> Понимайте, как числа влияют на вашу жизнь и открывают вам путь к самопознанию</p></li>
+                        <li className={S.offers_listItem}><div className={S.listItemImg_container}><Image fill sizes='' src={DreamcatcherIcon} alt={"https://www.flaticon.com/ru/free-icons/"}/></div><p><span style={{color:'#E5C59E'}}>Сонник:</span> Интерпретируйте ваши сновидения, раскрывайте их смысл и получайте ценные инсайты.</p></li>
                     </div>
                 </div>
                 <div className={S.purposes}>

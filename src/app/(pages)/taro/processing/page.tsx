@@ -20,6 +20,8 @@ const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps}) =>{
     
     const getPaymentInfo = async () =>{
         const response = await fetch('/api/taro/payment');
+        console.log('getPaymentInfo response')
+        console.log(response);
         return response.json()
     }
     
@@ -39,7 +41,7 @@ const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps}) =>{
 
     }
     useEffect(()=>{
-        if(taroReq[1].length < 1){
+        if(taroReq[1] !== undefined && taroReq[1].length < 1){
             router.push('/taro');
         }
     })
