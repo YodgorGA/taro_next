@@ -35,7 +35,7 @@ const Result:FC<ResultProps> = ({...ResultProps}) =>{
                 <Title>Результат</Title>
                 <div className={S.result_container}>
                     <OpenTaroCards/>
-                    <pre>{answer}</pre>
+                    <pre>{answer !== undefined && answer || 'Ответы на эти вопросы требуют больше времени...'}</pre>
                 </div>
             </div>
         </section>

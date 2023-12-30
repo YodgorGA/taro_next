@@ -1,7 +1,7 @@
 'use client'
 import {FC, useEffect, useState} from 'react';
 import S from './waiting.module.scss';
-import { CardTimer, Cross, ITaroReq, Title } from '@/components/shared';
+import { CardTimer, ITaroReq, Title } from '@/components/shared';
 import { TaroStore } from '@/store';
 import { useRouter } from 'next/navigation';
 
@@ -20,13 +20,9 @@ const Waiting:FC<WaitingProps> = ({...WaitingProps}) =>{
     const setTaroAnswer = TaroStore((state)=>state.setTaroAnswer);
 
     const postQuestion = async (taroReq:ITaroReq,taroCardNames:ITaroReq) =>{
-        console.log('Waiting\ntaroReq before if')
-        console.log(taroReq)
-        console.log('Waiting\ntaroCardNames before if')
-        console.log(taroCardNames)
         let haveError = false;
-        for(let key in taroReq){
-            if(taroReq[key].length < 1 || taroCardNames[key].length < 1){
+        for(let key in taroReq){ 
+            if(taroReq[key].length < 1 || taroCardNames === undefined){
                 haveError = true
             }
         }
@@ -41,25 +37,27 @@ const Waiting:FC<WaitingProps> = ({...WaitingProps}) =>{
             const data:{chatResp:string} = await response.json();
 
             setTaroAnswer(data.chatResp);
-            console.log('Waiting\ntaroReq after if')
-            console.log(taroReq)
-            console.log('Waiting\ntaroCardNames after if')
-            console.log(taroCardNames);
             
         }
     }
+
     useEffect(()=>{
-        console.log('Waiting/useEffect/taroCardItems')
-        console.log(taroCardItems);
-        console.log('Waiting/useEffect/taroReq')
-        console.log(taroReq);
-        
+        let haveErrors = false;
+
         if(taroCardItems.length > 0){
-            setTaroCardNames();
-            console.log('Waiting/useEffect/if/taroCardNames after setTaroCardNames')
-            console.log(taroCardNames)
-            if(taroCardNames[1] !== undefined){
+            Object.values(taroCardItems).forEach(({cardName})=>{
+                cardName !== undefined && cardName.quantor !== '' && cardName.type !== '' && cardName.link !== '' && setTaroCardNames();
+            })
+
+            Object.values(taroCardNames).forEach((cardName)=>{
+                if(cardName !== undefined){
+                    haveErrors = true
+                }
+            })
+            if(!haveErrors && taroCardNames !== undefined){
+                console.log(taroCardNames)
                 postQuestion(taroReq,taroCardNames).then(result=>{
+                    console.log(result);
                 })       
             }            
         } 
@@ -72,7 +70,7 @@ const Waiting:FC<WaitingProps> = ({...WaitingProps}) =>{
                     <div className={S.timer_remaining__text}>
                         <p>Время ожидания составит:</p>
                     </div>
-                   <CardTimer propTime={5}/>
+                   <CardTimer propTime={60}/>
                 </div>
             </div>
         </section>

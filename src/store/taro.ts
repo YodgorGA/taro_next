@@ -30,6 +30,7 @@ export const TaroStore = create<ITaroStore>()(
                 set({taroAnswer: answer})
             },
             setTaroCardNames:()=>{
+                console.log('Generating card names')
                 if(TaroStore.getState().taroCardItems.length > 0){
                     
                     const newCardNamesArr:string[] = [];
