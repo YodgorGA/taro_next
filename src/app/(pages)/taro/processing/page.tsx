@@ -1,10 +1,13 @@
 "use client"
-import { FC, useEffect,} from 'react';
+import { FC, useEffect, useState,} from 'react';
 import S from './processing.module.scss';
 import { Button, Cross, Title } from '@/components/shared';
 import { useRouter } from 'next/navigation';
 import { TaroCards } from '@/components/widgets';
 import { TaroStore } from '@/store';
+import { ICardInfo } from '@/components/shared';
+import { getRandomCardItems } from '@/components/widgets';
+
 
 
 interface TaroProcessingProps {
@@ -14,9 +17,16 @@ interface TaroProcessingProps {
 
 
 const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps}) =>{
+    const [randomCardItems,setrandomCardItems] = useState<ICardInfo[]>([])
     
     const router = useRouter()
     const taroReq = TaroStore(state=>state.taroReq);
+    const taroCardItems = TaroStore(state=>state.taroCardItems);
+    const taroCardNames = TaroStore(state=>state.taroCardNames);
+    const setTaroCardNames = TaroStore((state)=>state.setTaroCardNames);
+
+
+
     
     const getPaymentInfo = async () =>{
         const response = await fetch('/api/taro/payment');
@@ -40,6 +50,15 @@ const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps}) =>{
         },2000)
 
     }
+
+    useEffect(()=>{
+        setTaroCardNames();
+    },[])
+
+    useEffect(()=>{
+        setrandomCardItems(taroCardItems)  
+    },[taroCardNames])
+
     useEffect(()=>{
         if(taroReq[1] !== undefined && taroReq[1].length < 1){
             router.push('/taro');
@@ -49,7 +68,7 @@ const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps}) =>{
         <section className={S.container}>
             <div className={S.wrapper}>
                 <Title>Раcклад</Title>
-                <TaroCards />
+                <TaroCards cardItems={randomCardItems}/>
                 <div className={S.cards_buttonContainer}>
                     <Button clickHandler={buttonClickHandler}>Оплатить и узнать результат</Button>
                 </div>
