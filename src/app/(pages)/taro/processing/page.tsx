@@ -1,12 +1,11 @@
 "use client"
 import { FC, useEffect, useState,} from 'react';
 import S from './processing.module.scss';
-import { Button, Cross, Title } from '@/components/shared';
+import { Button, Title } from '@/components/shared';
 import { useRouter } from 'next/navigation';
 import { TaroCards } from '@/components/widgets';
 import { TaroStore } from '@/store';
 import { ICardInfo } from '@/components/shared';
-import { getRandomCardItems } from '@/components/widgets';
 
 
 
@@ -34,21 +33,21 @@ const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps}) =>{
         console.log(response);
         return response.json()
     }
+
+    const createPayment = async (body:{}) =>{
+        const response = await fetch('/api/taro/payment',{
+            method:'POST',
+            body:JSON.stringify(body)
+        })
+
+        return (response.json())
+    }
     
     const buttonClickHandler = () =>{
-        const interval = setInterval(()=>{
-            const payment:Promise<{status:boolean}> = getPaymentInfo();
-            payment.then(response =>{
-                if(response.status === true){
-                    router.push('/taro/waiting');
-                    console.log("should go to waiting")
-                    clearInterval(interval)
-                    console.log("clearInterval(interval)")
-                }
-            });
-            
-        },2000)
 
+        const payment:Promise<{redirectLink:string}> = createPayment({});
+
+        payment.then(response=>router.push(response.redirectLink))
     }
 
     useEffect(()=>{

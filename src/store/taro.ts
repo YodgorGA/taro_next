@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { ICardInfo, ITaroReq } from "@/components/shared";
-import { devtools } from 'zustand/middleware'
+import { devtools, persist, } from 'zustand/middleware'
 import { getRandomCardItems } from "@/components/widgets";
 
 interface ITaroStore {
@@ -16,6 +16,7 @@ interface ITaroStore {
 
 export const TaroStore = create<ITaroStore>()(
     devtools(
+        persist(
         (set)=>({
             taroReq:{},
             taroCardItems:[],
@@ -57,4 +58,4 @@ export const TaroStore = create<ITaroStore>()(
         }),
         {name: 'TaroStore'}
     )
-)
+))

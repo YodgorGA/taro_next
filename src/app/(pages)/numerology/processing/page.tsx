@@ -13,22 +13,20 @@ const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps}) =>{
     const router = useRouter()
     const numerologyReq = NumerologyStore(state=>state.numerologyReq);
 
-    const getPaymentInfo = async () =>{
-        const response = await fetch('/api/numerology/payment');
-        return response.json()
+    const createPayment = async (body:{}) =>{
+        const response = await fetch('/api/numerology/payment',{
+            method:'POST',
+            body:JSON.stringify(body)
+        })
+
+        return (response.json())
     }
 
     const buttonClickHandler = () =>{
-        const interval = setInterval(()=>{
-            const payment:Promise<{status:boolean}> = getPaymentInfo();
-            payment.then(response =>{
-                if(response.status === true){
-                    router.push('/numerology/waiting');
-                    clearInterval(interval)
-                }
-            });
-            
-        },2000)
+
+        const payment:Promise<{redirectLink:string}> = createPayment({});
+
+        payment.then(response=>router.push(response.redirectLink))
     }
 
 
