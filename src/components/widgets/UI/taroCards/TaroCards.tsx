@@ -1,33 +1,24 @@
-"use client"
-import {FC,useEffect,useState} from 'react';
+import {FC} from 'react';
 import S from './taroCards.module.scss';
 import Image from 'next/image';
 import { ICardInfo } from '@/components/shared';
-import { getRandomCardItems } from '@/components/widgets';
-import { TaroStore } from '@/store';
 
 interface TaroCardsProps {
+    cardItems:ICardInfo[]
 }
 
 
-export const TaroCards:FC<TaroCardsProps> = ({...TaroCardsProps}) =>{
-    const randomCardsArr = getRandomCardItems();
-    const [randomCardItems,setrandomCardItems] = useState<ICardInfo[]>([])
-    const setTaroCardItems = TaroStore(state=>state.setTaroCardItems);
+export const TaroCards:FC<TaroCardsProps> = ({cardItems,...TaroCardsProps}) =>{
 
-    useEffect(()=>{
-        setrandomCardItems(randomCardsArr);
-        setTaroCardItems(randomCardsArr);
-    },[])
     return ( 
         <div className={S.cards_container}>
         {
-            randomCardItems.map((item)=>{
+            cardItems.map((item)=>{
                 const cardItemName = Object.keys(item)[0];
                 return (
                 <div key={Math.random()} className={S.cards_cardItemContainer}>
                     <div  className={S.cards_cardItem}>
-                        <Image src={item[cardItemName].link} fill alt=''/>
+                        <Image src={item[cardItemName].link} fill sizes='' alt=''/>
                     </div>
                 </div>)
             })

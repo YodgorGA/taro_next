@@ -20,7 +20,7 @@ export const OpenTaroCards:FC<OpenTaroCardsProps> = ({...OpenTaroCardsProps}) =>
                 return (
                 <div key={Math.random()} className={S.cards_cardItemContainer}>
                     <div  className={S.cards_cardItem}>
-                        <Image src={`/taroCards/default/${cardItemName}.png`} fill alt=''/>
+                        <Image src={`/taroCards/default/${cardItemName}.png`} sizes='' fill alt=''/>
                     </div>
                 </div>)
             })

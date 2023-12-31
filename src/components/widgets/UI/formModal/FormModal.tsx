@@ -46,6 +46,7 @@ export const FormModal:FC<FormModalProps> = ({href,...FormModalProps}) =>{
     }
     const buttonClickHandler = () =>{
         if(pathname.includes('/taro')){
+            console.log('taroQuestions:');
             console.log(taroQuestions)
             taroQuestions && setTaroReq(taroQuestions)
             taroReq && taroReq[5] !== '' && router.push(href)
@@ -104,9 +105,9 @@ export const FormModal:FC<FormModalProps> = ({href,...FormModalProps}) =>{
                                     }
                                     {   
                                         pathname.includes('taro') && <div className={S.arrow_container}>
-                                         <div onClick={()=>changeQuestNuber('l')} className={`${S.arrow} ${S.arrow__left}`}></div>
+                                         <div onClick={()=>changeQuestNuber('l')} className={`${questionNubmer < 2 && S.hidden} ${S.arrow} ${S.arrow__left}`}></div>
                                          <div className={S.arrow_controlledCounter}>{questionNubmer}</div>
-                                         <div onClick={()=>changeQuestNuber('r')} className={`${S.arrow} ${S.arrow__right}`}></div>
+                                         <div onClick={()=>changeQuestNuber('r')} className={`${questionNubmer > 4 && S.hidden} ${S.arrow} ${S.arrow__right}`}></div>
                                         </div>
 
                                     }

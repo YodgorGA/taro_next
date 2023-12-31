@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { devtools } from 'zustand/middleware'
+import { devtools,persist } from 'zustand/middleware'
 
 interface IDreamcatcherStore {
     dreamcatcherReq:string,
@@ -9,7 +9,7 @@ interface IDreamcatcherStore {
 }
 
 export const DreamcatcherStore = create<IDreamcatcherStore>()(
-    devtools(
+    devtools(persist(
         (set)=>({
             dreamcatcherReq:'',
             dreamcatcherAnswer:'',
@@ -22,4 +22,4 @@ export const DreamcatcherStore = create<IDreamcatcherStore>()(
         }),
         {name: 'DreamcatcherStore'}
     )
-)
+))

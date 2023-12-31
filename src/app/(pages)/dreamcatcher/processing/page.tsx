@@ -14,22 +14,23 @@ const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps}) =>{
 
     const dreamcatcherReq = DreamcatcherStore(state=>state.dreamcatcherReq);
 
-    const getPaymentInfo = async () =>{
-        const response = await fetch('/api/dreamcatcher/payment');
-        return response.json()
+    const createPayment = async (body:{}) =>{
+        const response = await fetch('/api/dreamcatcher/payment',{
+            method:'POST',
+            body:JSON.stringify(body)
+        })
+
+        return (response.json())
     }
+
     const buttonClickHandler = () =>{
-        const interval = setInterval(()=>{
-            const payment:Promise<{status:boolean}> = getPaymentInfo();
-            payment.then(response =>{
-                if(response.status === true){
-                    router.push('/dreamcatcher/waiting');
-                    clearInterval(interval)
-                }
-            });
-            
-        },2000)
+
+        const payment:Promise<{redirectLink:string}> = createPayment({});
+
+        payment.then(response=>router.push(response.redirectLink))
     }
+
+
     useEffect(()=>{
         if(dreamcatcherReq.length <1){
             router.push('/dreamcatcher');

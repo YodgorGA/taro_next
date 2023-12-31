@@ -26,12 +26,12 @@ const TaroPage:FC<TaroPageProps> = ({...TaroPageProps}) =>{
                         </div>
                     </div>
                     <div className={S.withImage_image}>
-                        <Image fill src={Taro1} alt=''/>
+                        <Image fill sizes='' src={Taro1} alt=''/>
                     </div>
                 </div>
                 <div className={S.withImage__bottom}>
                     <div className={S.withImage_image}>
-                        <Image fill src={Taro2} alt=''/>
+                        <Image fill sizes='' src={Taro2} alt=''/>
                     </div>
                     <div className={S.withImage_text}>
                         <div className={S.withImage_title}>

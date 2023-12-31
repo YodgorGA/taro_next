@@ -23,12 +23,12 @@ const Dreamcatcher:FC<DreamcatcherProps> = ({...DreamcatcherProps}) =>{
                         </div>
                     </div>
                     <div className={S.withImage_image}>
-                        <Image fill src={dreamcatcherTop} alt=''/>
+                        <Image fill sizes='' src={dreamcatcherTop} alt=''/>
                     </div>
                 </div>
                 <div className={S.withImage__bottom}>
                     <div className={S.withImage_image}>
-                        <Image fill src={dreamCatcherBottom} alt=''/>
+                        <Image fill sizes='' src={dreamCatcherBottom} alt=''/>
                     </div>
                     <div className={S.withImage_text}>
                         <div className={S.withImage_title}>

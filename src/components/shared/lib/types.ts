@@ -7,7 +7,7 @@ export interface ICardItem{
     price:string,
 }
 
-export interface ICardInfo{
+export interface ICardInfo {
     [key:string]:{
         quantor:string|null,
         type:string,

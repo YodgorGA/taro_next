@@ -1,7 +1,7 @@
 'use client'
 import {FC, useEffect, useState} from 'react';
 import S from './waiting.module.scss';
-import { CardTimer, Cross, ITaroReq, Title } from '@/components/shared';
+import { CardTimer, ITaroReq, Title } from '@/components/shared';
 import { TaroStore } from '@/store';
 import { useRouter } from 'next/navigation';
 
@@ -15,32 +15,29 @@ const Waiting:FC<WaitingProps> = ({...WaitingProps}) =>{
     
     const taroReq = TaroStore(state=>state.taroReq);
     const taroCardNames = TaroStore((state)=>state.taroCardNames);
-    const taroCardItems = TaroStore((state)=>state.taroCardItems);
-    const setTaroCardNames = TaroStore((state)=>state.setTaroCardNames);
     const setTaroAnswer = TaroStore((state)=>state.setTaroAnswer);
 
     const postQuestion = async (taroReq:ITaroReq,taroCardNames:ITaroReq) =>{
-        if(taroReq[5] !== '' && taroCardNames[5] !== ''){
-            const response = await fetch('/api/taro/question',{
-                method:'POST',
-                body: JSON.stringify({taroReq,taroCardNames}),
-                headers:{
-                    "Content-Type":'applications/json',
-                }
-            });
-            const data:{chatResp:string} = await response.json();
-
-            setTaroAnswer(data.chatResp);
-        }
+        const response = await fetch('/api/taro/question',{
+            method:'POST',
+            body: JSON.stringify({taroReq,taroCardNames}),
+            headers:{
+                "Content-Type":'applications/json',
+            }
+        });
+        const data:{chatResp:string} = await response.json();
+        
+        setTaroAnswer(data.chatResp);
     }
+
     useEffect(()=>{
-        if(taroReq[5] !== '' || taroReq === undefined){
-            router.push('/taro');
-        }
-        if(taroCardItems.length > 0){
-            setTaroCardNames();
-            postQuestion(taroReq,taroCardNames)
-        } 
+        if(Object.keys(taroCardNames).length !== 0 && Object.keys(taroReq).length !== 0){
+            postQuestion(taroReq,taroCardNames).then(result=>{
+                console.log(result);
+            })       
+        }else{
+            console.log(`Request isn't sent cause have errors or taroCardNames or taroReq or both are empty `);
+        }            
     },[taroReq])
     return ( 
         <section className={S.container}>

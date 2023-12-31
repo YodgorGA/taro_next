@@ -10,9 +10,7 @@ interface HeaderProps {
 
 export const Header:FC<HeaderProps> = ({...HeaderProps}) =>{
     const isMobile = useDefinition((state)=>state.isMobile);
-    console.log(!isMobile);
     useEffect(()=>{
-        
     },[isMobile])
     return ( 
         <header className={S.header_container}>

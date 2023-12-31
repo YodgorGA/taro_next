@@ -18,18 +18,24 @@ const Result:FC<ResultProps> = ({...ResultProps}) =>{
     const taroReq = TaroStore((state)=>state.taroReq);
 
     useEffect(()=>{
-        if(taroReq === '' || taroReq === undefined){
+        let hasError = false;
+        for(let key in taroReq){
+            if (taroReq[key] === '' || taroReq === undefined){
+                hasError = true
+            }
+            return
+        }
+        if(!hasError){
             router.push('/taro');
         }
-        console.log(answer)
-    })
+    },[answer])
     return ( 
         <section className={S.container}>
             <div className={S.wrapper}>
                 <Title>Результат</Title>
                 <div className={S.result_container}>
                     <OpenTaroCards/>
-                    <pre>{answer}</pre>
+                    <pre>{answer !== undefined && answer || 'Ответы на эти вопросы требуют больше времени...'}</pre>
                 </div>
             </div>
         </section>

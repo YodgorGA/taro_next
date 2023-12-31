@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { ICardInfo, ITaroReq } from "@/components/shared";
-import { devtools } from 'zustand/middleware'
+import { devtools, persist, } from 'zustand/middleware'
+import { getRandomCardItems } from "@/components/widgets";
 
 interface ITaroStore {
     taroReq:ITaroReq,
@@ -15,6 +16,7 @@ interface ITaroStore {
 
 export const TaroStore = create<ITaroStore>()(
     devtools(
+        persist(
         (set)=>({
             taroReq:{},
             taroCardItems:[],
@@ -30,11 +32,14 @@ export const TaroStore = create<ITaroStore>()(
                 set({taroAnswer: answer})
             },
             setTaroCardNames:()=>{
-                if(TaroStore.getState().taroCardItems.length > 0){
+                console.log('Generating card names')
+                const randomCardsArr = getRandomCardItems();
+                set({taroCardItems:randomCardsArr});
+                if(randomCardsArr.length > 0){
                     
                     const newCardNamesArr:string[] = [];
     
-                    TaroStore.getState().taroCardItems.forEach((item:ICardInfo)=>{
+                    randomCardsArr.forEach((item:ICardInfo)=>{
                         const cardName = Object.keys(item)[0];
                         newCardNamesArr.push(`${item[cardName].quantor !== null? item[cardName].quantor:''} ${item[cardName].type}`) 
                     })
@@ -47,9 +52,10 @@ export const TaroStore = create<ITaroStore>()(
                             5:newCardNamesArr[4],
                         }
                     })
-                }     
+                }
+                console.log(TaroStore.getState().taroCardNames)
             }
         }),
         {name: 'TaroStore'}
     )
-)
+))

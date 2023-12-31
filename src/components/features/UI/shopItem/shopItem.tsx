@@ -19,7 +19,7 @@ export const ShopItem:FC<ShopItemProps> = ({alt,price,title,link,img,...ShopItem
     return ( 
         <div className={S.item}>
         <div className={S.item_photo}>
-            <Image fill src={img} alt={alt}/>
+            <Image fill sizes='' src={img} alt={alt}/>
         </div>
         <div className={S.item_title}>
             <p>{title}</p>

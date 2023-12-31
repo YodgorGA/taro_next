@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { devtools } from 'zustand/middleware'
+import { devtools,persist } from 'zustand/middleware'
 
 
 interface INumerologyStore {
@@ -10,7 +10,7 @@ interface INumerologyStore {
 }
 
 export const NumerologyStore = create<INumerologyStore>()(
-    devtools(
+    devtools(persist(
         (set)=>({
             numerologyReq:'',
             numerologyAnswer:'',
@@ -23,4 +23,4 @@ export const NumerologyStore = create<INumerologyStore>()(
         }),
         {name: 'NumerologyStore'}
     )
-)
+))

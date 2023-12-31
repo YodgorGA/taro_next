@@ -43,7 +43,7 @@ const MagicShop:FC<MagicShopProps> = ({...MagicShopProps}) =>{
             </div>
             <div className={S.background}>
                 <div className={S.background_container}>
-                    <Image priority fill src={magicShopBackground} alt=''/> 
+                    <Image priority fill sizes='' src={magicShopBackground} alt=''/> 
                 </div>
             </div>
         </section>
