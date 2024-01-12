@@ -17,6 +17,7 @@ export const FormModal:FC<FormModalProps> = ({href,...FormModalProps}) =>{
     const [taroQuestions,setTaroQuestions] = useState<{[key:string]:string}>();
     const [isQuestChanged,setIsQuestChanged] = useState<boolean>(false);
     const [questInputValue,setQuestInputValue] = useState<string>('');
+    const [userEmail,setUserEmail] = useState<string>('')
     
         
     const setDreamCatcherReq = DreamcatcherStore(state=>state.setDreamcatcherReq);
@@ -62,6 +63,10 @@ export const FormModal:FC<FormModalProps> = ({href,...FormModalProps}) =>{
         })
     }
 
+    const emailInputChangeHanlder = (e:React.ChangeEvent<HTMLInputElement>) =>{
+        
+    }
+
     const hideModal = () =>{
         setIsHidden(true)
     }
@@ -90,9 +95,7 @@ export const FormModal:FC<FormModalProps> = ({href,...FormModalProps}) =>{
                                 <label>Введите ваши данные</label>
                                 <input className={S.modal_input} placeholder={'Ваше имя'} type={'text'}/>
                                 <div className={S.modal_inputGroup}>
-                                    {
-                                        
-                                    }
+                                    <input onChange={emailInputChangeHanlder} className={S.modal_input} placeholder={'Введите вашу почту'} type={'text'} value={questInputValue}/>
                                     {
                                         pathname.includes('dreamcatcher') 
                                         && <textarea onChange={inputChangeHandler} className={S.modal_input} placeholder={getPlaceholder(pathname)}/>

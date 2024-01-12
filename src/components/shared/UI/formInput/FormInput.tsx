@@ -1,13 +1,13 @@
 "use client"
-import {FC,useEffect,useState} from 'react';
+import {FC,useState} from 'react';
 import S from './formInput.module.scss';
 import { getPlaceholder } from '@/components/widgets';
 
 
 interface FormInputProps {
-    id:number,
+    id?:number,
     onChange:(id:number,value:string)=>void,
-    pathname:string
+    pathname?:string
 }
 
 export const FormInput:FC<FormInputProps> = ({id,onChange,pathname}) => {
@@ -15,9 +15,9 @@ export const FormInput:FC<FormInputProps> = ({id,onChange,pathname}) => {
 
     const changeHandler = (e:React.ChangeEvent<HTMLInputElement>) =>{
         setState(e.currentTarget.value)
-        onChange(id,e.currentTarget.value)
+        id && onChange(id,e.currentTarget.value)
     }
   return (
-    <input onChange={changeHandler} id={`${id}`} className={S.input} placeholder={getPlaceholder(pathname)} type={'text'} value={state}/>
+    <input onChange={changeHandler} id={`${id}`} className={S.input} placeholder={pathname && getPlaceholder(pathname)} type={'text'} value={state}/>
   )
 }
