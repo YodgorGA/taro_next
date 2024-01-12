@@ -79,7 +79,9 @@ const TaroPage:FC<TaroPageProps> = ({...TaroPageProps}) =>{
                     </div>
                 </div>
             </div>
-            <FormModal href='/taro/processing'/>
+            <FormModal
+                href='/taro/processing'
+            />
         </section>
     )
 }

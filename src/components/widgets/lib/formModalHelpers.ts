@@ -8,7 +8,7 @@ export const getDescription = (pathname:string) =>{
 
 export const getPlaceholder = (pathname:string) =>{
     let plaseholder:string = '';
-    pathname.includes('taro')? plaseholder = 'Ваши вопросы'
+    pathname.includes('taro')? plaseholder = 'Ваш вопрос'
     :pathname.includes('numerology')? plaseholder = 'Интересующая дата'
     :plaseholder = 'Ваш сон'
     return plaseholder

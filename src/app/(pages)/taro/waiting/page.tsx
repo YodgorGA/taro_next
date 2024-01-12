@@ -47,7 +47,7 @@ const Waiting:FC<WaitingProps> = ({...WaitingProps}) =>{
                     <div className={S.timer_remaining__text}>
                         <p>Время ожидания составит:</p>
                     </div>
-                   <CardTimer propTime={60}/>
+                   <CardTimer propTime={5}/>
                 </div>
             </div>
         </section>

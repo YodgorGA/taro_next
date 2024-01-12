@@ -53,9 +53,14 @@ export async function POST(request:Request){
         });
     
         const data = await response.json();
-    
-        // Верните данные, включая confirmation_url
-        return NextResponse.json({ redirectLink: data.confirmation.confirmation_url });
+
+        if (data.confirmation && data.confirmation.confirmation_url) {
+          // Верните данные, включая confirmation_url
+          return NextResponse.json({ redirectLink: data.confirmation.confirmation_url });
+      } else {
+          // Если свойство отсутствует, возвращаем ошибку
+          return NextResponse.json({ error: 'Confirmation URL not found in the response' });
+      }
       } catch (error) {
         console.error(error);
         return NextResponse.json({ error: 'An error occurred during payment processing' });

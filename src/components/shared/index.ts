@@ -1,3 +1,4 @@
+import { FormInput } from './UI/formInput/FormInput';
 import Button from "./UI/button/Button"
 import StoreUpdater from "./UI/storeupdater/Storeupdater"
 import Navbar from "./UI/navbar/Navbar"
@@ -28,5 +29,6 @@ export {
     ICardItem,ICardInfo,ITimerCardInfo,ITaroReq,
     Items,
     Item,
-    Cross
+    Cross,
+    FormInput
 }
