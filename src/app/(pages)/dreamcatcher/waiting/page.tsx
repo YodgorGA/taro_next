@@ -104,8 +104,8 @@ const Waiting:FC<WaitingProps> = ({...WaitingProps}) =>{
                         <div className={S.timer_remaining__text}>
                             <p>Время ожидания составит:</p>
                         </div>
-                        <DreamcatcherTimer timerTime={5}/></>
-                    }
+                        <DreamcatcherTimer timerTime={Number(process.env.NODE_PUBLIC_TIMER_TIME) || 60}/></>
+                }
                 </div>
             </div>
         </section>

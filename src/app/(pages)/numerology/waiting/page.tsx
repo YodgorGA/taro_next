@@ -103,7 +103,7 @@ const Waiting:FC<WaitingProps> = ({...WaitingProps}) =>{
                         <div className={S.timer_remaining__text}>
                             <p>Время ожидания составит:</p>
                         </div>
-                        <DigitTimer timerTime={5}/></>
+                        <DigitTimer timerTime={Number(process.env.NEXT_PUBLIC_TIMER_TIME) || 60}/></>
                     }
                 </div>
             </div>

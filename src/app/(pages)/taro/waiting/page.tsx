@@ -106,7 +106,7 @@ const Waiting:FC<WaitingProps> = ({...WaitingProps}) =>{
                         <div className={S.timer_remaining__text}>
                             <p>Время ожидания составит:</p>
                         </div>
-                        <CardTimer propTime={5}/></>
+                        <CardTimer propTime={Number(process.env.NODE_PUBLIC_TIMER_TIME) || 60}/></>
                     }
                    
                 </div>
