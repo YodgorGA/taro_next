@@ -33,7 +33,7 @@ const MainPage:FC<MainPageProps> = ({...MainPageProps}) =>{
                     <p>Добро пожаловать на Портал магии</p>
                 </div>
                 <div className={S.image_container}>
-                    <Image priority src={SandClock} alt="Портал магии" className={S.sandclockImage}/>
+                    <Image priority fill sizes='' src={SandClock} alt="Портал магии" className={S.sandclockImage}/>
                 </div>
                 <div className={S.aboutText}>
                     <div className={S.aboutText_heroText}>

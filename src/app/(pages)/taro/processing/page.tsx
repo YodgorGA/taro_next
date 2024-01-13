@@ -30,9 +30,10 @@ const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps}) =>{
     const createPayment = useCreatePayment;
     
     const buttonClickHandler = () =>{
-        
+
         if(userEmail !== null){
-            const payment:Promise<{redirectLink:string,id:string}> = createPayment({redirectLink:'taro',email:userEmail,description:'Тест'});
+            const payment:Promise<{redirectLink:string,id:string}> =
+            createPayment({redirectLink:'taro',email:userEmail,description:'Тест'});
             payment.then(response=>{
                 setPaymentId(response.id)
                 console.log(paymentId,['buttonClickHandler']);    

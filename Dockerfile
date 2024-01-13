@@ -24,10 +24,11 @@ WORKDIR /app
 
 # Копируем только необходимые файлы из builder образа
 COPY --from=builder /app/.next /app/.next
+COPY --from=builder /app/public /app/public
 COPY --from=builder /app/package*.json /app/
 
 # Устанавливаем только необходимые зависимости
-RUN npm install --production
+RUN npm install --omit=dev
 
 EXPOSE 3000
 

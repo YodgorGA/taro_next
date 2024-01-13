@@ -26,6 +26,5 @@ const getChatResp = async (request:{taroReq:{1:string,2:string,3:string,4:string
 export async function POST(request:Request){
     const response = await request.json()
     const chatResp = await getChatResp(response);
-    console.log(chatResp);
     return NextResponse.json({chatResp});
 }
