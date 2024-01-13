@@ -1,11 +1,16 @@
-import { randomUUID } from "crypto";
 import { NextResponse } from "next/server";
+import { randomUUID } from "crypto";
+
 
 export async function POST(request:Request){
 
+    const { email,description,redirectLink } = await request.json()
+    
     const shopId = process.env.YOO_KASSA_SHOP_ID;
     const secretKey = process.env.YOO_KASSA_SHOP_SECRET_KEY;
     const idempotenceKey = randomUUID();
+
+    console.log(redirectLink,['create-payment'])
 
     const requestData = {
         amount: {
@@ -17,9 +22,10 @@ export async function POST(request:Request){
         },
         confirmation: {
           type: 'redirect',
-          return_url: `${process.env.YOO_KASSA_REDIRECT_URL}/numerology/waiting`,
+          return_url: `${process.env.YOO_KASSA_REDIRECT_URL}/${redirectLink}/waiting`,
         },
-        description: 'Заказ №72',
+        capture:true,
+        description: description || 'Услуги Портала Магии',
         receipt: {
             items: [
               {
@@ -33,8 +39,7 @@ export async function POST(request:Request){
               },
             ],
             customer: {
-                email: 'customer@example.com',
-                phone: '79111234567',
+                email: email,
             },
         },
 
@@ -53,14 +58,14 @@ export async function POST(request:Request){
         });
     
         const data = await response.json();
-
-        if (data.confirmation && data.confirmation.confirmation_url) {
-          // Верните данные, включая confirmation_url
-          return NextResponse.json({ redirectLink: data.confirmation.confirmation_url });
-      } else {
-          // Если свойство отсутствует, возвращаем ошибку
-          return NextResponse.json({ error: 'Confirmation URL not found in the response' });
-      }
+        
+        console.log(data,['create-payment'])
+    
+        // Верните данные, включая confirmation_url
+        return NextResponse.json({ 
+          redirectLink: data.confirmation.confirmation_url,
+          id: data.id
+        });
       } catch (error) {
         console.error(error);
         return NextResponse.json({ error: 'An error occurred during payment processing' });

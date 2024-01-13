@@ -27,6 +27,5 @@ const getChatResp = async (request:{numerologyReq:string}) => {
 export async function POST(request:Request){
     const response = await request.json()
     const chatResp = await getChatResp(response);
-    console.log(response);
     return NextResponse.json({chatResp});
 }

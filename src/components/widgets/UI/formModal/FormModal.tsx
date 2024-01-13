@@ -2,7 +2,7 @@
 import {FC,useEffect,useState} from 'react';
 import S from './formModal.module.scss';
 import {usePathname, useRouter} from 'next/navigation';
-import { DreamcatcherStore, TaroStore, NumerologyStore } from '@/store';
+import { DreamcatcherStore, TaroStore, NumerologyStore, PaymentData } from '@/store';
 import { getDescription,getPlaceholder } from '@/components/widgets';
 import { FormInput, ITaroReq } from '@/components/shared';
 
@@ -18,6 +18,7 @@ export const FormModal:FC<FormModalProps> = ({href,...FormModalProps}) =>{
     const [isQuestChanged,setIsQuestChanged] = useState<boolean>(false);
     const [questInputValue,setQuestInputValue] = useState<string>('');
     const [userEmail,setUserEmail] = useState<string>('')
+    const setEmail = PaymentData(state=>state.setEmail);
     
         
     const setDreamCatcherReq = DreamcatcherStore(state=>state.setDreamcatcherReq);
@@ -35,11 +36,24 @@ export const FormModal:FC<FormModalProps> = ({href,...FormModalProps}) =>{
         isHidden === true? setIsHidden(false) : setIsHidden(true);
     }
     const buttonClickHandler = () =>{
+
+        const getIsEmailValid = (value:string) =>{
+            let isValid = false
+            const emailRegex = /^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$/;
+            isValid = emailRegex.test(value);
+            return isValid
+        }
         if(pathname.includes('/taro')){
-            console.log('taroQuestions:');
-            console.log(taroQuestions)
-            taroQuestions && setTaroReq(taroQuestions)
-            taroReq && taroReq[5] !== '' && router.push(href)
+            if(taroReq && taroQuestions && getIsEmailValid(userEmail) === true){
+                console.log('taroQuestions:');
+                console.log(taroQuestions);
+                setEmail(userEmail);
+                setTaroReq(taroQuestions)
+                taroReq[5] !== '' && router.push(href)
+            }
+
+
+            
         }
         if(pathname.includes('/numerology')){
             numerologyReq !== '' && numerologyReq !== undefined && router.push(href)
@@ -64,7 +78,7 @@ export const FormModal:FC<FormModalProps> = ({href,...FormModalProps}) =>{
     }
 
     const emailInputChangeHanlder = (e:React.ChangeEvent<HTMLInputElement>) =>{
-        
+        setUserEmail(e.currentTarget.value)
     }
 
     const hideModal = () =>{
@@ -95,7 +109,7 @@ export const FormModal:FC<FormModalProps> = ({href,...FormModalProps}) =>{
                                 <label>Введите ваши данные</label>
                                 <input className={S.modal_input} placeholder={'Ваше имя'} type={'text'}/>
                                 <div className={S.modal_inputGroup}>
-                                    <input onChange={emailInputChangeHanlder} className={S.modal_input} placeholder={'Введите вашу почту'} type={'text'} value={questInputValue}/>
+                                    <input onChange={emailInputChangeHanlder} className={S.modal_input} placeholder={'Введите вашу почту'} type={'text'} value={userEmail}/>
                                     {
                                         pathname.includes('dreamcatcher') 
                                         && <textarea onChange={inputChangeHandler} className={S.modal_input} placeholder={getPlaceholder(pathname)}/>

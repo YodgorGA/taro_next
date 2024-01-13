@@ -53,7 +53,7 @@ export const TaroStore = create<ITaroStore>()(
                         }
                     })
                 }
-                console.log(TaroStore.getState().taroCardNames)
+                
             }
         }),
         {name: 'TaroStore'}

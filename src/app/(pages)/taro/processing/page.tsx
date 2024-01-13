@@ -4,8 +4,9 @@ import S from './processing.module.scss';
 import { Button, Title } from '@/components/shared';
 import { useRouter } from 'next/navigation';
 import { TaroCards } from '@/components/widgets';
-import { TaroStore } from '@/store';
+import { TaroStore, PaymentData } from '@/store';
 import { ICardInfo } from '@/components/shared';
+import { useCreatePayment } from '@/components/shared/api/createPayment';
 
 
 
@@ -23,31 +24,21 @@ const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps}) =>{
     const taroCardItems = TaroStore(state=>state.taroCardItems);
     const taroCardNames = TaroStore(state=>state.taroCardNames);
     const setTaroCardNames = TaroStore((state)=>state.setTaroCardNames);
-
-
-
-    
-    const getPaymentInfo = async () =>{
-        const response = await fetch('/api/taro/payment');
-        console.log('getPaymentInfo response')
-        console.log(response);
-        return response.json()
-    }
-
-    const createPayment = async (body:{}) =>{
-        const response = await fetch('/api/taro/payment',{
-            method:'POST',
-            body:JSON.stringify(body)
-        })
-
-        return (response.json())
-    }
+    const userEmail = PaymentData(state=>state.email)
+    const paymentId = PaymentData(state=>state.paymentId)
+    const setPaymentId = PaymentData(state=>state.setPaymentId);
+    const createPayment = useCreatePayment;
     
     const buttonClickHandler = () =>{
-
-        const payment:Promise<{redirectLink:string}> = createPayment({});
-
-        payment.then(response=>router.push(response.redirectLink))
+        
+        if(userEmail !== null){
+            const payment:Promise<{redirectLink:string,id:string}> = createPayment({redirectLink:'taro',email:userEmail,description:'Тест'});
+            payment.then(response=>{
+                setPaymentId(response.id)
+                console.log(paymentId,['buttonClickHandler']);    
+                router.push(response.redirectLink)
+            }).catch(error=>console.error(error))
+        }
     }
 
     useEffect(()=>{

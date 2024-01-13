@@ -1,9 +1,9 @@
 "use client"
 import { FC, useEffect } from 'react';
 import S from './processing.module.scss';
-import { Button, Cross, Title } from '@/components/shared';
+import { Button, Cross, Title, useCreatePayment } from '@/components/shared';
 import { useRouter } from 'next/navigation'
-import { NumerologyStore } from '@/store';
+import { NumerologyStore, PaymentData } from '@/store';
 
 interface TaroProcessingProps {
     
@@ -11,22 +11,24 @@ interface TaroProcessingProps {
 
 const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps}) =>{
     const router = useRouter()
+    const createPayment = useCreatePayment;
+
     const numerologyReq = NumerologyStore(state=>state.numerologyReq);
-
-    const createPayment = async (body:{}) =>{
-        const response = await fetch('/api/numerology/payment',{
-            method:'POST',
-            body:JSON.stringify(body)
-        })
-
-        return (response.json())
-    }
+    const paymentId = PaymentData(state=>state.paymentId)
+    const userEmail = PaymentData(state=>state.email)
+    const setPaymentId = PaymentData(state=>state.setPaymentId);
 
     const buttonClickHandler = () =>{
-
-        const payment:Promise<{redirectLink:string}> = createPayment({});
-
-        payment.then(response=>router.push(response.redirectLink))
+        
+        if(userEmail !== null){
+            const payment:Promise<{redirectLink:string,id:string}> = 
+            createPayment({redirectLink:'numerology',email:userEmail,description:'Тест'});
+            payment.then(response=>{
+                setPaymentId(response.id)
+                console.log(paymentId,['buttonClickHandler']);    
+                router.push(response.redirectLink)
+            }).catch(error=>console.error(error))
+        }
     }
 
 
@@ -54,4 +56,8 @@ const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps}) =>{
 }
 
 export default TaroProcessing
+
+function createPayment(arg0: { email: string; description: string; }): Promise<{ redirectLink: string; id: string; }> {
+    throw new Error('Function not implemented.');
+}
 

@@ -1,3 +1,4 @@
+import { useCreatePayment } from './api/createPayment';
 import { FormInput } from './UI/formInput/FormInput';
 import Button from "./UI/button/Button"
 import StoreUpdater from "./UI/storeupdater/Storeupdater"
@@ -30,5 +31,6 @@ export {
     Items,
     Item,
     Cross,
-    FormInput
+    FormInput,
+    useCreatePayment
 }
