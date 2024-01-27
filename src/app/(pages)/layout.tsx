@@ -20,12 +20,12 @@ export const Layout:FC<LayoutProps> = ({children,...LayoutProps}) =>{
                     <div className={S.background_container}>
                         <div className={S.darkBall}>
                             <div className={S.darkBall_container}>
-                                <Image fill sizes='' src={Darkball} alt=''/>
+                                <img style={{position:'absolute',top:0,left:0,right:0,bottom:0,width:'100%',height:'100%'}} src={Darkball.src} alt=''/>
                             </div>
                         </div>
                         <div className={S.lightBall}>
                             <div className={S.lightBall_container}>
-                                <Image fill sizes='' src={Lightball} alt=''/>
+                                <img style={{position:'absolute',top:0,left:0,right:0,bottom:0,width:'100%',height:'100%'}} src={Lightball.src} alt=''/>
                             </div>
                         </div>
                     </div>

@@ -57,7 +57,4 @@ const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps}) =>{
 
 export default TaroProcessing
 
-function createPayment(arg0: { email: string; description: string; }): Promise<{ redirectLink: string; id: string; }> {
-    throw new Error('Function not implemented.');
-}
 

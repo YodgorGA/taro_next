@@ -1,13 +1,11 @@
 "use client"
 import {FC} from 'react';
 import S from './shopItem.module.scss';
-import Image from 'next/image';
-import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import Link from 'next/link';
 
 
 export interface ShopItemProps {
-    img:string|StaticImport,
+    img:string,
     link:string
     alt:string,
     title:string,
@@ -19,7 +17,7 @@ export const ShopItem:FC<ShopItemProps> = ({alt,price,title,link,img,...ShopItem
     return ( 
         <div className={S.item}>
         <div className={S.item_photo}>
-            <Image fill sizes='' src={img} alt={alt}/>
+            <img style={{position:'absolute',top:0,left:0,right:0,bottom:0,width:'100%',height:'100%'}} src={img} alt={alt}/>
         </div>
         <div className={S.item_title}>
             <p>{title}</p>

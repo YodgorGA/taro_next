@@ -20,11 +20,11 @@ const MainPage:FC<MainPageProps> = ({...MainPageProps}) =>{
         <main className={S.main_container}>
             <div className={S.backgroundImage_container}>
                 <div className={S.backgroundImage_darkSphere}>
-                    
-                    <Image priority fill sizes={'(min-width:640px) fit-content,(max-width:640px) 25vh'} src={Darkball} alt={''}/>
+
+                    <img style={{position:'absolute',top:0,left:0,right:0,bottom:0,width:'100%',height:'100%'}} src={Darkball.src} alt={''} />
                 </div>
                 <div className={S.backgroundImage_lightSphere}>
-                    <Image priority fill sizes={'(min-width:640px) fit-content,(max-width:640px) 25vh'} src={Lightball} alt={''}/>
+                    <img style={{position:'absolute',top:0,left:0,right:0,bottom:0,width:'100%',height:'100%'}} src={Lightball.src} alt={''} />
                 </div>
             </div>
             <Header/>
@@ -33,7 +33,7 @@ const MainPage:FC<MainPageProps> = ({...MainPageProps}) =>{
                     <p>Добро пожаловать на Портал магии</p>
                 </div>
                 <div className={S.image_container}>
-                    <Image priority src={SandClock} alt="Портал магии" className={S.sandclockImage}/>
+                    <img style={{position:'absolute',top:0,left:0,right:0,bottom:0,width:'100%',height:'100%'}} src={SandClock.src} alt="Портал магии" className={S.sandclockImage}/>
                 </div>
                 <div className={S.aboutText}>
                     <div className={S.aboutText_heroText}>
@@ -45,9 +45,9 @@ const MainPage:FC<MainPageProps> = ({...MainPageProps}) =>{
                         <p>Что мы предлагаем?</p>
                     </div>
                     <div className={S.offers_list}>
-                        <li className={S.offers_listItem}><div className={S.listItemImg_container}><Image fill sizes='' src={TaroCardIcon} alt={"https://www.flaticon.com/ru/free-icons/"}/></div><p><span style={{color:'#E5C59E'}}>Таро:</span> Разгадайте символику карт Таро, предсказывайте будущее и познайте себя с помощью мудрости старинных карт</p></li>
-                        <li className={S.offers_listItem}><div className={S.listItemImg_container}><Image fill sizes='' src={NubmerologyIcon } alt={"https://www.flaticon.com/ru/free-icons/"}/></div><p><span style={{color:'#E5C59E'}}>Нумерология:</span> Понимайте, как числа влияют на вашу жизнь и открывают вам путь к самопознанию</p></li>
-                        <li className={S.offers_listItem}><div className={S.listItemImg_container}><Image fill sizes='' src={DreamcatcherIcon} alt={"https://www.flaticon.com/ru/free-icons/"}/></div><p><span style={{color:'#E5C59E'}}>Сонник:</span> Интерпретируйте ваши сновидения, раскрывайте их смысл и получайте ценные инсайты.</p></li>
+                        <li className={S.offers_listItem}><div className={S.listItemImg_container}><img style={{position:'absolute',top:0,left:0,right:0,bottom:0,width:'100%',height:'100%'}} src={TaroCardIcon.src} alt={"https://www.flaticon.com/ru/free-icons/"}/></div><p><span style={{color:'#E5C59E'}}>Таро:</span> Разгадайте символику карт Таро, предсказывайте будущее и познайте себя с помощью мудрости старинных карт</p></li>
+                        <li className={S.offers_listItem}><div className={S.listItemImg_container}><img style={{position:'absolute',top:0,left:0,right:0,bottom:0,width:'100%',height:'100%'}} src={NubmerologyIcon.src} alt={"https://www.flaticon.com/ru/free-icons/"}/></div><p><span style={{color:'#E5C59E'}}>Нумерология:</span> Понимайте, как числа влияют на вашу жизнь и открывают вам путь к самопознанию</p></li>
+                        <li className={S.offers_listItem}><div className={S.listItemImg_container}><img style={{position:'absolute',top:0,left:0,right:0,bottom:0,width:'100%',height:'100%'}} src={DreamcatcherIcon.src} alt={"https://www.flaticon.com/ru/free-icons/"}/></div><p><span style={{color:'#E5C59E'}}>Сонник:</span> Интерпретируйте ваши сновидения, раскрывайте их смысл и получайте ценные инсайты.</p></li>
                     </div>
                 </div>
                 <div className={S.purposes}>

@@ -4,37 +4,37 @@ import Placeholder from '/public/assets/images/placeholder.png';
 export const Items:ICardItem[]=[
     {
         alt:'',
-        img:Placeholder,
+        img:Placeholder.src,
         price:'Цена',
         title:'Название'
     },
     {
         alt:'',
-        img:Placeholder,
+        img:Placeholder.src,
         price:'Цена',
         title:'Название'
     },
     {
         alt:'',
-        img:Placeholder,
+        img:Placeholder.src,
         price:'Цена',
         title:'Название'
     },
     {
         alt:'',
-        img:Placeholder,
+        img:Placeholder.src,
         price:'Цена',
         title:'Название'
     },
     {
         alt:'',
-        img:Placeholder,
+        img:Placeholder.src,
         price:'Цена',
         title:'Название'
     },
     {
         alt:'',
-        img:Placeholder,
+        img:Placeholder.src,
         price:'Цена',
         title:'Название'
     },
@@ -43,7 +43,7 @@ export const Items:ICardItem[]=[
 
 export const Item = {
     alt:'',
-    img:Placeholder,
+    img:Placeholder.src,
     price:'Цена',
     title:'Название'
 }

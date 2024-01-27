@@ -25,14 +25,14 @@ const AboutPage:FC<AboutPageProps> = ({...AboutPageProps}) =>{
                     <div className={S.images}>
                         <div className={S.image_container}>
                             <div className={S.image_candle}>
-                                <Image fill sizes='' src={CandleImage} alt='candles'/>
+                                <img style={{position:'absolute',top:0,left:0,right:0,bottom:0,width:'100%',height:'100%'}} src={CandleImage.src} alt='candles'/>
                             </div>
                             <div className={S.image_cards}>
-                                <Image fill sizes='' src={CardsImage} alt='cards'/>
+                                <img style={{position:'absolute',top:0,left:0,right:0,bottom:0,width:'100%',height:'100%'}} src={CardsImage.src} alt='cards'/>
                             </div>
                         </div>
                         <div className={S.star}>
-                                <Image fill sizes='' src={Star} alt=''/>
+                                <img style={{position:'absolute',top:0,left:0,right:0,bottom:0,width:'100%',height:'100%'}} src={Star.src} alt=''/>
                         </div>
                     </div>
                 </div>

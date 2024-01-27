@@ -23,12 +23,12 @@ const Numerology:FC<NumerologyProps> = ({...NumerologyProps}) =>{
                         </div>
                     </div>
                     <div className={S.withImage_image}>
-                        <Image fill sizes='' src={numerology1} alt=''/>
+                        <img style={{position:'absolute',top:0,left:0,right:0,bottom:0,width:'100%',height:'100%'}} src={numerology1.src} alt=''/>
                     </div>
                 </div>
                 <div className={S.withImage__bottom}>
                     <div className={S.withImage_image}>
-                        <Image fill sizes='' src={numerology2} alt=''/>
+                        <img style={{position:'absolute',top:0,left:0,right:0,bottom:0,width:'100%',height:'100%'}} src={numerology2.src} alt=''/>
                     </div>
                     <div className={S.withImage_text}>
                         <div className={S.withImage_title}>

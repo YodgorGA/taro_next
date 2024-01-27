@@ -14,7 +14,7 @@ export async function POST(request:Request){
 
     const requestData = {
         amount: {
-          value: '2.00',
+          value: '50.00',
           currency: 'RUB',
         },
         payment_method_data: {

@@ -25,7 +25,7 @@ const MagicShopBuy:FC<MagicShopBuyProps> = ({...MagicShopBuyProps}) =>{
                 <Cross href='/magic-shop'/>
                 <div className={S.shopItem}>
                     <div className={S.shopItem_image}>
-                        <Image alt={ShopItem.alt} fill sizes='' src={ShopItem.img}/>
+                        <Image alt={ShopItem.alt} fill sizes={'(min-width: 1152px) 33.333vw, (min-width: 640px) 50vw, 100vw'} src={ShopItem.img}/>
                     </div>
                     <div className={S.shopItem_title}>
                         <p>{returnMagicShopGoodName()}</p>
@@ -38,7 +38,7 @@ const MagicShopBuy:FC<MagicShopBuyProps> = ({...MagicShopBuyProps}) =>{
             </div>
             <div className={S.background}>
                 <div className={S.background_container}>
-                    <Image priority fill sizes='' src={magicShopBackground} alt=''/> 
+                    <img style={{position:'absolute',top:0,left:0,right:0,bottom:0,width:'100%',height:'100%'}} src={magicShopBackground.src} alt=''/> 
                 </div>
             </div>
 

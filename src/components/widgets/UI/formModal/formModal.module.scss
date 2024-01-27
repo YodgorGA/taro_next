@@ -222,9 +222,14 @@
     &_container{
         width: 100%;
         height: 100px;
-        @include flex(row,center,center);
+        @include flex(column,center,center);
+        gap: 10px;
         @media (max-width: $mobile) {
             margin-top: 30px;
+        }
+
+        .price{
+            font-size: $d_sm;
         }
     }
 }
