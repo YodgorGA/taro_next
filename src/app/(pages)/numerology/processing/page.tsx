@@ -20,15 +20,16 @@ const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps}) =>{
 
     const buttonClickHandler = () =>{
         
-        if(userEmail !== null){
-            const payment:Promise<{redirectLink:string,id:string}> = 
-            createPayment({redirectLink:'numerology',email:userEmail,description:'Тест'});
-            payment.then(response=>{
-                setPaymentId(response.id)
-                console.log(paymentId,['buttonClickHandler']);    
-                router.push(response.redirectLink)
-            }).catch(error=>console.error(error))
-        }
+        // if(userEmail !== null){
+        //     const payment:Promise<{redirectLink:string,id:string}> = 
+        //     createPayment({redirectLink:'numerology',email:userEmail,description:'Тест'});
+        //     payment.then(response=>{
+        //         setPaymentId(response.id)
+        //         console.log(paymentId,['buttonClickHandler']);    
+        //         router.push(response.redirectLink)
+        //     }).catch(error=>console.error(error))
+        // }
+        router.push('/numerology/waiting')
     }
 
 
@@ -48,7 +49,7 @@ const TaroProcessing:FC<TaroProcessingProps> = ({...TaroProcessingProps}) =>{
                     </p>
                 </div>
                 <div className={S.buttonContainer}>
-                    <Button clickHandler={buttonClickHandler}>Оплатить и узнать результат</Button>
+                    <Button clickHandler={buttonClickHandler}>Узнать результат</Button>
                 </div>
             </div>
         </section>

@@ -93,7 +93,7 @@ export const FormModal:FC<FormModalProps> = ({href,...FormModalProps}) =>{
         <>
             <div className={S.button_container}>
                 <button onClick={modalToggler} className={S.button}>Задать вопрос</button>
-                <p className={S.price}>стоимость услуги 50 руб</p>
+                <p className={S.price}>Поддержать нас: 5213244066175114</p>
             </div>
             {
                 isHidden === false && 
